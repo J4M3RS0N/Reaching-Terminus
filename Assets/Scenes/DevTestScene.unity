@@ -20658,7 +20658,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24360
+  m_Name: pb_Mesh31068
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -23711,6 +23711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   containerGameObject: {fileID: 1302176861}
   playerInteract: {fileID: 1914993557}
+  newPI: {fileID: 1914993564}
   interactTMPGUI: {fileID: 1650963006}
 --- !u!1 &938058023
 GameObject:
@@ -29331,7 +29332,7 @@ GameObject:
   - component: {fileID: 1507388474}
   - component: {fileID: 1507388473}
   - component: {fileID: 1507388476}
-  m_Layer: 6
+  m_Layer: 14
   m_Name: backwallCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29346,7 +29347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507388471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.588, z: -0.994}
+  m_LocalPosition: {x: 0, y: 0.588, z: -1.981}
   m_LocalScale: {x: 1.6515, y: 2.6325, z: 0.17385873}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29864,7 +29865,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25932
+  m_Name: pb_Mesh32602
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -37258,7 +37259,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh50678
+  m_Name: pb_Mesh31318
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -38010,6 +38011,7 @@ GameObject:
   - component: {fileID: 1914993557}
   - component: {fileID: 1914993559}
   - component: {fileID: 1914993563}
+  - component: {fileID: 1914993564}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -38024,7 +38026,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914993556}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd0a06f11b001aa43a311cdaeea1e933, type: 3}
   m_Name: 
@@ -38034,8 +38036,8 @@ MonoBehaviour:
   pickUpLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  InteractorSource: {fileID: 0}
-  InteractRange: 0
+  InteractorSource: {fileID: 990670909}
+  InteractRange: 1
 --- !u!4 &1914993558
 Transform:
   m_ObjectHideFlags: 0
@@ -38157,6 +38159,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInFire: 0
   playerInAcid: 0
+--- !u!114 &1914993564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914993556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2116c69834fa6694ab3586b4399904fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamTransform: {fileID: 990670909}
+  interactLayerMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  InteractRange: 2
+  objectIsInteractable: 0
 --- !u!1 &1952367773
 GameObject:
   m_ObjectHideFlags: 0

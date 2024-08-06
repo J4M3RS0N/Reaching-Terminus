@@ -22,7 +22,7 @@ public class PlayerInteract : MonoBehaviour
         //Player Pickup Objects
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(objectGrabbable == null) //Not carrying Object, try to grab
+            if (objectGrabbable == null) //Not carrying Object, try to grab
             {
                 float pickUpDistance = 2f;
                 if (Physics.Raycast(playerCamTransform.position, playerCamTransform.forward, out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
@@ -37,14 +37,12 @@ public class PlayerInteract : MonoBehaviour
                 objectGrabbable = null;
             }
 
-            // Interacting with Buttons and Switches
+            //Interacting with Buttons and Switches
             IIteractable interactable = GetInteractableObject();
-            if(interactable != null)
+            if (interactable != null)
             {
                 interactable.Interact(transform);
             }
-
-
         }
     }
 
@@ -82,14 +80,15 @@ public class PlayerInteract : MonoBehaviour
 
         return closestInteractable;
 
-        //Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
-        //if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
-        //{
-        //    if (hitInfo.collider.gameObject.TryGetComponent(out IIteractable interactable))
-        //    {
-        //        interactable.Interact(transform);
-        //    }
+        //    //Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
+        //    //if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
+        //    //{
+        //    //    if (hitInfo.collider.gameObject.TryGetComponent(out IIteractable interactable))
+        //    //    {
+        //    //        interactable.Interact(transform);
+        //    //    }
+        //    //}
         //}
+
     }
-   
 }
