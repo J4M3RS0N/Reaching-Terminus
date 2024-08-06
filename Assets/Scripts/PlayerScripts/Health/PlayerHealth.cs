@@ -66,12 +66,12 @@ public class PlayerHealth : MonoBehaviour
             //DamagePlayerHealth();
 
             //deplete player health
-            playerHealth -= 0.001f;
+            playerHealth -= 0.002f;
 
             //increase vignette intensity
             //volVignette.enabled.Override(true);
 
-            intensity += 0.001f;
+            intensity += 0.002f;
 
             if (intensity < 0) intensity = 0;
 

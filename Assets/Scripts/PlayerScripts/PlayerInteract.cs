@@ -10,6 +10,9 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
 
+    [SerializeField] private Transform InteractorSource;
+    public float InteractRange;
+
     private ObjectGrabbable objectGrabbable;
 
     // Update is called once per frame
@@ -40,6 +43,8 @@ public class PlayerInteract : MonoBehaviour
             {
                 interactable.Interact(transform);
             }
+
+
         }
     }
 
@@ -48,6 +53,7 @@ public class PlayerInteract : MonoBehaviour
         List<IIteractable> interactableList = new List<IIteractable>();
         float interactRange = 0.8f;
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+
         foreach (Collider collider in colliderArray)
         {
             if (collider.TryGetComponent(out IIteractable interactable))
@@ -65,7 +71,7 @@ public class PlayerInteract : MonoBehaviour
             }
             else
             {
-                if (Vector3.Distance(transform.position, interactable.GetTransform().position) < 
+                if (Vector3.Distance(transform.position, interactable.GetTransform().position) <
                     Vector3.Distance(transform.position, closestInteractable.GetTransform().position))
 
                 {
@@ -75,6 +81,15 @@ public class PlayerInteract : MonoBehaviour
         }
 
         return closestInteractable;
+
+        //Ray r = new Ray(InteractorSource.position, InteractorSource.forward);
+        //if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
+        //{
+        //    if (hitInfo.collider.gameObject.TryGetComponent(out IIteractable interactable))
+        //    {
+        //        interactable.Interact(transform);
+        //    }
+        //}
     }
    
 }

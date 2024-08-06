@@ -270,6 +270,24 @@ public class SAVED_PlayerMovement : MonoBehaviour
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 
-   
+    //stop jumping when in acid
+    public void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Acid")
+        {
+            readyToJump = false;
+        }
+    }
+
+    // let player jump when out of acid
+    public void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "Acid")
+        {
+            readyToJump = true;
+        }
+    }
+
+
 
 }

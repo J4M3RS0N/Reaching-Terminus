@@ -5,6 +5,7 @@ using UnityEngine;
 public class OpenHangerDoors : MonoBehaviour
 {
     Animator hangerAnimator;
+    public GameObject doorButton;
 
     // Start is called before the first frame update
     void Start()
@@ -15,5 +16,6 @@ public class OpenHangerDoors : MonoBehaviour
     public void PlayDoorOpenAnim()
     {
         hangerAnimator.SetBool("OpenDoors", true);
+        doorButton.SetActive(false);
     }
 }
