@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
+//using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,8 +13,11 @@ public class PlayerHealth : MonoBehaviour
     [Header("Health Visuals")]
     public float intensity = 0;
 
-    PostProcessVolume visualVolume;
-    Vignette visualVignette;
+    //PostProcessVolume visualVolume;
+    //Vignette visualVignette;
+
+    [SerializeField] public Volume volume;
+    Vignette volVignette;
 
     // mech dmg check talks to player dmg check
 
@@ -35,18 +40,21 @@ public class PlayerHealth : MonoBehaviour
 
         playerHealth = playerMaxhealth;
 
-        visualVolume = GetComponent<PostProcessVolume>();
-        visualVolume.profile.TryGetSettings<Vignette>(out visualVignette);
+        //visualVolume = GetComponent<PostProcessVolume>();
+        //visualVolume.profile.TryGetSettings<Vignette>(out visualVignette);
 
-        if (!visualVignette)
-        {
-            print("error, vignette error");
-        }
+        volume.profile.TryGet<Vignette>(out volVignette); 
 
-        else
-        {
-            visualVignette.enabled.Override(false);
-        }
+
+        //if (!volVignette)
+        //{
+        //    print("error, vignette error");
+        //}
+
+        //else
+        //{
+        //    volVignette.enabled.Override(false);
+        //}
     }
 
     // Update is called once per frame
@@ -61,13 +69,13 @@ public class PlayerHealth : MonoBehaviour
             playerHealth -= 0.001f;
 
             //increase vignette intensity
-            visualVignette.enabled.Override(true);
+            //volVignette.enabled.Override(true);
 
             intensity += 0.001f;
 
             if (intensity < 0) intensity = 0;
 
-            visualVignette.intensity.Override(intensity);
+            volVignette.intensity.Override(intensity);
 
         }
 
@@ -84,7 +92,7 @@ public class PlayerHealth : MonoBehaviour
 
             if (intensity < 0) intensity = 0;
 
-            visualVignette.intensity.Override(intensity);
+            volVignette.intensity.Override(intensity);
 
         }
 
