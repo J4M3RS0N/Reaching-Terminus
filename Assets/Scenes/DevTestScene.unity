@@ -22994,7 +22994,7 @@ Transform:
   - {fileID: 417229445}
   - {fileID: 671651244}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &820075076
 MonoBehaviour:
@@ -24873,7 +24873,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003682309}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: ba9ea9f77536efa4b9c079607c60a854, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -30358,6 +30358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cacde0beedf79948b724b7e6faf2117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorButton: {fileID: 2115114378}
 --- !u!114 &1608059770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38033,6 +38034,8 @@ MonoBehaviour:
   pickUpLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  InteractorSource: {fileID: 0}
+  InteractRange: 0
 --- !u!4 &1914993558
 Transform:
   m_ObjectHideFlags: 0
@@ -44480,7 +44483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1642831628609991150, guid: aa71f64b2e2b546488d87e345c478723, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1642831628609991150, guid: aa71f64b2e2b546488d87e345c478723, type: 3}
       propertyPath: m_LocalPosition.x
