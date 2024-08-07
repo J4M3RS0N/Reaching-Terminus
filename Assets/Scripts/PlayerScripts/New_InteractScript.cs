@@ -60,18 +60,22 @@ public class New_InteractScript : MonoBehaviour
 
             }
 
+            //IIteractaballs interactable = GetInteractaballs();
+            //if (interactable != null)
+            //{
+            //    interactable.Interact();
+            //}
 
-          
-            //Interact with buttons
-                Ray r = new Ray(playerCamTransform.position, playerCamTransform.forward);
-                if (Physics.Raycast(r, out RaycastHit hit, InteractRange))
+
+            Ray r = new Ray(playerCamTransform.position, playerCamTransform.forward);
+            if (Physics.Raycast(r, out RaycastHit hit, InteractRange))
+            {
+                if (hit.collider.TryGetComponent(out IIteractable interactable))
                 {
-                    if (hit.collider.TryGetComponent(out IIteractable interactable))
-                    {
-                        interactable.Interact(transform);
-                    }
+                    interactable.Interact(transform);
                 }
-            
+            }
+
         }
 
     }
@@ -107,13 +111,26 @@ public class New_InteractScript : MonoBehaviour
     }
 
 
-    public void GetInteractable(GameObject objectToInteractWith)
-    {
-        if (objectToInteractWith.TryGetComponent(out IIteractable interactable))
-        {
-            interactable.Interact(transform);
-        }
-    }
+    //public void GetInteractable(GameObject objectToInteractWith)
+    //{
+    //    if (objectToInteractWith.TryGetComponent(out IIteractaballs interactable))
+    //    {
+    //        interactable.Interact(transform);
+
+    //    }
+    //}
+
+    //public IIteractaballs GetInteractaballs()
+    //{
+    //    Ray r = new Ray(playerCamTransform.position, playerCamTransform.forward);
+    //    if (Physics.Raycast(r, out RaycastHit hit, InteractRange))
+    //    {
+    //        if (hit.collider.TryGetComponent(out IIteractaballs interactable))
+    //        {
+    //            interactable.Interact();
+    //        }
+    //    }
+    //}
 
     public SimpleButton GetSimpleButton()
     {

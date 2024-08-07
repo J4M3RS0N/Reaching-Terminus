@@ -26,7 +26,7 @@ public class PlayerInteractUI : MonoBehaviour
 
         if (newPI.GetSimpleButton() != null)
         {
-            Show();
+            Show(newPI.GetSimpleButton());
         }
         else
         {
@@ -42,10 +42,10 @@ public class PlayerInteractUI : MonoBehaviour
     //    interactTMPGUI.text = interactable.GetInteractText();
     //}
 
-    private void Show()
+    private void Show(SimpleButton button)
     {
         containerGameObject.SetActive(true);
-        //interactTMPGUI.text = interactable.GetInteractText();
+        interactTMPGUI.text = button.GetInteractText();
     }
 
     private void Hide()
