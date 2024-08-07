@@ -13,6 +13,8 @@ public class ToastCollector : MonoBehaviour
     [SerializeField] private GameObject emptyToastUI;
     [SerializeField] private GameObject intemptyUI;
 
+    public New_InteractScript intscript;
+
 
     IEnumerator drainHealthCoruotine;
 
@@ -98,6 +100,7 @@ public class ToastCollector : MonoBehaviour
         if (other.gameObject.CompareTag("Toast"))
         {
             AddHealth(30);
+            intscript.DropObject();
             Destroy(other.gameObject);
         }
     }

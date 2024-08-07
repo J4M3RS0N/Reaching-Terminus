@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArmMoverScript : MonoBehaviour
 {
-    Animator armAnimator;
+    public Animator armAnimator;
 
     // Start is called before the first frame update
     void Start()

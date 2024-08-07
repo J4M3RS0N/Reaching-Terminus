@@ -10,7 +10,7 @@ public class FireExtinguisher : MonoBehaviour
     private float CurrentCooldown;
 
     [SerializeField] private GameObject extinguishPS;
-    [SerializeField] private GameObject reloadText;   
+    [SerializeField] private GameObject reloadText;
 
     // ammo floats
     //public float ammo = 1f;

@@ -11,6 +11,7 @@ public class PlayerInteractUI : MonoBehaviour
     [SerializeField] private New_InteractScript newPI;
     [SerializeField] private TextMeshProUGUI interactTMPGUI;
 
+    //private SimpleButton simpB;
 
     private void Update()
     {
@@ -44,7 +45,7 @@ public class PlayerInteractUI : MonoBehaviour
     private void Show()
     {
         containerGameObject.SetActive(true);
-       // interactTMPGUI.text = interactable.GetInteractText();
+        //interactTMPGUI.text = interactable.GetInteractText();
     }
 
     private void Hide()

@@ -14,6 +14,8 @@ public class CoolantCollector : MonoBehaviour
     [SerializeField] private GameObject emptyButterUI;
     [SerializeField] private GameObject intemptyUI;
 
+    public New_InteractScript intscript;
+
     [SerializeField] public GameObject fireParticle;
     [SerializeField] private Transform fireSpawner;
     private bool thereIsFire;
@@ -111,6 +113,7 @@ public class CoolantCollector : MonoBehaviour
         if (other.gameObject.CompareTag("Butter"))
         {
             AddHealth(30);
+            intscript.DropObject();
             Destroy(other.gameObject);
         }
     }
