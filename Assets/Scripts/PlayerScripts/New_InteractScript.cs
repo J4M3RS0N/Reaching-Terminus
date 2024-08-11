@@ -68,7 +68,8 @@ public class New_InteractScript : MonoBehaviour
 
 
             Ray r = new Ray(playerCamTransform.position, playerCamTransform.forward);
-            if (Physics.Raycast(r, out RaycastHit hit, InteractRange))
+            Debug.DrawRay(r.origin, r.direction, Color.red);
+            if (Physics.Raycast(r, out RaycastHit hit, InteractRange, interactLayerMask))
             {
                 if (hit.collider.TryGetComponent(out IIteractable interactable))
                 {
@@ -135,7 +136,7 @@ public class New_InteractScript : MonoBehaviour
     public SimpleButton GetSimpleButton()
     {
         Ray r = new Ray(playerCamTransform.position, playerCamTransform.forward);
-        if (Physics.Raycast(r, out RaycastHit hit, InteractRange))
+        if (Physics.Raycast(r, out RaycastHit hit, InteractRange, interactLayerMask))
         {
             if (hit.collider.TryGetComponent(out SimpleButton button))
             {
