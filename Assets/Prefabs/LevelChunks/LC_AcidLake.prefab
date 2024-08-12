@@ -4494,7 +4494,7 @@ GameObject:
   - component: {fileID: 4250088656245390970}
   - component: {fileID: 7341721606657999666}
   - component: {fileID: 6087326331365600336}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ButtonCube(Crane)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5070,6 +5070,7 @@ MonoBehaviour:
   attatchedContainer: {fileID: 6554469924332414122}
   rampContainer: {fileID: 4216353888254394264}
   craneCollider: {fileID: 6233504567711640644}
+  craneButton: {fileID: 2566539071480256629}
 --- !u!1 &3316930530354243474
 GameObject:
   m_ObjectHideFlags: 0

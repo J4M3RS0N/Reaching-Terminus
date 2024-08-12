@@ -15,6 +15,8 @@ public class CraneScript : MonoBehaviour
 
     public GameObject craneCollider;
 
+    [SerializeField] private GameObject craneButton; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,7 @@ public class CraneScript : MonoBehaviour
     public void MoveCrane()
     {
         craneAnimator.SetBool("ActivateCrane", true);
+        craneButton.SetActive(false);
         StartCoroutine(SeatPlayer());
     }
 
