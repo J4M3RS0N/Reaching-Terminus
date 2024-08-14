@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyScript : MonoBehaviour, IIteractable
+public class KeyScript : MonoBehaviour
 {
-    [SerializeField] private string interactText;
     [SerializeField] private GameObject doorButton;
     //public bool keyBool;
 
@@ -21,7 +20,7 @@ public class KeyScript : MonoBehaviour, IIteractable
         
     }
 
-    public void Interact(Transform interactorTransform)
+    public void KeyFunction()
     {
         //keyBool = true;
         doorButton.SetActive(true);
@@ -31,12 +30,6 @@ public class KeyScript : MonoBehaviour, IIteractable
     private void DestroyKey()
     {
         Destroy(this.gameObject);
-    }
-
-    public string GetInteractText()
-    {
-        //return "Push Button (E)";
-        return interactText;
     }
 
     public Transform GetTransform()

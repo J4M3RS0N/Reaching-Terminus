@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class New_InteractScript : MonoBehaviour
 {
-
-
     [SerializeField] private Transform playerCamTransform;
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
