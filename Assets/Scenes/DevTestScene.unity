@@ -6155,7 +6155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1813770447382751261, guid: aa71f64b2e2b546488d87e345c478723, type: 3}
       propertyPath: listChunks.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1813770447382751261, guid: aa71f64b2e2b546488d87e345c478723, type: 3}
       propertyPath: listChunks.Array.data[0]
@@ -6165,6 +6165,10 @@ PrefabInstance:
       propertyPath: listChunks.Array.data[1]
       value: 
       objectReference: {fileID: 7813872856638003321, guid: 1d47b8565a38eec4a81ce8affbd489f0, type: 3}
+    - target: {fileID: 1813770447382751261, guid: aa71f64b2e2b546488d87e345c478723, type: 3}
+      propertyPath: listChunks.Array.data[2]
+      value: 
+      objectReference: {fileID: 4937233462817666942, guid: 64a00f93cc46a3a4285a5119ca11997e, type: 3}
     - target: {fileID: 5695802631605144094, guid: aa71f64b2e2b546488d87e345c478723, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -12995,6 +12999,7 @@ GameObject:
   - component: {fileID: 355410551}
   - component: {fileID: 355410553}
   - component: {fileID: 355410552}
+  - component: {fileID: 355410554}
   m_Layer: 0
   m_Name: Acid_Rock_B (1)
   m_TagString: Untagged
@@ -13066,6 +13071,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355410550}
+  m_Mesh: {fileID: -5536362786213416803, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
+--- !u!64 &355410554
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355410550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5536362786213416803, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
 --- !u!1 &360991512
 GameObject:
@@ -14068,6 +14087,7 @@ GameObject:
   - component: {fileID: 446772987}
   - component: {fileID: 446772989}
   - component: {fileID: 446772988}
+  - component: {fileID: 446772990}
   m_Layer: 0
   m_Name: Acid_Rock_C (1)
   m_TagString: Untagged
@@ -14139,6 +14159,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446772986}
+  m_Mesh: {fileID: 5748775369624089150, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
+--- !u!64 &446772990
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446772986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: 5748775369624089150, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
 --- !u!1 &452571896
 GameObject:
@@ -20171,6 +20205,7 @@ GameObject:
   - component: {fileID: 528151760}
   - component: {fileID: 528151762}
   - component: {fileID: 528151761}
+  - component: {fileID: 528151763}
   m_Layer: 0
   m_Name: Acid_Rock_A (2)
   m_TagString: Untagged
@@ -20242,6 +20277,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528151759}
+  m_Mesh: {fileID: -7189436883576857095, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
+--- !u!64 &528151763
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528151759}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: -7189436883576857095, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
 --- !u!1 &540840884
 GameObject:
@@ -25968,6 +26017,7 @@ GameObject:
   - component: {fileID: 1177651062}
   - component: {fileID: 1177651064}
   - component: {fileID: 1177651063}
+  - component: {fileID: 1177651065}
   m_Layer: 0
   m_Name: Acid_Rock_A (1)
   m_TagString: Untagged
@@ -26039,6 +26089,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177651061}
+  m_Mesh: {fileID: -7189436883576857095, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
+--- !u!64 &1177651065
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177651061}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: -7189436883576857095, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
 --- !u!1 &1227391717
 GameObject:
@@ -27578,6 +27642,7 @@ GameObject:
   - component: {fileID: 1437887968}
   - component: {fileID: 1437887970}
   - component: {fileID: 1437887969}
+  - component: {fileID: 1437887971}
   m_Layer: 0
   m_Name: Acid_Platform_A (1)
   m_TagString: Untagged
@@ -27649,6 +27714,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437887967}
+  m_Mesh: {fileID: -6061318773290444533, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
+--- !u!64 &1437887971
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437887967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: -6061318773290444533, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
 --- !u!1 &1459636831
 GameObject:
@@ -37983,6 +38062,7 @@ GameObject:
   - component: {fileID: 1991743074}
   - component: {fileID: 1991743076}
   - component: {fileID: 1991743075}
+  - component: {fileID: 1991743077}
   m_Layer: 0
   m_Name: Acid_Rock_A (3)
   m_TagString: Untagged
@@ -38054,6 +38134,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991743073}
+  m_Mesh: {fileID: -7189436883576857095, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
+--- !u!64 &1991743077
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991743073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: -7189436883576857095, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
 --- !u!1 &1994402871
 GameObject:
@@ -38607,7 +38701,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24622
+  m_Name: pb_Mesh24624
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41945,6 +42039,7 @@ GameObject:
   - component: {fileID: 8141157054663590093}
   - component: {fileID: 5354016392065925907}
   - component: {fileID: 6167715315114809477}
+  - component: {fileID: 8141157054663590094}
   m_Layer: 0
   m_Name: Acid_Rock_C
   m_TagString: Untagged
@@ -44662,6 +44757,7 @@ GameObject:
   - component: {fileID: 2371920582540706702}
   - component: {fileID: 7774519574900731669}
   - component: {fileID: 1333892873500864137}
+  - component: {fileID: 7774519574900731670}
   m_Layer: 0
   m_Name: Acid_Rock_A
   m_TagString: Untagged
@@ -46126,6 +46222,7 @@ GameObject:
   - component: {fileID: 7515398800515415153}
   - component: {fileID: 7489610478290902948}
   - component: {fileID: 5827864004621270096}
+  - component: {fileID: 7515398800515415154}
   m_Layer: 0
   m_Name: Acid_Platform_A
   m_TagString: Untagged
@@ -46159,6 +46256,7 @@ GameObject:
   - component: {fileID: 6291138617986101963}
   - component: {fileID: 8949596072944867843}
   - component: {fileID: 8802263597539404156}
+  - component: {fileID: 8949596072944867844}
   m_Layer: 0
   m_Name: Acid_Rock_B
   m_TagString: Untagged
@@ -47075,6 +47173,20 @@ Transform:
   m_Father: {fileID: 3399272687319173571}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 104.07599, y: -23.348999, z: 0}
+--- !u!64 &7515398800515415154
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579329631016650365}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6061318773290444533, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
 --- !u!23 &7538917648813277622
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47360,6 +47472,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4781810824014437660}
   m_Mesh: {fileID: -7189436883576857095, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
+--- !u!64 &7774519574900731670
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4781810824014437660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7189436883576857095, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
 --- !u!4 &7788284353090381102
 Transform:
   m_ObjectHideFlags: 0
@@ -47531,7 +47657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1813770447382751261, guid: aa71f64b2e2b546488d87e345c478723, type: 3}
       propertyPath: listChunks.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1813770447382751261, guid: aa71f64b2e2b546488d87e345c478723, type: 3}
       propertyPath: listChunks.Array.data[0]
@@ -47541,6 +47667,10 @@ PrefabInstance:
       propertyPath: listChunks.Array.data[1]
       value: 
       objectReference: {fileID: 3451728790024791849, guid: 82a7f5533e189ae418a352f5e8c34923, type: 3}
+    - target: {fileID: 1813770447382751261, guid: aa71f64b2e2b546488d87e345c478723, type: 3}
+      propertyPath: listChunks.Array.data[2]
+      value: 
+      objectReference: {fileID: 4937233462817666942, guid: 64a00f93cc46a3a4285a5119ca11997e, type: 3}
     - target: {fileID: 5695802631605144094, guid: aa71f64b2e2b546488d87e345c478723, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -47754,6 +47884,20 @@ Transform:
   m_Father: {fileID: 3399272687319173571}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8141157054663590094
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3389329459108234777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5748775369624089150, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
 --- !u!4 &8231035717455537985
 Transform:
   m_ObjectHideFlags: 0
@@ -48318,6 +48462,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6670543296998974306}
+  m_Mesh: {fileID: -5536362786213416803, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
+--- !u!64 &8949596072944867844
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6670543296998974306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
   m_Mesh: {fileID: -5536362786213416803, guid: 974dc7177baef2245968f1e15b5d02d3, type: 3}
 --- !u!33 &8974337968016729074
 MeshFilter:
