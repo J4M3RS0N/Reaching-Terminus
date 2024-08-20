@@ -7,12 +7,14 @@ public class GeyserScript : MonoBehaviour
     //Random Seed
     private float fireOffFloat;
     public float firingTime = 2.0f;
-    public GameObject testObj;
+    public GameObject geyserDamageObj;
+    public GameObject geyserWarningObj;
 
     // Start is called before the first frame update
     void Start()
     {
-        testObj.SetActive(false);
+        geyserDamageObj.SetActive(false);
+        geyserWarningObj.SetActive(false);
 
         StartCoroutine(SetOffGeyser());
     }
@@ -29,13 +31,18 @@ public class GeyserScript : MonoBehaviour
 
         // turn on geyser collider + PS and SFX
 
+        //yield return new WaitForSeconds(fireOffFloat);
+
+        geyserWarningObj.SetActive(true);
+
         yield return new WaitForSeconds(fireOffFloat);
 
-        testObj.SetActive(true);
+        geyserDamageObj.SetActive(true);
 
         yield return new WaitForSeconds(firingTime);
 
-        testObj.SetActive(false);
+        geyserDamageObj.SetActive(false);
+        geyserWarningObj.SetActive(false);
 
         StartCoroutine(SetOffGeyser());
 
