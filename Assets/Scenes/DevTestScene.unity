@@ -37351,7 +37351,7 @@ MonoBehaviour:
   shake: {fileID: 1249652097}
   mechCam: {fileID: 1249652093}
   muzzleFlash: {fileID: 615280620}
-  impactFlash: {fileID: 699199562820365520, guid: 86b8f49a1a0890146bee03ff6ced0e29, type: 3}
+  impactFlash: {fileID: 7279701320254069687, guid: 26123b68fc9f50147bf81a765c09c31b, type: 3}
 --- !u!1 &1896190833
 GameObject:
   m_ObjectHideFlags: 0
