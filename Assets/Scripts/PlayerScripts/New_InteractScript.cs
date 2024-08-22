@@ -10,8 +10,9 @@ public class New_InteractScript : MonoBehaviour
 
     private ObjectGrabbable objectGrabbable;
 
-    [SerializeField] private FireExtinguisher fireExtinguisher;
-    [SerializeField] private ArmMoverScript arm;
+    //[SerializeField] private FireExtinguisher fireExtinguisher;
+    //[SerializeField] private ArmMoverScript arm;
+    [SerializeField] private GameObject playerObjects;
 
     public bool objectisbeingheld;
 
@@ -88,11 +89,13 @@ public class New_InteractScript : MonoBehaviour
         objectGrabbable.transform.rotation = objectGrabPointTransform.transform.rotation;
 
         //Stop player arm from moving;
-        arm.gameObject.SetActive(false);
+        //arm.gameObject.SetActive(false);
 
         //putaway fire extinguisher, swap to animation when models are finished
-        fireExtinguisher.gameObject.SetActive(false);
+        //fireExtinguisher.gameObject.SetActive(false);
 
+
+        playerObjects.SetActive(false);
     }
 
     public void DropObject()
@@ -103,10 +106,12 @@ public class New_InteractScript : MonoBehaviour
         Debug.Log(objectGrabbable = null);
 
         // allow arm to animate again
-        arm.gameObject.SetActive(true);
+        //arm.gameObject.SetActive(true);
 
         //bring back fire extinguisher (again replace with animation once the models done)
-        fireExtinguisher.gameObject.SetActive(true);
+        //fireExtinguisher.gameObject.SetActive(true);
+
+        playerObjects.SetActive(true);
     }
 
 

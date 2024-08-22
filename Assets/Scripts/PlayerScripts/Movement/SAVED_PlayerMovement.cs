@@ -153,7 +153,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
 
 
         //play walking noises when input for movement keys
-        if(horizontalInput > 0f || verticalInput > 0f)
+        if((horizontalInput > 0 || horizontalInput < 0 || verticalInput > 0f || verticalInput < 0f) && grounded)
         {
             playerFootsteps.enabled = true;
         }
