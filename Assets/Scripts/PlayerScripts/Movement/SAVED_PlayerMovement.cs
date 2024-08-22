@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class SAVED_PlayerMovement : MonoBehaviour
 {
     [SerializeField] private EndGameScript endGame;
+    [SerializeField] private AudioSource playerFootsteps;
 
     public static SAVED_PlayerMovement pmInstance;
 
@@ -149,6 +150,17 @@ public class SAVED_PlayerMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+
+        //play walking noises when input for movement keys
+        if(horizontalInput > 0f || verticalInput > 0f)
+        {
+            playerFootsteps.enabled = true;
+        }
+        else
+        {
+            playerFootsteps.enabled = false;
+        }
 
         //when to jump
         if(Input.GetKey(jumpKey) && readyToJump && grounded)
