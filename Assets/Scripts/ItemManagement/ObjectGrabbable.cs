@@ -8,12 +8,19 @@ public class ObjectGrabbable : MonoBehaviour
     private Transform objectGrabPointTransform;
     private Collider objectCollider;
 
+    [Header("Audio")]
+    private AudioSource objectAudio;
+
+    public AudioClip pickUpAudio;
+    public AudioClip dropAudio;
+
     [SerializeField] private string interactText;
 
     private void Awake()
     {
         objectRb = GetComponent<Rigidbody>();
         objectCollider = GetComponent<Collider>();
+        objectAudio = GetComponent<AudioSource>();
     }
     public void Grab(Transform objectGrabPointTransform) 
     {
@@ -23,6 +30,9 @@ public class ObjectGrabbable : MonoBehaviour
         //Constrain Rigibody
         objectRb.constraints = RigidbodyConstraints.FreezePosition;
         objectRb.freezeRotation = true;
+
+        //play audio clip
+        objectAudio.PlayOneShot(pickUpAudio);
     }
 
     public void Drop()
@@ -35,6 +45,9 @@ public class ObjectGrabbable : MonoBehaviour
         //Unrestrict Rigidbody
         objectRb.constraints = RigidbodyConstraints.None;
         objectRb.freezeRotation = false;
+
+        //play audio clip
+        objectAudio.PlayOneShot(dropAudio);
     }
 
     private void FixedUpdate()
