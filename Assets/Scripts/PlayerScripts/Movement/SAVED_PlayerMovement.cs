@@ -7,6 +7,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
 {
     [SerializeField] private EndGameScript endGame;
     [SerializeField] private AudioSource playerFootsteps;
+    [SerializeField] private Animator playerAnimator;
 
     public static SAVED_PlayerMovement pmInstance;
 
@@ -156,14 +157,37 @@ public class SAVED_PlayerMovement : MonoBehaviour
         if((horizontalInput > 0 || horizontalInput < 0 || verticalInput > 0f || verticalInput < 0f) && grounded)
         {
             playerFootsteps.enabled = true;
+            playerAnimator.SetBool("Walking", true);
         }
         else
         {
             playerFootsteps.enabled = false;
+            playerAnimator.SetBool("Walking", false);
         }
 
+        //Set Camera Animator bools for leaning
+        if (Input.GetKey(KeyCode.A))
+        {
+            playerAnimator.SetBool("LeanLeft", true);
+        }
+        else
+        {
+            playerAnimator.SetBool("LeanLeft", false);
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            playerAnimator.SetBool("LeanRight", true);
+        }
+
+        else
+        {
+            playerAnimator.SetBool("LeanRight", false);
+        }
+
+
         //when to jump
-        if(Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKey(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
 
