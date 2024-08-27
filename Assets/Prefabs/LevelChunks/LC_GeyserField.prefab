@@ -485,7 +485,8 @@ GameObject:
   - component: {fileID: 3347940365209108993}
   - component: {fileID: 9053081626160790372}
   - component: {fileID: 9118593179270285661}
-  m_Layer: 0
+  - component: {fileID: 6005176386596507558}
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,6 +558,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6005176386596507558
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3429511080770390810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -629719859055844128, guid: 6db7f3e6f073037449cec988954a3857, type: 3}
 --- !u!1 &4510853188076228393
 GameObject:
   m_ObjectHideFlags: 0
@@ -3808,7 +3823,8 @@ GameObject:
   - component: {fileID: 1441388014324564814}
   - component: {fileID: 7549429896225407544}
   - component: {fileID: 4227471582797985559}
-  m_Layer: 0
+  - component: {fileID: 1377053860145274698}
+  m_Layer: 6
   m_Name: GeyserWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3880,6 +3896,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1377053860145274698
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166932452908362879}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8432212002610678384, guid: 6db7f3e6f073037449cec988954a3857, type: 3}
 --- !u!1 &7176243793761917480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,7 +3921,8 @@ GameObject:
   - component: {fileID: 1409586105224353716}
   - component: {fileID: 1564235369383311284}
   - component: {fileID: 3793866068483745098}
-  m_Layer: 0
+  - component: {fileID: 4711895358769977545}
+  m_Layer: 6
   m_Name: GRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3963,6 +3994,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4711895358769977545
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7176243793761917480}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1464920778408536576, guid: 6db7f3e6f073037449cec988954a3857, type: 3}
 --- !u!1 &7371538853368709372
 GameObject:
   m_ObjectHideFlags: 0
@@ -3974,7 +4019,8 @@ GameObject:
   - component: {fileID: 3008548287302879268}
   - component: {fileID: 3692231673283594270}
   - component: {fileID: 3457444717609238293}
-  m_Layer: 0
+  - component: {fileID: 5407576121057931479}
+  m_Layer: 6
   m_Name: GeyserWall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4046,6 +4092,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5407576121057931479
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7371538853368709372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8432212002610678384, guid: 6db7f3e6f073037449cec988954a3857, type: 3}
 --- !u!1 &7834947135908261704
 GameObject:
   m_ObjectHideFlags: 0

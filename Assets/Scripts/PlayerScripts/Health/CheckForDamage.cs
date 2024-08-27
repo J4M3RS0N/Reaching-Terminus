@@ -21,7 +21,7 @@ public class CheckForDamage : MonoBehaviour
         if (col.gameObject.tag == "Fire")
         {
             playerInFire = true;
-            //debug.log("is inside damage area");
+            //Debug.Log("is inside damage area");
         }
 
         if (col.gameObject.tag == "Acid")
@@ -35,7 +35,7 @@ public class CheckForDamage : MonoBehaviour
         if (col.gameObject.tag == "Fire")
         {
             playerInFire = false;
-            //debug.log("player left fire");
+            //.Log("player left fire");
         }
 
         if (col.gameObject.tag == "Acid")
