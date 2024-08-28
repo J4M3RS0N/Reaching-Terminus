@@ -8,7 +8,7 @@ public class EndGameScript : MonoBehaviour
     [SerializeField] PlayerHealth playerHPS;
 
     [SerializeField] GameObject playerLosePanel;
-    [SerializeField] GameObject mechLosePanel;
+    //[SerializeField] GameObject mechLosePanel;
 
     public bool deathAnim;
     public bool gameOver;
@@ -33,7 +33,7 @@ public class EndGameScript : MonoBehaviour
         if (gameOver)
         {
             playerLosePanel.SetActive(true);
-            mechLosePanel.SetActive(true);
+            //mechLosePanel.SetActive(true);
 
             if (Input.GetKey(KeyCode.R))
             {

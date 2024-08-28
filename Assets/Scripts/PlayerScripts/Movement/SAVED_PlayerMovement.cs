@@ -60,7 +60,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
 
     public bool playerCannotMove = false;
 
-    public UnityEvent playerPauseGame;
+    //public UnityEvent playerPauseGame;
 
     public enum MovementState
     {
@@ -110,11 +110,12 @@ public class SAVED_PlayerMovement : MonoBehaviour
             playerCannotMove = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            //GameManager.current.Pausegame();
-            playerPauseGame.Invoke();
-        }
+        ////PAUSE GAME
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    //GameManager.current.Pausegame();
+        //    playerPauseGame.Invoke();
+        //}
 
     }
 

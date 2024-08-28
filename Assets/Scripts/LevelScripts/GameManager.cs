@@ -42,6 +42,13 @@ public class GameManager : MonoBehaviour
         // best time and best score - set best to the current if its higher/ shorter in value
 
         // set the test for the timer
+
+        //PAUSE GAME
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //GameManager.current.Pausegame();
+            Pausegame();
+        }
     }
 
     public void Pausegame()
