@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class New_InteractScript : MonoBehaviour
 {
+    public static New_InteractScript interactInstance;
+
     [SerializeField] private Transform playerCamTransform;
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
@@ -23,7 +25,7 @@ public class New_InteractScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        interactInstance = this;
     }
 
     // Update is called once per frame

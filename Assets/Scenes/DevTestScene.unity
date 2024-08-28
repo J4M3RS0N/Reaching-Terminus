@@ -6304,7 +6304,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24634
+  m_Name: pb_Mesh431898
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22856,7 +22856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2a60500e818fe43b486ca8c738229f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgCheck: {fileID: 1914993563}
+  dmgCheck: {fileID: 1914993566}
   enterMech: {fileID: 820075072}
 --- !u!1 &833035363
 GameObject:
@@ -23925,7 +23925,7 @@ MonoBehaviour:
   endGame: {fileID: 1026954869}
   intensity: 0
   volume: {fileID: 1053309473}
-  dmgCheck: {fileID: 1914993563}
+  dmgCheck: {fileID: 1914993566}
   playerHealth: 1
   playerHasDied: 0
 --- !u!1 &988927473
@@ -37818,9 +37818,9 @@ GameObject:
   - component: {fileID: 1914993560}
   - component: {fileID: 1914993557}
   - component: {fileID: 1914993559}
-  - component: {fileID: 1914993563}
   - component: {fileID: 1914993564}
   - component: {fileID: 1914993565}
+  - component: {fileID: 1914993566}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -37956,20 +37956,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &1914993563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1914993556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61191591dafaa81488a7ff5cb37c2b0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInFire: 0
-  playerInAcid: 0
 --- !u!114 &1914993564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38089,6 +38075,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1914993566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914993556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61191591dafaa81488a7ff5cb37c2b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInFire: 0
+  playerInAcid: 0
 --- !u!1001 &1950063636
 PrefabInstance:
   m_ObjectHideFlags: 0

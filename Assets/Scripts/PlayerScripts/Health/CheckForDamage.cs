@@ -5,14 +5,14 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class CheckForDamage : MonoBehaviour
 {
-    //public static CheckForDamage phInstance;
+    public static CheckForDamage dmgCheckInstance;
 
     public bool playerInFire;
     public bool playerInAcid;
 
     public void Start()
     {
-        //phInstance = this;
+        dmgCheckInstance = this;
     }
 
     //Check if Player is touching a damaging collider

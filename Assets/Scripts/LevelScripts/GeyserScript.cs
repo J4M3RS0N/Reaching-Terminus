@@ -13,7 +13,8 @@ public class GeyserScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        geyserDamageObj.SetActive(false);
+        //geyserDamageObj.SetActive(false);
+        geyserDamageObj.transform.Rotate(180.0f, 0.0f, 0.0f);
         geyserWarningObj.SetActive(false);
 
         StartCoroutine(SetOffGeyser());
@@ -25,6 +26,8 @@ public class GeyserScript : MonoBehaviour
         
     }
 
+   
+
     private IEnumerator SetOffGeyser()
     {
         fireOffFloat = Random.Range(1.0f, 5.0f);
@@ -34,14 +37,17 @@ public class GeyserScript : MonoBehaviour
         //yield return new WaitForSeconds(fireOffFloat);
 
         geyserWarningObj.SetActive(true);
+        //geyserDamageObj.transform.Rotate(0.0f, 0.0f, 0.0f); 
 
         yield return new WaitForSeconds(fireOffFloat);
 
-        geyserDamageObj.SetActive(true);
+        //geyserDamageObj.SetActive(true);
+        geyserDamageObj.transform.Rotate(0.0f, 0.0f, 0.0f); 
 
         yield return new WaitForSeconds(firingTime);
 
-        geyserDamageObj.SetActive(false);
+        //geyserDamageObj.SetActive(false);
+        geyserDamageObj.transform.Rotate(180.0f, 0.0f, 0.0f);
         geyserWarningObj.SetActive(false);
 
         StartCoroutine(SetOffGeyser());

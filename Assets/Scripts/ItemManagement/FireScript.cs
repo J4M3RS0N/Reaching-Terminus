@@ -38,6 +38,8 @@ public class FireScript : MonoBehaviour
         //TakeDamage();
     }
 
+  
+
     public bool TryExtinguish(float fire)
     {
         currentIntensity -= fire;

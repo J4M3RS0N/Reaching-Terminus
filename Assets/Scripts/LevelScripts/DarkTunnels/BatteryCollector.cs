@@ -7,8 +7,6 @@ public class BatteryCollector : MonoBehaviour
     [SerializeField] private GameObject visualBattery;
     [SerializeField] private Animator gateAnimator;
 
-    public New_InteractScript intscript;
-
     public bool gatePowered;
 
     // Start is called before the first frame update
@@ -16,6 +14,7 @@ public class BatteryCollector : MonoBehaviour
     {
         visualBattery.SetActive(false);
         gatePowered = false;
+        //intscript = Get
     }
 
    //if battery is collected, open the gate
@@ -27,7 +26,7 @@ public class BatteryCollector : MonoBehaviour
 
             Destroy(other.gameObject);
 
-            intscript.DropObject();
+            New_InteractScript.interactInstance.DropObject();
 
             visualBattery.SetActive(true);
 
