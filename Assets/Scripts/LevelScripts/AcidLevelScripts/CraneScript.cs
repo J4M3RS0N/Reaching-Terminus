@@ -15,7 +15,7 @@ public class CraneScript : MonoBehaviour
 
     public GameObject craneCollider;
 
-    [SerializeField] private GameObject craneButton; 
+    [SerializeField] private GameObject craneButton;
 
     // Start is called before the first frame update
     void Start()
