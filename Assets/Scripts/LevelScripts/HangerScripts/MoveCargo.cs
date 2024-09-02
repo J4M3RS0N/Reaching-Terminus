@@ -31,7 +31,9 @@ public class MoveCargo : MonoBehaviour
 
     public IEnumerator MovingCargo()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1f);
+        cargoButton.SetActive(false);
+        yield return new WaitForSeconds(1);
         newCargo.GetComponent<MeshRenderer>().enabled = false;
     }
 
@@ -41,11 +43,13 @@ public class MoveCargo : MonoBehaviour
         doorButton.SetActive(true);
     }
 
+
+
     public void ReplaceCargo()
     {
         hangerAnimator.SetBool("AttatchCargo", true);
         StartCoroutine(movingCargo);
         StartCoroutine(unlockDoorButton);
-        cargoButton.SetActive(false);
+        //cargoButton.SetActive(false);
     }
 }

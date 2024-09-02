@@ -9,19 +9,24 @@ public class SimpleButton : MonoBehaviour, IIteractable
     [SerializeField] GameObject itemHolder;
     [SerializeField] private string interactText;
 
+    [Header("Audio")]
+    private AudioSource buttonAudio;
+    [SerializeField] private AudioClip pressSound;
+
+
     public UnityEvent buttonPush;
 
     // Start is called before the first frame update
     void Start()
     {
-       // toastCollector = itemHolder.GetComponent<ToastCollector>();
+        // toastCollector = itemHolder.GetComponent<ToastCollector>();
+        buttonAudio = GetComponent<AudioSource>();
     }
 
     private void PushButton()
     {
+        buttonAudio.PlayOneShot(pressSound);
         buttonPush.Invoke();
-        //toastCollector.ToggleEngine();
-        //currentFuelScript.ToggleEngine();
     }
 
     public void Interact(Transform interactorTransform)
