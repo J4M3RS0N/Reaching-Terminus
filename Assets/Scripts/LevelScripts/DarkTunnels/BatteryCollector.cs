@@ -6,6 +6,9 @@ public class BatteryCollector : MonoBehaviour
 {
     [SerializeField] private GameObject visualBattery;
     [SerializeField] private Animator gateAnimator;
+    
+    [SerializeField] private AudioSource batteryAudio;
+    [SerializeField] private AudioClip collectSound;
 
     public bool gatePowered;
 
@@ -22,6 +25,8 @@ public class BatteryCollector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Battery"))
         {
+            batteryAudio.PlayOneShot(collectSound);
+
             gatePowered = true;
 
             Destroy(other.gameObject);

@@ -15,7 +15,11 @@ public class ToastCollector : MonoBehaviour
 
     public New_InteractScript intscript;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource fuelAudio;
+    [SerializeField] private AudioClip collectSound;
 
+    [Header("Health")]
     IEnumerator drainHealthCoruotine;
 
     // stats for player monitor
@@ -100,6 +104,8 @@ public class ToastCollector : MonoBehaviour
         if (other.gameObject.CompareTag("Toast"))
         {
             AddHealth(30);
+            fuelAudio.PlayOneShot(collectSound);
+
             intscript.DropObject();
             Destroy(other.gameObject);
         }

@@ -20,6 +20,10 @@ public class CoolantCollector : MonoBehaviour
     [SerializeField] private Transform fireSpawner;
     private bool thereIsFire;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource coolantAudio;
+    [SerializeField] private AudioClip collectSound;
+
     IEnumerator drainHealthCoruotine;
 
     [Header("CoolantHealth")]
@@ -116,6 +120,8 @@ public class CoolantCollector : MonoBehaviour
         if (other.gameObject.CompareTag("Butter"))
         {
             AddHealth(30);
+            coolantAudio.PlayOneShot(collectSound);
+
             intscript.DropObject();
             Destroy(other.gameObject);
         }
