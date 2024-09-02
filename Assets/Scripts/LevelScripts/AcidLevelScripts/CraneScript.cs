@@ -42,7 +42,7 @@ public class CraneScript : MonoBehaviour
     public void MoveCrane()
     {
         craneAnimator.SetBool("ActivateCrane", true);
-        craneButton.SetActive(false);
+        //craneButton.SetActive(false);
         StartCoroutine(SeatPlayer());
     }
 
@@ -55,7 +55,11 @@ public class CraneScript : MonoBehaviour
     public IEnumerator SeatPlayer()
     {
         Player.transform.SetParent(CraneSeat);
-        yield return new WaitForSeconds(5.8f);
+
+        yield return new WaitForSeconds(1);
+        craneButton.SetActive(false);
+
+        yield return new WaitForSeconds(4.8f);
         craneCollider.SetActive(true);
         Player.transform.SetParent(null);
 
