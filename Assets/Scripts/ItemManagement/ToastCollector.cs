@@ -16,8 +16,14 @@ public class ToastCollector : MonoBehaviour
     public New_InteractScript intscript;
 
     [Header("Audio")]
-    [SerializeField] private AudioSource fuelAudio;
+    private AudioSource fuelAudio;
+    [SerializeField] private AudioSource engineAudio;
+
     [SerializeField] private AudioClip collectSound;
+    [SerializeField] private AudioClip breakdownSound;
+
+    private bool playBreakdownClip;
+    private bool hasPlayed;
 
     [Header("Health")]
     IEnumerator drainHealthCoruotine;
@@ -50,18 +56,27 @@ public class ToastCollector : MonoBehaviour
 
         emptyToastUI.SetActive(false);
         intemptyUI.SetActive(false);
+
+        fuelAudio = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !playBreakdownClip)
         {
             currentHealth = 0;
             healthbar.SetHealth(currentHealth);
 
             emptyToastUI.SetActive(true);
             intemptyUI.SetActive(true);
+
+            engineAudio.enabled = false;
+
+            if (!hasPlayed)
+            {
+                playBreakdownClip = true;
+            }
         }
 
         if(currentHealth > 0)
@@ -69,6 +84,14 @@ public class ToastCollector : MonoBehaviour
             emptyToastUI.SetActive(false);
             intemptyUI.SetActive(false);
         }
+
+        if (playBreakdownClip)
+        {
+            hasPlayed = true;
+            fuelAudio.PlayOneShot(breakdownSound, 0.6f);
+            playBreakdownClip = false;
+        }
+
     }
 
     public void ToggleEngine()
@@ -79,11 +102,15 @@ public class ToastCollector : MonoBehaviour
         {
             GetComponent<MeshRenderer>().material = turnedOnMaterial;
            StartCoroutine(drainHealthCoruotine);
+
+            engineAudio.enabled = true;
         }
         else
         {
             GetComponent<MeshRenderer>().material = turnedOffMaterial;
            StopCoroutine(drainHealthCoruotine);
+
+            engineAudio.enabled = false;
         }
     }
 

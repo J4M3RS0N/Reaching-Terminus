@@ -14,6 +14,10 @@ public class MechCannon : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public GameObject impactFlash;
 
+    [Header("Audio")]
+    private AudioSource cannonAudio;
+    [SerializeField] private AudioClip firingSound;
+
     //[SerializeField] 
 
     private float nextTimeToFire = 0f;
@@ -21,6 +25,7 @@ public class MechCannon : MonoBehaviour
     private void Start()
     {
         //mechUIAnim = GetComponent<Animator>();
+        cannonAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,6 +53,9 @@ public class MechCannon : MonoBehaviour
         if (Physics.Raycast(mechCam.transform.position, mechCam.transform.forward, out hit, cannonRange))
         {
             Debug.Log(hit.transform.name);
+
+
+            cannonAudio.PlayOneShot(firingSound);
 
 
             DestructableWall wall = hit.transform.GetComponent<DestructableWall>();

@@ -6,6 +6,9 @@ public class LowerGate : MonoBehaviour
 {
     public Animator hangerAnimator;
 
+    [SerializeField] private AudioSource gateAudio;
+    [SerializeField] private AudioClip openGateSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,7 @@ public class LowerGate : MonoBehaviour
         if(other.gameObject.tag == "Mech")
         {
             hangerAnimator.SetBool("LowerGate", true);
+            gateAudio.PlayOneShot(openGateSound);
         }
     }
 }

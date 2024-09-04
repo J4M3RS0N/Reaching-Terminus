@@ -7,6 +7,9 @@ public class OpenHangerDoors : MonoBehaviour
     Animator hangerAnimator;
     public GameObject doorButton;
 
+    [SerializeField] private AudioSource doorAudio;
+    [SerializeField] private AudioClip slideSound;
+
     IEnumerator switchbuttonOff;
 
     // Start is called before the first frame update
@@ -20,6 +23,8 @@ public class OpenHangerDoors : MonoBehaviour
     {
         hangerAnimator.SetBool("OpenDoors", true);
         StartCoroutine(switchbuttonOff);
+
+        doorAudio.PlayOneShot(slideSound);
     }
 
     private IEnumerator SwitchButtonOff()
