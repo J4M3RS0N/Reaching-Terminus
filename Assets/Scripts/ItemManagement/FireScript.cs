@@ -18,6 +18,9 @@ public class FireScript : MonoBehaviour
 
     [SerializeField] private ParticleSystem [] particleSystems = new ParticleSystem[0];
 
+    [Header("Audio")]
+    private AudioSource fireAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,8 @@ public class FireScript : MonoBehaviour
         }
 
         currenthealth = maxHealth;
+
+        fireAudio = GetComponent<AudioSource>();
     }
 
     private void Update()

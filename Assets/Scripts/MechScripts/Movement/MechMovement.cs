@@ -19,7 +19,7 @@ public class MechMovement : MonoBehaviour
     public float groundDrag;
 
     [Header("Mech movement stuff")]
-    //roatate mech body float
+    //rotate mech body float
     public float mechRotationSpeed;
 
     public float airMultiplyer;
@@ -74,7 +74,6 @@ public class MechMovement : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-
     }
 
     private void FixedUpdate()

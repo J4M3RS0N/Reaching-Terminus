@@ -6,7 +6,7 @@ using UnityEngine;
 public class SwayAndBob : MonoBehaviour
 {
     Animator mechFrameAnimator;
-
+    [SerializeField] private AudioSource mechFootstepAudio;
 
     private void Start()
     {
@@ -28,6 +28,7 @@ public class SwayAndBob : MonoBehaviour
                 mechFrameAnimator.SetBool("NoFuel", true);
                 StartCoroutine(EmptyFuelAnimCycle());
 
+                mechFootstepAudio.enabled = false;
             }
 
             if (Input.GetAxisRaw("Vertical") != 0)
@@ -60,16 +61,19 @@ public class SwayAndBob : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") !=0)
         {
             mechFrameAnimator.SetBool("MechWalking", true);
+            mechFootstepAudio.enabled = true;
         }
 
         if (Input.GetAxisRaw("Vertical") != 0)
         {
             mechFrameAnimator.SetBool("MechWalking", true);
+            mechFootstepAudio.enabled = true;
         }
 
         else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
         {
             mechFrameAnimator.SetBool("MechWalking", false);
+            mechFootstepAudio.enabled = false;
         }
 
     }

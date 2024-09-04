@@ -28,6 +28,9 @@ public class FireExtinguisher : MonoBehaviour
     public bool canShoot;
     public bool firing = false;
 
+    [Header("Audio")]
+    private AudioSource extinguisherAudio;
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +43,8 @@ public class FireExtinguisher : MonoBehaviour
 
         currentAmmo = maxAmmo;
         healthbar.SetHealth(currentAmmo);
+
+        extinguisherAudio = GetComponent<AudioSource>();
 
         //ammo = maxAmmo;
     }
@@ -65,6 +70,8 @@ public class FireExtinguisher : MonoBehaviour
 
                 extinguishPS.SetActive(true);
 
+                extinguisherAudio.enabled = true;
+
                 CurrentCooldown = ShootCooldown;
             }
         }
@@ -76,12 +83,14 @@ public class FireExtinguisher : MonoBehaviour
 
             firing = false;
 
+            extinguisherAudio.enabled = false;
         }
 
         // if player isnt shooting disable particle system
         if (Input.GetMouseButtonDown(0) && canShoot)
         {
             extinguishPS.SetActive(true);
+            extinguisherAudio.enabled = true;
         }
 
         // regenerate Ammo
@@ -93,7 +102,7 @@ public class FireExtinguisher : MonoBehaviour
             healthbar.SetHealth(currentAmmo);
         }
 
-        //resettinf firing when ammo is maxxed
+        //resetting firing when ammo is maxxed
         if (currentAmmo == maxAmmo)
         {
             reloadText.SetActive(false);
@@ -114,6 +123,9 @@ public class FireExtinguisher : MonoBehaviour
             reloadText.SetActive(true);
 
             extinguishPS.SetActive(false);
+
+            extinguisherAudio.enabled = false;
+
             healthbar.SetHealth(currentAmmo);
         }
 
