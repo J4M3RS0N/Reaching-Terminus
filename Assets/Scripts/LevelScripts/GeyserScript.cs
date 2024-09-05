@@ -10,12 +10,21 @@ public class GeyserScript : MonoBehaviour
     public GameObject geyserDamageObj;
     public GameObject geyserWarningObj;
 
+    [Header("Audio")]
+    private AudioSource geyserAudio;
+    [SerializeField] private AudioSource plumeAudio;
+    [SerializeField] private AudioClip endingSound;
+
     // Start is called before the first frame update
     void Start()
     {
+        geyserAudio = GetComponent<AudioSource>();
+
         //geyserDamageObj.SetActive(false);
         geyserDamageObj.transform.Rotate(180.0f, 0.0f, 0.0f);
         geyserWarningObj.SetActive(false);
+
+        plumeAudio.enabled = false;
 
         StartCoroutine(SetOffGeyser());
     }
@@ -37,13 +46,18 @@ public class GeyserScript : MonoBehaviour
         yield return new WaitForSeconds(fireOffFloat);
 
         //geyserDamageObj.SetActive(true);
-        geyserDamageObj.transform.Rotate(0.0f, 0.0f, 0.0f); 
+        geyserDamageObj.transform.Rotate(0.0f, 0.0f, 0.0f);
+
+        plumeAudio.enabled = true;
 
         yield return new WaitForSeconds(firingTime);
 
         //geyserDamageObj.SetActive(false);
         geyserDamageObj.transform.Rotate(180.0f, 0.0f, 0.0f);
         geyserWarningObj.SetActive(false);
+
+        //geyserAudio.PlayOneShot(endingSound);
+        plumeAudio.enabled = false;
 
         StartCoroutine(SetOffGeyser());
 

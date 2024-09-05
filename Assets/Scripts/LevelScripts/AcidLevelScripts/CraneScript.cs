@@ -19,7 +19,9 @@ public class CraneScript : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource craneAudio;
+    [SerializeField] private AudioSource containerAudio;
     [SerializeField] private AudioClip movingSound;
+    [SerializeField] private AudioClip droppingSound;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +57,9 @@ public class CraneScript : MonoBehaviour
     public void DropContainer()
     {
         craneAnimator.SetBool("DropContainer", true);
+
+        containerAudio.PlayOneShot(droppingSound);
+
         StartCoroutine(ReplaceContainer());
     }
 

@@ -8,10 +8,15 @@ public class ArmMoverScript : MonoBehaviour
 
     [SerializeField] private GameObject keyInHandObj;
 
+    [Header("Audio")]
+    private AudioSource armAudio;
+    [SerializeField] private AudioClip armMoveAudio;
+
     // Start is called before the first frame update
     void Start()
     {
         armAnimator = GetComponent<Animator>();
+        armAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,11 +25,13 @@ public class ArmMoverScript : MonoBehaviour
         if (SAVED_PlayerMovement.pmInstance.playerActive && Input.GetKeyDown(KeyCode.Tab))
         {
             armAnimator.SetBool("ShowArm", true);
+            armAudio.PlayOneShot(armMoveAudio);
         }
 
         if (SAVED_PlayerMovement.pmInstance.playerActive && Input.GetKeyUp(KeyCode.Tab))
         {
             armAnimator.SetBool("ShowArm", false);
+            armAudio.PlayOneShot(armMoveAudio);
         }
 
         if(KeyScript.TunnelKey.keyBool == true)
