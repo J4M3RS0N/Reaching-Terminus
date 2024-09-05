@@ -17015,6 +17015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorButton: {fileID: 8247211495645244674}
+  keyBool: 0
 --- !u!65 &2434057543494372772
 BoxCollider:
   m_ObjectHideFlags: 0

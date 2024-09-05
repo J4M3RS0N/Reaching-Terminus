@@ -23,6 +23,7 @@ public class DoorTriggerScript : MonoBehaviour
     {
         keySprite.SetActive(true);
         doorAnimator.SetBool("OpenDoor", true);
+        KeyScript.TunnelKey.keyBool = false;
     }
 
 }

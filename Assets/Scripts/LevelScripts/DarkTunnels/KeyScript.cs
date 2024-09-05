@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
+    public static KeyScript TunnelKey;
+
     [SerializeField] private GameObject doorButton;
-    //public bool keyBool;
+    public bool keyBool;
 
     // Start is called before the first frame update
     void Start()
     {
-        //keyBool = false;
+        TunnelKey = this;
+
+        keyBool = false;
         doorButton.SetActive(false);
     }
 
@@ -22,8 +26,10 @@ public class KeyScript : MonoBehaviour
 
     public void KeyFunction()
     {
-        //keyBool = true;
         doorButton.SetActive(true);
+
+        keyBool = true;
+
         DestroyKey();
     }
 

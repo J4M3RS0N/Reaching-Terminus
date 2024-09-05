@@ -6,6 +6,8 @@ public class ArmMoverScript : MonoBehaviour
 {
     public Animator armAnimator;
 
+    [SerializeField] private GameObject keyInHandObj;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,16 @@ public class ArmMoverScript : MonoBehaviour
         if (SAVED_PlayerMovement.pmInstance.playerActive && Input.GetKeyUp(KeyCode.Tab))
         {
             armAnimator.SetBool("ShowArm", false);
+        }
+
+        if(KeyScript.TunnelKey.keyBool == true)
+        {
+            keyInHandObj.SetActive(true);
+        }
+
+        if(KeyScript.TunnelKey.keyBool == false)
+        {
+            keyInHandObj.SetActive(false);
         }
     }
 }
