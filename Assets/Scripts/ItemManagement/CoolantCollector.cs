@@ -24,6 +24,8 @@ public class CoolantCollector : MonoBehaviour
     [SerializeField] private AudioSource coolantAudio;
     [SerializeField] private AudioClip collectSound;
 
+    [SerializeField] private AudioSource emptyCoolantAudio;
+
     IEnumerator drainHealthCoruotine;
 
     [Header("CoolantHealth")]
@@ -55,6 +57,8 @@ public class CoolantCollector : MonoBehaviour
         emptyButterUI.SetActive(false);
         intemptyUI.SetActive(false);
 
+        emptyCoolantAudio.enabled = false;
+
         instance = this;
     }
 
@@ -70,6 +74,8 @@ public class CoolantCollector : MonoBehaviour
             emptyButterUI.SetActive(true);
             intemptyUI.SetActive(true );
 
+            emptyCoolantAudio.enabled = true;
+
             //fireSpawner.SetActive(true);
             if (thereIsFire == false)
             {
@@ -84,6 +90,8 @@ public class CoolantCollector : MonoBehaviour
             intemptyUI.SetActive(false);
 
             thereIsFire = false;
+
+            emptyCoolantAudio.enabled = false;
 
             //fireSpawner.SetActive(false);
         }

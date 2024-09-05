@@ -22,6 +22,8 @@ public class ToastCollector : MonoBehaviour
     [SerializeField] private AudioClip collectSound;
     [SerializeField] private AudioClip breakdownSound;
 
+    [SerializeField] private AudioSource emptyFuelAudio;
+
     private bool playBreakdownClip;
     private bool hasPlayed;
 
@@ -58,6 +60,7 @@ public class ToastCollector : MonoBehaviour
         intemptyUI.SetActive(false);
 
         fuelAudio = GetComponent<AudioSource>();
+        emptyFuelAudio.enabled = false;
     }
 
     private void Update()
@@ -73,6 +76,8 @@ public class ToastCollector : MonoBehaviour
 
             engineAudio.enabled = false;
 
+            emptyFuelAudio.enabled = true;
+
             if (!hasPlayed)
             {
                 playBreakdownClip = true;
@@ -83,6 +88,8 @@ public class ToastCollector : MonoBehaviour
         {
             emptyToastUI.SetActive(false);
             intemptyUI.SetActive(false);
+
+            emptyFuelAudio.enabled = false;
         }
 
         if (playBreakdownClip)
