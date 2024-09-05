@@ -10,6 +10,9 @@ public class BatteryCollector : MonoBehaviour
     [SerializeField] private AudioSource batteryAudio;
     [SerializeField] private AudioClip collectSound;
 
+    [SerializeField] private AudioSource tunnelGateAudio;
+    [SerializeField] private AudioClip openGateSound;
+
     public bool gatePowered;
 
     // Start is called before the first frame update
@@ -35,6 +38,7 @@ public class BatteryCollector : MonoBehaviour
 
             visualBattery.SetActive(true);
 
+            tunnelGateAudio.PlayOneShot(openGateSound);
             gateAnimator.SetBool("OpenGate", true);
         }
         else
