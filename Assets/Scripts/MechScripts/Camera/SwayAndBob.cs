@@ -8,6 +8,8 @@ public class SwayAndBob : MonoBehaviour
     Animator mechFrameAnimator;
     [SerializeField] private AudioSource mechFootstepAudio;
 
+    [SerializeField] private EnterMechDemo mechEmbarked;
+
     private void Start()
     {
         mechFrameAnimator = GetComponent<Animator>();
@@ -23,7 +25,7 @@ public class SwayAndBob : MonoBehaviour
         if (ToastCollector.instance.currentHealth <= 0 || CoolantCollector.instance.coolantRunning == false)
         {
             //mechFrameAnimator.enabled = false;
-            if (Input.GetAxisRaw("Horizontal") != 0)
+            if (Input.GetAxisRaw("Horizontal") != 0 && mechEmbarked.playerInMech == true)
             {
                 mechFrameAnimator.SetBool("NoFuel", true);
                 StartCoroutine(EmptyFuelAnimCycle());
@@ -31,14 +33,14 @@ public class SwayAndBob : MonoBehaviour
                 mechFootstepAudio.enabled = false;
             }
 
-            if (Input.GetAxisRaw("Vertical") != 0)
+            if (Input.GetAxisRaw("Vertical") != 0 && mechEmbarked.playerInMech == true)
             {
                 mechFrameAnimator.SetBool("NoFuel", true);
                 StartCoroutine(EmptyFuelAnimCycle());
 
             }
 
-            else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+            else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 && mechEmbarked.playerInMech == false)
             {
                 mechFrameAnimator.SetBool("NoFuelIdle", true);
             }

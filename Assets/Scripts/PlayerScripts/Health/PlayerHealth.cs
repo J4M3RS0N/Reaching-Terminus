@@ -30,10 +30,15 @@ public class PlayerHealth : MonoBehaviour
     //bool to call if player health is empty
     public bool playerHasDied = false;
 
+    [Header("Audio")]
+    private AudioSource phAudio;
+    [SerializeField] private AudioClip deathSound;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        phAudio = GetComponent<AudioSource>();
 
         //making sure the game kows this isn't true yet
         playerHasDied = false;
@@ -116,6 +121,8 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("player died here");
         endGame.PlayerDied();
 
+        phAudio.PlayOneShot(deathSound);
+ 
     }
 
 

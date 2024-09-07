@@ -63,6 +63,7 @@ public class GameManager : MonoBehaviour
             Cursor.visible = true;
 
             optionsPanel.SetActive(true);
+            //OptionsScript.currentOP.gameObject.SetActive(true);
 
             Debug.Log("Pause Game");
         }
@@ -72,11 +73,10 @@ public class GameManager : MonoBehaviour
             Cursor.visible = false;
 
             optionsPanel.SetActive(false);
+            //OptionsScript.currentOP.gameObject.SetActive(false);
 
             Time.timeScale = 1;
         }
-
-
     }
 
     public void WinGame()
