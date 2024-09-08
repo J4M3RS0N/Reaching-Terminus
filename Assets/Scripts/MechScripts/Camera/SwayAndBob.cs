@@ -6,7 +6,6 @@ using UnityEngine;
 public class SwayAndBob : MonoBehaviour
 {
     Animator mechFrameAnimator;
-    [SerializeField] private AudioSource mechFootstepAudio;
 
     [SerializeField] private EnterMechDemo mechEmbarked;
 
@@ -29,8 +28,6 @@ public class SwayAndBob : MonoBehaviour
             {
                 mechFrameAnimator.SetBool("NoFuel", true);
                 StartCoroutine(EmptyFuelAnimCycle());
-
-                mechFootstepAudio.enabled = false;
             }
 
             if (Input.GetAxisRaw("Vertical") != 0 && mechEmbarked.playerInMech == true)
@@ -40,7 +37,7 @@ public class SwayAndBob : MonoBehaviour
 
             }
 
-            else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 && mechEmbarked.playerInMech == false)
+            else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
             {
                 mechFrameAnimator.SetBool("NoFuelIdle", true);
             }
@@ -60,22 +57,19 @@ public class SwayAndBob : MonoBehaviour
 
     private void MechBob()
     {
-        if (Input.GetAxisRaw("Horizontal") !=0)
+        if (Input.GetAxisRaw("Horizontal") != 0 && mechEmbarked.playerInMech == true)
         {
             mechFrameAnimator.SetBool("MechWalking", true);
-            mechFootstepAudio.enabled = true;
         }
 
-        if (Input.GetAxisRaw("Vertical") != 0)
+        if (Input.GetAxisRaw("Vertical") != 0 && mechEmbarked.playerInMech == true)
         {
             mechFrameAnimator.SetBool("MechWalking", true);
-            mechFootstepAudio.enabled = true;
         }
 
-        else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+        else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 || ToastCollector.instance.currentHealth == 0)
         {
             mechFrameAnimator.SetBool("MechWalking", false);
-            mechFootstepAudio.enabled = false;
         }
 
     }

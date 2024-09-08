@@ -10412,7 +10412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4ef0c4084f4114387aca708777848e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mechFootstepAudio: {fileID: 1661460697}
   mechEmbarked: {fileID: 820075072}
 --- !u!95 &510267185
 Animator:
@@ -22953,6 +22952,7 @@ MonoBehaviour:
   groundDrag: 5
   mechRotationSpeed: 700
   airMultiplyer: 0.4
+  mechFootstepAudio: {fileID: 1661460697}
   playerHeight: 6
   ground:
     serializedVersion: 2

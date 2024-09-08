@@ -24,6 +24,9 @@ public class MechMovement : MonoBehaviour
 
     public float airMultiplyer;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource mechFootstepAudio;
+
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask ground;
@@ -105,6 +108,12 @@ public class MechMovement : MonoBehaviour
             }
         }
 
+
+        if (enterMechDemo.playerInMech == false)
+        {
+            mechFootstepAudio.enabled = false;
+        }
+
         if (mechActive == true)
         {
             // new event system input to exit the mech
@@ -160,6 +169,16 @@ public class MechMovement : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
+        //play walking noises when input for movement keys
+        if ((horizontalInput > 0 || horizontalInput < 0 || verticalInput > 0f || verticalInput < 0f) && ToastCollector.instance.currentHealth > 0)
+        {
+            mechFootstepAudio.enabled = true;
+        }
+        else
+        {
+            mechFootstepAudio.enabled = false;
+        }
     }
 
 
