@@ -10,6 +10,7 @@ TagManager:
   - Mech
   - Acid
   - Battery
+  - Geyser
   layers:
   - Default
   - TransparentFX

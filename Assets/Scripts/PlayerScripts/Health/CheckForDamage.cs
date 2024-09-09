@@ -9,6 +9,7 @@ public class CheckForDamage : MonoBehaviour
 
     public bool playerInFire;
     public bool playerInAcid;
+    public bool playerInGeyser;
 
     public void Start()
     {
@@ -21,15 +22,20 @@ public class CheckForDamage : MonoBehaviour
         if (col.gameObject.tag == "Fire")
         {
             playerInFire = true;
-            //Debug.Log("is inside damage area");
         }
 
         if (col.gameObject.tag == "Acid")
         {
             playerInAcid = true;
         }
+
+        if (col.gameObject.tag == "Geyser")
+        {
+            playerInGeyser = true;
+        }
     }
 
+    //when they leave a damaging collider, tell the health script
     public void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag == "Fire")
@@ -41,6 +47,11 @@ public class CheckForDamage : MonoBehaviour
         if (col.gameObject.tag == "Acid")
         {
             playerInAcid = false;
+        }
+
+        if (col.gameObject.tag == "Geyser")
+        {
+            playerInGeyser = false;
         }
     }
 }

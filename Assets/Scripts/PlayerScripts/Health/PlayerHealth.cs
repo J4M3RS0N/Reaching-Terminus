@@ -27,6 +27,10 @@ public class PlayerHealth : MonoBehaviour
     public float playerHealth = 1f;
     private float playerMaxhealth = 1f;
 
+    private float fireDamage = 0.002f;
+    private float geyserDamage = 0.007f;
+    private float acidDamage = 0.003f;
+
     //bool to call if player health is empty
     public bool playerHasDied = false;
 
@@ -45,43 +49,48 @@ public class PlayerHealth : MonoBehaviour
 
         playerHealth = playerMaxhealth;
 
-        //visualVolume = GetComponent<PostProcessVolume>();
-        //visualVolume.profile.TryGetSettings<Vignette>(out visualVignette);
-
         volume.profile.TryGet<Vignette>(out volVignette); 
-
-
-        //if (!volVignette)
-        //{
-        //    print("error, vignette error");
-        //}
-
-        //else
-        //{
-        //    volVignette.enabled.Override(false);
-        //}
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (playerHealth > 0 && dmgCheck.playerInFire == true || playerHealth > 0 && dmgCheck.playerInAcid == true)
+        //Damage player accodring to fire bool and fire damage float
+        if (playerHealth > 0 && dmgCheck.playerInFire == true)
         {
-            //DamagePlayerHealth();
-
             //deplete player health
-            playerHealth -= 0.002f;
+            playerHealth -= fireDamage;
 
-            //increase vignette intensity
-            //volVignette.enabled.Override(true);
-
-            intensity += 0.002f;
+            intensity += fireDamage;
 
             if (intensity < 0) intensity = 0;
 
             volVignette.intensity.Override(intensity);
 
+        }
+
+        //damage player according to acid bool and acid damage float
+        if (playerHealth > 0 && dmgCheck.playerInAcid == true)
+        {
+            playerHealth -= acidDamage;
+
+            intensity += acidDamage;
+
+            if (intensity < 0) intensity = 0;
+
+            volVignette.intensity.Override(intensity);
+        }
+
+        //damage player according to geyser bool and damage float
+        if (playerHealth > 0 && dmgCheck.playerInGeyser == true)
+        {
+            playerHealth -= geyserDamage;
+
+            intensity += geyserDamage;
+
+            if (intensity < 0) intensity = 0;
+
+            volVignette.intensity.Override(intensity);
         }
 
         //player health regeneration

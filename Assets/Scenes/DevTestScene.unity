@@ -7529,7 +7529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75739018ea09b874ab20821faaf29d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armAnimator: {fileID: 0}
+  armAnimator: {fileID: 290951934}
   keyInHandObj: {fileID: 1775926575}
   armMoveAudio: {fileID: 8300000, guid: a96fc6b9cf5b6c6499877120262a66cc, type: 3}
 --- !u!1 &296574959
@@ -39008,6 +39008,7 @@ GameObject:
   - component: {fileID: 1914993564}
   - component: {fileID: 1914993565}
   - component: {fileID: 1914993566}
+  - component: {fileID: 1914993567}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -39261,6 +39262,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInFire: 0
   playerInAcid: 0
+  playerInGeyser: 0
+--- !u!114 &1914993567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914993556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3c4eb4297435749a25805ce285fa77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1914993556}
+  playerCam: {fileID: 990670912}
+  targetPoint: {fileID: 8428317006293330212, guid: 9ca14e42758860546949fa4a506a5843, type: 3}
+  firingRange: 100
+  zipSpeed: 2
+  canZip: 0
+  isZipping: 0
 --- !u!1001 &1950063636
 PrefabInstance:
   m_ObjectHideFlags: 0
