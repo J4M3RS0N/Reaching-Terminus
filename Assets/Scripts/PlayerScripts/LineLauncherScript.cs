@@ -6,7 +6,7 @@ public class LineLauncherScript : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private Camera playerCam;
-    [SerializeField] private GameObject targetPoint;
+    private Transform targetPoint;
     public float firingRange = 100f;
     public float zipSpeed;
 
@@ -26,20 +26,26 @@ public class LineLauncherScript : MonoBehaviour
     void Update()
     {
         //Instantiate zipline
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKey(KeyCode.P))
         {
             ShootLine();
         }
 
-        if (isZipping == true)
+        if (Input.GetKeyUp(KeyCode.P))
         {
-            player.transform.position = Vector3.MoveTowards(player.transform.position, targetPoint.transform.position, zipSpeed * Time.deltaTime);
+            rb.isKinematic = false;
+            rb.useGravity = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            ToggleZipAbility();
-        }
+        //if (isZipping == true)
+        //{
+        //    player.transform.position = Vector3.MoveTowards(player.transform.position, targetPoint.position, zipSpeed * Time.deltaTime);
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    ToggleZipAbility();
+        //}
 
     }
 
@@ -50,28 +56,35 @@ public class LineLauncherScript : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
+            if (hit.transform.CompareTag("LinePoint"))
+            {
+                rb.isKinematic = true;
+                rb.useGravity = false;
+                player.transform.position = Vector3.MoveTowards(player.transform.position, hit.transform.position, zipSpeed * Time.deltaTime);
+            }
+           
 
-            DestructableWall wall = hit.transform.GetComponent<DestructableWall>();
+            //DestructableWall wall = hit.transform.GetComponent<DestructableWall>();
 
-            BreakCraneHold craneCollider = hit.transform.GetComponent<BreakCraneHold>();
+            //BreakCraneHold craneCollider = hit.transform.GetComponent<BreakCraneHold>();
 
 
-            GameObject impactGO = Instantiate(targetPoint, hit.point, Quaternion.LookRotation(hit.normal));
+            //GameObject impactGO = Instantiate(targetPoint.gameObject, hit.point, Quaternion.LookRotation(hit.normal));
 
         }
     }
 
-    public void ToggleZipAbility()
-    {
-        canZip = !canZip;
+    //public void ToggleZipAbility()
+    //{
+    //    canZip = !canZip;
 
-        if (canZip)
-        {
-            isZipping = true;
-        }
-        else
-        {
-            isZipping = false;
-        }
-    }
+    //    if (canZip)
+    //    {
+    //        isZipping = true;
+    //    }
+    //    else
+    //    {
+    //        isZipping = false;
+    //    }
+    //}
 }
