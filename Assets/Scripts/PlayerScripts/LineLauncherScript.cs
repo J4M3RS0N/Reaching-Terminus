@@ -13,9 +13,9 @@ public class LineLauncherScript : MonoBehaviour
 
     Rigidbody rb;
 
-    //public bool canZip;
+    public bool canZip;
     public bool isZipping;
-    public bool droppedZip;
+    //public bool droppedZip;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +30,7 @@ public class LineLauncherScript : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             ShootLine();
+            //ToggleZipAbility();
         }
 
         if (Input.GetMouseButtonUp(1))
@@ -38,6 +39,10 @@ public class LineLauncherScript : MonoBehaviour
             rb.useGravity = true;
 
             isZipping = false;
+
+            StartCoroutine(ZipBoost());
+
+            Debug.Log("UnZipped");
         }
 
         //if (isZipping == false)
@@ -65,7 +70,7 @@ public class LineLauncherScript : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, firingRange))
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
 
             if (hit.transform.CompareTag("LinePoint"))
             {
@@ -81,16 +86,18 @@ public class LineLauncherScript : MonoBehaviour
                 rb.useGravity = true;
                 //droppedZip = true;
             }
-           
-
-            //DestructableWall wall = hit.transform.GetComponent<DestructableWall>();
-
-            //BreakCraneHold craneCollider = hit.transform.GetComponent<BreakCraneHold>();
 
 
             //GameObject impactGO = Instantiate(targetPoint.gameObject, hit.point, Quaternion.LookRotation(hit.normal));
 
         }
+    }
+
+    private IEnumerator ZipBoost()
+    {
+        rb.AddForce(playerCam.transform.forward * zipThrust);
+
+        yield return new WaitForSeconds(1);
     }
 
     //public void ToggleZipAbility()
@@ -99,11 +106,14 @@ public class LineLauncherScript : MonoBehaviour
 
     //    if (canZip)
     //    {
-    //        isZipping = true;
+    //        ShootLine();
     //    }
+
     //    else
     //    {
-    //        isZipping = false;
+    //        rb.isKinematic = false;
+    //        rb.useGravity = true;
+    //        Debug.Log("Else");
     //    }
     //}
 }
