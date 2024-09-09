@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class LineLauncherScript : MonoBehaviour
 {
+    public LineRenderer line;
+
     [SerializeField] private GameObject player;
     [SerializeField] private Camera playerCam;
+    [SerializeField] private Transform linePos;
     private Transform targetPoint;
     public float firingRange = 100f;
     public float zipSpeed;
@@ -33,12 +36,14 @@ public class LineLauncherScript : MonoBehaviour
             //ToggleZipAbility();
         }
 
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1) && isZipping)
         {
             rb.isKinematic = false;
             rb.useGravity = true;
 
             isZipping = false;
+
+            line.enabled = false;
 
             StartCoroutine(ZipBoost());
 
@@ -74,7 +79,14 @@ public class LineLauncherScript : MonoBehaviour
 
             if (hit.transform.CompareTag("LinePoint"))
             {
+                line.enabled = true;
+
                 isZipping = true;
+
+                //create visual line for the zipline for players to see
+                line.SetPosition(0, linePos.transform.position);
+                line.SetPosition(1, hit.transform.position);
+
 
                 rb.isKinematic = true;
                 rb.useGravity = false;
