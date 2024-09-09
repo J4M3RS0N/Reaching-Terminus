@@ -39335,7 +39335,7 @@ MonoBehaviour:
   player: {fileID: 1914993556}
   playerCam: {fileID: 990670912}
   firingRange: 100
-  zipSpeed: 2
+  zipSpeed: 10
   canZip: 0
   isZipping: 0
 --- !u!1001 &1950063636

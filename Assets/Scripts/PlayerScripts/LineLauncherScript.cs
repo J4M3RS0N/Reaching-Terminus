@@ -9,33 +9,44 @@ public class LineLauncherScript : MonoBehaviour
     private Transform targetPoint;
     public float firingRange = 100f;
     public float zipSpeed;
+    public float zipThrust;
 
     Rigidbody rb;
 
-    public bool canZip;
+    //public bool canZip;
     public bool isZipping;
-
+    public bool droppedZip;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        canZip = false;
+        //canZip = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Instantiate zipline
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetMouseButton(1))
         {
             ShootLine();
         }
 
-        if (Input.GetKeyUp(KeyCode.P))
+        if (Input.GetMouseButtonUp(1))
         {
             rb.isKinematic = false;
             rb.useGravity = true;
+
+            isZipping = false;
         }
+
+        //if (isZipping == false)
+        //{
+        //    //isZipping = false;
+        //    rb.AddForce(playerCam.transform.forward * zipThrust);
+
+        //    droppedZip = false;
+        //}
 
         //if (isZipping == true)
         //{
@@ -58,9 +69,17 @@ public class LineLauncherScript : MonoBehaviour
 
             if (hit.transform.CompareTag("LinePoint"))
             {
+                isZipping = true;
+
                 rb.isKinematic = true;
                 rb.useGravity = false;
                 player.transform.position = Vector3.MoveTowards(player.transform.position, hit.transform.position, zipSpeed * Time.deltaTime);
+            }
+            else
+            {
+                rb.isKinematic = false;
+                rb.useGravity = true;
+                //droppedZip = true;
             }
            
 
