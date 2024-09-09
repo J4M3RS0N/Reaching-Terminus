@@ -48,14 +48,12 @@ public class MechCannon : MonoBehaviour
         muzzleFlash.Play();
 
         shake.ShakeTheCamera();
+        cannonAudio.PlayOneShot(firingSound);
 
         RaycastHit hit;
         if (Physics.Raycast(mechCam.transform.position, mechCam.transform.forward, out hit, cannonRange))
         {
             Debug.Log(hit.transform.name);
-
-
-            cannonAudio.PlayOneShot(firingSound);
 
 
             DestructableWall wall = hit.transform.GetComponent<DestructableWall>();
