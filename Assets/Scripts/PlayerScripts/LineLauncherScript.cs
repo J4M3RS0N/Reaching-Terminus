@@ -46,6 +46,7 @@ public class LineLauncherScript : MonoBehaviour
             line.enabled = false;
 
             StartCoroutine(ZipBoost());
+            StartCoroutine(ResetZipping());
 
             Debug.Log("UnZipped");
         }
@@ -72,44 +73,66 @@ public class LineLauncherScript : MonoBehaviour
 
     private void ShootLine()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, firingRange))
+        if (canZip)
         {
-            //Debug.Log(hit.transform.name);
-
-            if (hit.transform.CompareTag("LinePoint"))
+            RaycastHit hit;
+            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, firingRange))
             {
-                line.enabled = true;
+                //start zipping if we hit a zipPoint
+                if (hit.transform.CompareTag("LinePoint"))
+                {
+                    line.enabled = true;
 
-                isZipping = true;
+                    isZipping = true;
 
-                //create visual line for the zipline for players to see
-                line.SetPosition(0, linePos.transform.position);
-                line.SetPosition(1, hit.transform.position);
+                    //create visual line for the zipline for players to see
+                    line.SetPosition(0, linePos.transform.position);
+                    line.SetPosition(1, hit.transform.position);
+
+                    //make player moveable
+                    rb.isKinematic = true;
+                    rb.useGravity = false;
+                    //zip player to the zip point hit by their raycast
+                    player.transform.position = Vector3.MoveTowards(player.transform.position, hit.transform.position, zipSpeed * Time.deltaTime);
+                }
+                //Stop Zipping and reset zip cooldown
+                else 
+                {
+                    rb.isKinematic = false;
+                    rb.useGravity = true;
+
+                    line.enabled = false;
+
+                    isZipping = false;
+
+                    StartCoroutine(ResetZipping());
+                }
 
 
-                rb.isKinematic = true;
-                rb.useGravity = false;
-                player.transform.position = Vector3.MoveTowards(player.transform.position, hit.transform.position, zipSpeed * Time.deltaTime);
+                //GameObject impactGO = Instantiate(targetPoint.gameObject, hit.point, Quaternion.LookRotation(hit.normal));
+
             }
-            else
-            {
-                rb.isKinematic = false;
-                rb.useGravity = true;
-                //droppedZip = true;
-            }
-
-
-            //GameObject impactGO = Instantiate(targetPoint.gameObject, hit.point, Quaternion.LookRotation(hit.normal));
-
         }
     }
 
     private IEnumerator ZipBoost()
     {
+        // boost player forward when the leave a zipine 
+
         rb.AddForce(playerCam.transform.forward * zipThrust);
 
         yield return new WaitForSeconds(1);
+    }
+
+    private IEnumerator ResetZipping()
+    {
+        //zip cooldown function
+
+        canZip = false;
+
+        yield return new WaitForSeconds(2);
+
+        canZip = true;
     }
 
     //public void ToggleZipAbility()
