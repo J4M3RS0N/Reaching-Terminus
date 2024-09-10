@@ -8,6 +8,10 @@ public class PressurePlateScript : MonoBehaviour
 
     [SerializeField] private Transform startPos;
     [SerializeField] private Transform endPos;
+
+    // this string lets me make any plate use any tag, so i don't have to make different scripts for each type of pressure plate
+    public string plateTag;
+
     public float moveSpeed;
 
     public bool activePlate;
@@ -38,7 +42,7 @@ public class PressurePlateScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Mech")
+        if (other.gameObject.tag == plateTag)
         {
             //plateWall.transform.position += new Vector3(0, 6, 0);
             activePlate = true;
@@ -49,7 +53,7 @@ public class PressurePlateScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Mech")
+        if (other.gameObject.tag == plateTag)
         {
             //plateWall.transform.position -= new Vector3(0, 6, 0);
             activePlate = false;

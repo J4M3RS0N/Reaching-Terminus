@@ -12,6 +12,7 @@ TagManager:
   - Battery
   - Geyser
   - LinePoint
+  - Cargo
   layers:
   - Default
   - TransparentFX
