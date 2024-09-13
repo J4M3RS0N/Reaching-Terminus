@@ -194,6 +194,7 @@ public class MechMovement : MonoBehaviour
         {
             state = MovementState.dead;
             moveSpeed = deadSpeed;
+            rb.velocity = Vector3.zero;
             Debug.Log(state = MovementState.dead);
         }
 

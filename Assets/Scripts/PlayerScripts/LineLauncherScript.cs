@@ -13,8 +13,11 @@ public class LineLauncherScript : MonoBehaviour
     public float firingRange = 100f;
     public float zipSpeed;
     public float zipThrust;
+    public KeyCode grappleKey = KeyCode.Mouse1;
 
     Rigidbody rb;
+    public LayerMask isGrappable;
+    private Vector3 grapplePoint;
 
     public bool canZip;
     public bool isZipping;
@@ -24,32 +27,35 @@ public class LineLauncherScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         //canZip = false;
+        line.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Instantiate zipline
-        if (Input.GetMouseButton(1))
+        if (Input.GetKeyDown(grappleKey))
         {
             ShootLine();
             //ToggleZipAbility();
         }
 
-        if (Input.GetMouseButtonUp(1) && isZipping)
-        {
-            rb.isKinematic = false;
-            rb.useGravity = true;
+        //if (Input.GetKeyUp(grappleKey) && isZipping)
+        //{
+        //    rb.isKinematic = false;
+        //    rb.useGravity = true;
 
-            isZipping = false;
+        //    isZipping = false;
 
-            line.enabled = false;
+        //    line.enabled = false;
 
-            StartCoroutine(ZipBoost());
-            StartCoroutine(ResetZipping());
+        //    StartCoroutine(ZipBoost());
+        //    StartCoroutine(ResetZipping());
 
-            Debug.Log("UnZipped");
-        }
+        //    Debug.Log("UnZipped");
+        //}
+
+        line.SetPosition(0, linePos.position);
 
         //if (isZipping == false)
         //{
@@ -69,6 +75,13 @@ public class LineLauncherScript : MonoBehaviour
         //    ToggleZipAbility();
         //}
 
+        if(isZipping == true)
+        {
+            player.transform.position = Vector3.MoveTowards(player.transform.position, grapplePoint, zipSpeed * Time.deltaTime);
+            rb.isKinematic = true;
+            rb.useGravity = false;
+        }
+
     }
 
     private void ShootLine()
@@ -76,37 +89,57 @@ public class LineLauncherScript : MonoBehaviour
         if (canZip)
         {
             RaycastHit hit;
-            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, firingRange))
+            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, firingRange, isGrappable))
             {
-                //start zipping if we hit a zipPoint
-                if (hit.transform.CompareTag("LinePoint"))
-                {
-                    line.enabled = true;
+                grapplePoint = hit.point;
 
-                    isZipping = true;
+                ////start zipping if we hit a zipPoint
+                //if (hit.transform.CompareTag("LinePoint"))
+                //{
+                //    line.enabled = true;
 
-                    //create visual line for the zipline for players to see
-                    line.SetPosition(0, linePos.transform.position);
-                    line.SetPosition(1, hit.transform.position);
+                //    isZipping = true;
 
-                    //make player moveable
-                    rb.isKinematic = true;
-                    rb.useGravity = false;
-                    //zip player to the zip point hit by their raycast
-                    player.transform.position = Vector3.MoveTowards(player.transform.position, hit.transform.position, zipSpeed * Time.deltaTime);
-                }
-                //Stop Zipping and reset zip cooldown
-                else 
-                {
-                    rb.isKinematic = false;
-                    rb.useGravity = true;
+                //    //create visual line for the zipline for players to see
+                //    line.SetPosition(0, linePos.transform.position);
+                //    line.SetPosition(1, hit.transform.position);
 
-                    line.enabled = false;
+                //    //make player moveable
+                //    rb.isKinematic = true;
+                //    rb.useGravity = false;
+                //    //zip player to the zip point hit by their raycast
+                //    player.transform.position = Vector3.MoveTowards(player.transform.position, hit.transform.position, zipSpeed * Time.deltaTime);
+                //}
 
-                    isZipping = false;
+                line.enabled = true;
 
-                    StartCoroutine(ResetZipping());
-                }
+                isZipping = true;
+
+                //create visual line for the zipline for players to see
+                //line.SetPosition(0, linePos.transform.position);
+                line.SetPosition(1, grapplePoint);
+
+                //make player moveable
+                rb.isKinematic = true;
+                rb.useGravity = false;
+                //zip player to the zip point hit by their raycast
+                //player.transform.position = Vector3.MoveTowards(player.transform.position, grapplePoint, zipSpeed * Time.deltaTime);
+
+
+
+                    //Stop Zipping and reset zip cooldown
+                //else
+                //{
+                //    rb.isKinematic = false;
+                //    rb.useGravity = true;
+
+                //    line.enabled = false;
+
+                //    isZipping = false;
+
+                //    StartCoroutine(ResetZipping());
+                //    Debug.Log("looked away from zipPoint");
+                //}
 
 
                 //GameObject impactGO = Instantiate(targetPoint.gameObject, hit.point, Quaternion.LookRotation(hit.normal));

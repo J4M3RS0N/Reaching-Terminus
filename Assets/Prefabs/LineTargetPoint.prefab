@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4098112901343599349}
   - component: {fileID: 2802935297282757442}
   - component: {fileID: 2428131031921640190}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Sphere
   m_TagString: LinePoint
   m_Icon: {fileID: 0}

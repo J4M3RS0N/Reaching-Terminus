@@ -108,14 +108,14 @@ public class ToastCollector : MonoBehaviour
         if (running)
         {
             GetComponent<MeshRenderer>().material = turnedOnMaterial;
-           StartCoroutine(drainHealthCoruotine);
+           //StartCoroutine(drainHealthCoruotine);
 
             engineAudio.enabled = true;
         }
         else
         {
             GetComponent<MeshRenderer>().material = turnedOffMaterial;
-           StopCoroutine(drainHealthCoruotine);
+           //StopCoroutine(drainHealthCoruotine);
 
             engineAudio.enabled = false;
         }
