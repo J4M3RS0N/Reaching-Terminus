@@ -27,6 +27,9 @@ public class MechMovement : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource mechFootstepAudio;
 
+    [Header("LineLauncherChecks")]
+    [SerializeField] private LineLauncherScript ll;
+
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask ground;
@@ -77,6 +80,8 @@ public class MechMovement : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        ll = GetComponent<LineLauncherScript>();
     }
 
     private void FixedUpdate()
@@ -276,6 +281,16 @@ public class MechMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             enterMechDemo.ToggleEmbark();
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "LineLauncherPickup")
+        {
+            ll.canZip = true;
+            Destroy(other.gameObject);
         }
     }
 }
