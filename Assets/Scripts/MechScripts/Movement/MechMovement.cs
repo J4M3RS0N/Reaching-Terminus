@@ -28,7 +28,7 @@ public class MechMovement : MonoBehaviour
     [SerializeField] private AudioSource mechFootstepAudio;
 
     [Header("LineLauncherChecks")]
-    [SerializeField] private LineLauncherScript ll;
+    [SerializeField] private V3_LineLauncher ll;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -81,7 +81,7 @@ public class MechMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
-        ll = GetComponent<LineLauncherScript>();
+        ll = GetComponent<V3_LineLauncher>();
     }
 
     private void FixedUpdate()
@@ -172,6 +172,8 @@ public class MechMovement : MonoBehaviour
 
     private void MyInput()
     {
+        if (ll.isZipping) return;
+
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 

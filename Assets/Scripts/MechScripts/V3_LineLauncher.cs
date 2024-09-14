@@ -9,6 +9,7 @@ public class V3_LineLauncher : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Camera playerCam;
     [SerializeField] private Transform linePos;
+    [SerializeField] private Animator mechAnimator;
     public Transform targetPoint;
 
     [Header("Floats")]
@@ -68,12 +69,16 @@ public class V3_LineLauncher : MonoBehaviour
             player.transform.position = Vector3.MoveTowards(player.transform.position, grapplePoint, zipSpeed * Time.deltaTime);
             rb.isKinematic = true;
             rb.useGravity = false;
+
+           // mechAnimator.SetBool("Zipping", true);
         }
         else
         {
             rb.isKinematic = false;
             rb.useGravity = true;
             //StartCoroutine(ZipBoost());
+
+            //mechAnimator.SetBool("Zipping", false);
         }
 
 
@@ -101,6 +106,9 @@ public class V3_LineLauncher : MonoBehaviour
 
                 //this will decide if the player can reel themselves or not
                 lineConnected = true;
+
+                //animate grapple arm to come up
+                mechAnimator.SetBool("LineConnected", true);
             }
 
             //Stop Zipping and reset zip cooldown
@@ -113,6 +121,9 @@ public class V3_LineLauncher : MonoBehaviour
 
                 lineConnected = false;
                 isZipping = false;
+
+                //animate grapple arm going away
+                mechAnimator.SetBool("LineConnected", false);
 
                 StartCoroutine(ResetZipping());
                 Debug.Log("looked away from zipPoint");

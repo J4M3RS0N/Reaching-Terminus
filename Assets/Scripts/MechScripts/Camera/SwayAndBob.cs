@@ -8,10 +8,12 @@ public class SwayAndBob : MonoBehaviour
     Animator mechFrameAnimator;
 
     [SerializeField] private EnterMechDemo mechEmbarked;
+    [SerializeField] private V3_LineLauncher ll;
 
     private void Start()
     {
         mechFrameAnimator = GetComponent<Animator>();
+        ll = FindObjectOfType<V3_LineLauncher>();
     }
 
     private void Update()
@@ -46,6 +48,7 @@ public class SwayAndBob : MonoBehaviour
 
             return;
         }
+
         else
         {
             //mechFrameAnimator.enabled = true;
@@ -57,19 +60,53 @@ public class SwayAndBob : MonoBehaviour
 
     private void MechBob()
     {
+        //if the mech isnt zipping then mech bob
+        //if (ll.isZipping) return;
+
         if (Input.GetAxisRaw("Horizontal") != 0 && mechEmbarked.playerInMech == true)
         {
             mechFrameAnimator.SetBool("MechWalking", true);
+
+            if (ll.isZipping == true)
+            {
+                mechFrameAnimator.SetBool("Zipping", true);
+            }
+
+            if (ll.isZipping == false)
+            {
+                mechFrameAnimator.SetBool("Zipping", false);
+            }
         }
 
         if (Input.GetAxisRaw("Vertical") != 0 && mechEmbarked.playerInMech == true)
         {
             mechFrameAnimator.SetBool("MechWalking", true);
+
+            if (ll.isZipping == true)
+            {
+                mechFrameAnimator.SetBool("Zipping", true);
+            }
+
+            if (ll.isZipping == false)
+            {
+                mechFrameAnimator.SetBool("Zipping", false);
+            }
         }
+
 
         else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 || ToastCollector.instance.currentHealth == 0)
         {
             mechFrameAnimator.SetBool("MechWalking", false);
+
+            if (ll.isZipping == true)
+            {
+                mechFrameAnimator.SetBool("Zipping", true);
+            }
+
+            if (ll.isZipping == false)
+            {
+                mechFrameAnimator.SetBool("Zipping", false);
+            }
         }
 
     }
