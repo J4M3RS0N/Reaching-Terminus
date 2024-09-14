@@ -104,12 +104,12 @@ public class CoolantCollector : MonoBehaviour
         if (coolantRunning)
         {
             leverAnimator.SetBool("RunCoolant", true);
-            StartCoroutine(drainHealthCoruotine);
+            //StartCoroutine(drainHealthCoruotine);
         }
         else
         {
             leverAnimator.SetBool("RunCoolant", false);
-            StopCoroutine(drainHealthCoruotine);
+            //StopCoroutine(drainHealthCoruotine);
         }
     }
 

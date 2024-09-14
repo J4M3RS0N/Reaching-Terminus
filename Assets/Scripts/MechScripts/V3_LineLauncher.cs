@@ -10,7 +10,8 @@ public class V3_LineLauncher : MonoBehaviour
     [SerializeField] private Camera playerCam;
     [SerializeField] private Transform linePos;
     [SerializeField] private Animator mechAnimator;
-    public Transform targetPoint;
+    public GameObject firedHook;
+    public GameObject homeHook;
 
     [Header("Floats")]
     public float firingRange = 100f;
@@ -109,6 +110,14 @@ public class V3_LineLauncher : MonoBehaviour
 
                 //animate grapple arm to come up
                 mechAnimator.SetBool("LineConnected", true);
+
+                //diasble the hook attatched to the mech model
+                homeHook.SetActive(false);
+
+                //sethook to the location that has been hit by the zipline
+                firedHook.SetActive(true);
+                firedHook.transform.position = grapplePoint;
+                firedHook.transform.rotation = hit.transform.rotation;
             }
 
             //Stop Zipping and reset zip cooldown
@@ -124,6 +133,11 @@ public class V3_LineLauncher : MonoBehaviour
 
                 //animate grapple arm going away
                 mechAnimator.SetBool("LineConnected", false);
+
+                //enable the hook attatched to the mech model
+                homeHook.SetActive(true);
+
+                firedHook.SetActive(false);
 
                 StartCoroutine(ResetZipping());
                 Debug.Log("looked away from zipPoint");
