@@ -18,6 +18,8 @@ public class SwayAndBob : MonoBehaviour
 
     private void Update()
     {
+        
+
         if (MechMovement.instance.mechCannotMove == true)
         {
             mechFrameAnimator.SetBool("PlayerDead", true);
@@ -62,51 +64,52 @@ public class SwayAndBob : MonoBehaviour
     {
         //if the mech isnt zipping then mech bob
         //if (ll.isZipping) return;
+        
 
         if (Input.GetAxisRaw("Horizontal") != 0 && mechEmbarked.playerInMech == true)
         {
             mechFrameAnimator.SetBool("MechWalking", true);
 
-            if (ll.isZipping == true)
-            {
-                mechFrameAnimator.SetBool("Zipping", true);
-            }
+            //if (ll.isZipping == true)
+            //{
+            //    mechFrameAnimator.SetBool("Zipping", true);
+            //}
 
-            if (ll.isZipping == false)
-            {
-                mechFrameAnimator.SetBool("Zipping", false);
-            }
+            //if (ll.isZipping == false)
+            //{
+            //    mechFrameAnimator.SetBool("Zipping", false);
+            //}
         }
 
         if (Input.GetAxisRaw("Vertical") != 0 && mechEmbarked.playerInMech == true)
         {
             mechFrameAnimator.SetBool("MechWalking", true);
 
-            if (ll.isZipping == true)
-            {
-                mechFrameAnimator.SetBool("Zipping", true);
-            }
+            //if (ll.isZipping == true)
+            //{
+            //    mechFrameAnimator.SetBool("Zipping", true);
+            //}
 
-            if (ll.isZipping == false)
-            {
-                mechFrameAnimator.SetBool("Zipping", false);
-            }
+            //if (ll.isZipping == false)
+            //{
+            //    mechFrameAnimator.SetBool("Zipping", false);
+            //}
         }
 
 
-        else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 || ToastCollector.instance.currentHealth == 0)
+        else if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0 || ToastCollector.instance.currentHealth == 0 || ll.isZipping == true)
         {
             mechFrameAnimator.SetBool("MechWalking", false);
 
-            if (ll.isZipping == true)
-            {
-                mechFrameAnimator.SetBool("Zipping", true);
-            }
+            //if (ll.isZipping == true)
+            //{
+            //    mechFrameAnimator.SetBool("Zipping", true);
+            //}
 
-            if (ll.isZipping == false)
-            {
-                mechFrameAnimator.SetBool("Zipping", false);
-            }
+            //if (ll.isZipping == false)
+            //{
+            //    mechFrameAnimator.SetBool("Zipping", false);
+            //}
         }
 
     }

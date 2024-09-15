@@ -44,6 +44,7 @@ public class V3_LineLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //Instantiate zipline
         if (Input.GetKeyDown(grappleKey))
         {
@@ -54,6 +55,8 @@ public class V3_LineLauncher : MonoBehaviour
             if (lineConnected)
             {
                 isZipping = !isZipping;
+
+                //mechAnimator.SetBool("Zipping", true);
             }
             else
             {
@@ -66,20 +69,31 @@ public class V3_LineLauncher : MonoBehaviour
         //Zip Player to location while bool is true
         if (isZipping)
         {
+            mechAnimator.SetBool("Zipping", true);
 
-            player.transform.position = Vector3.MoveTowards(player.transform.position, grapplePoint, zipSpeed * Time.deltaTime);
-            rb.isKinematic = true;
-            rb.useGravity = false;
+            if (MechMovement.instance.mechActive == true)
+            {
+                player.transform.position = Vector3.MoveTowards(player.transform.position, grapplePoint, zipSpeed * Time.deltaTime);
+                rb.isKinematic = true;
+                rb.useGravity = false;
+            }
 
-           // mechAnimator.SetBool("Zipping", true);
+            if (MechMovement.instance.mechActive == false)
+            {
+                isZipping = false;
+                rb.isKinematic = false;
+            }
         }
         else
         {
-            rb.isKinematic = false;
+            mechAnimator.SetBool("Zipping", false);
+
+            if (MechMovement.instance.mechActive == true)
+            {
+                rb.isKinematic = false;
+            }
             rb.useGravity = true;
             //StartCoroutine(ZipBoost());
-
-            //mechAnimator.SetBool("Zipping", false);
         }
 
 

@@ -9,6 +9,7 @@ public class EnterMechDemo : MonoBehaviour
     MechMovement mechMove;
     public Transform Mech;
     public Transform Player;
+    public V3_LineLauncher ll;
 
     Rigidbody mechrb;
 
@@ -103,6 +104,9 @@ public class EnterMechDemo : MonoBehaviour
 
     public void ToggleEmbark()
     {
+        //dont let player leave the mule if they are zipping
+        if (ll.isZipping) return;
+
         embark = !embark;
 
         if (embark)

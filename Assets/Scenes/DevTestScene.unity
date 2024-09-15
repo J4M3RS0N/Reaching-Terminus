@@ -10663,6 +10663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa4ef0c4084f4114387aca708777848e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mechFrameAnimator: {fileID: 510267185}
   mechEmbarked: {fileID: 820075072}
   ll: {fileID: 820075081}
 --- !u!95 &510267185
@@ -25414,7 +25415,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25166
+  m_Name: pb_Mesh25186
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
