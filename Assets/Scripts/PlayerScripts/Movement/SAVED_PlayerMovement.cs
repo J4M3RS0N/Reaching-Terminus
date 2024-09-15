@@ -150,6 +150,8 @@ public class SAVED_PlayerMovement : MonoBehaviour
 
     private void MyInput()
     {
+        if (GameManager.current.gamePaused) return;
+
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
