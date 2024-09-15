@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject optionsPanel;
     public GameObject losePanel;
+    public TutorialPanelScript llPanel;
     public bool gamePaused;
+    public bool linelaunchOpen;
 
     private void Awake()
     {
@@ -30,6 +32,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        llPanel = GetComponent<TutorialPanelScript>();
      
         //check if the player has a highscore and set the highscore test to that
         //else, no highscore yet

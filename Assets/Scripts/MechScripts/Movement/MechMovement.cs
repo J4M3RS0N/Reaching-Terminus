@@ -172,6 +172,7 @@ public class MechMovement : MonoBehaviour
 
     private void MyInput()
     {
+        if (GameManager.current.gamePaused) return;
         if (ll.isZipping) return;
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -293,6 +294,7 @@ public class MechMovement : MonoBehaviour
         if(other.gameObject.tag == "LineLauncherPickup")
         {
             ll.canZip = true;
+
             Destroy(other.gameObject);
         }
     }

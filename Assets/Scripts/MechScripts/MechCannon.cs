@@ -34,6 +34,7 @@ public class MechCannon : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
         {
+            if (GameManager.current.gamePaused) return;
             nextTimeToFire = Time.time + 1f / cannonFirerate;
             mechUIAnim.SetTrigger("ShotsFired");
             Shoot();

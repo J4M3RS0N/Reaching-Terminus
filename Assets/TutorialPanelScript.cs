@@ -18,7 +18,7 @@ public class TutorialPanelScript : MonoBehaviour
     [SerializeField] private Sprite spriteA;
     [SerializeField] private Sprite spriteB;
 
-    private bool openPanel;
+    public bool openPanel;
 
     // Start is called before the first frame update
     void Start()
