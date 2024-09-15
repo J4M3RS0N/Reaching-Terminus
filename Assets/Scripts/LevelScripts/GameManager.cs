@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager current;
 
     [SerializeField] GameObject optionsPanel;
+    public GameObject losePanel;
     public bool gamePaused;
 
     private void Awake()

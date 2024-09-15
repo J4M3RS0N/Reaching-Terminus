@@ -7,7 +7,7 @@ public class EndGameScript : MonoBehaviour
 {
     [SerializeField] PlayerHealth playerHPS;
 
-    [SerializeField] GameObject LosePanel;
+    //[SerializeField] GameObject LosePanel;
     //[SerializeField] GameObject mechLosePanel;
 
     public bool deathAnim;
@@ -33,10 +33,13 @@ public class EndGameScript : MonoBehaviour
         if (gameOver)
         {
             //LosePanel.SetActive(true);
+            GameManager.current.losePanel.SetActive(true);
 
             if (Input.GetKey(KeyCode.R))
             {
-                LosePanel.SetActive(false);
+                //LosePanel.SetActive(false);
+
+                GameManager.current.losePanel.SetActive(false);
 
                 SceneManager.LoadScene(1);
             }
@@ -45,7 +48,9 @@ public class EndGameScript : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
 
-                LosePanel.SetActive(false);
+                //LosePanel.SetActive(false);
+
+                GameManager.current.losePanel.SetActive(false);
 
                 SceneManager.LoadScene("Main Menu");
             }
