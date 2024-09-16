@@ -29,6 +29,7 @@ public class MechMovement : MonoBehaviour
 
     [Header("LineLauncherChecks")]
     [SerializeField] private V3_LineLauncher ll;
+    [SerializeField] private GameObject backPlatform;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -130,7 +131,11 @@ public class MechMovement : MonoBehaviour
             rb.drag = groundDrag;
 
         else
+        {
             rb.drag = 0;
+        }
+
+            
 
 
         if (!mechCannotMove && endGame.deathAnim == true)
@@ -206,12 +211,16 @@ public class MechMovement : MonoBehaviour
         {
             state = MovementState.walking;
             moveSpeed = walkSpeed;
+
+            backPlatform.SetActive(true);
         }
 
         //mode - air
         else
         {
             state = MovementState.air;
+
+            backPlatform.SetActive (false);
         }
     }
 
