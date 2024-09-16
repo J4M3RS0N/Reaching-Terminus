@@ -8706,7 +8706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370288812}
   m_LocalRotation: {x: 1.110223e-17, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.961145, y: -1.9589944, z: 548}
+  m_LocalPosition: {x: 12.961145, y: -1.9589944, z: 548.4}
   m_LocalScale: {x: 86.59124, y: 1.0944335, z: 113.042946}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10217,11 +10217,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listChunks:
-  - {fileID: 3464483721647730962, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
   - {fileID: 7314091989967738524, guid: 81e9b1bd67f62bb4c81439d9f2fd2ecb, type: 3}
+  - {fileID: 3464483721647730962, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
+  - {fileID: 5796722280780390541, guid: 951f1579ab17e484fabe9a567c9d6c83, type: 3}
   firstPosition: {fileID: 1570249628}
   secondPosition: {fileID: 370288813}
-  thirdPosition: {fileID: 0}
+  thirdPosition: {fileID: 1886392747}
 --- !u!4 &465355383
 Transform:
   m_ObjectHideFlags: 0
@@ -24260,7 +24261,7 @@ MonoBehaviour:
   airMultiplyer: 0.4
   mechFootstepAudio: {fileID: 1661460697}
   ll: {fileID: 820075081}
-  backPlatform: {fileID: 1410219373}
+  backPlatform: {fileID: 719907045}
   playerHeight: 6
   ground:
     serializedVersion: 2
@@ -24510,7 +24511,7 @@ MonoBehaviour:
   firedHook: {fileID: 2000902704}
   homeHook: {fileID: 723848625}
   firingRange: 25
-  zipSpeed: 8
+  zipSpeed: 16
   zipThrust: 200
   maxZipTime: 5
   isGrappable:
@@ -54241,7 +54242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8756211175857806181}
   m_LocalRotation: {x: 1.110223e-17, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.96115, y: -1.9589944, z: 68.653534}
+  m_LocalPosition: {x: 13, y: -1.9589944, z: 68.653534}
   m_LocalScale: {x: 86.59124, y: 1.0944335, z: 113.042946}
   m_ConstrainProportionsScale: 0
   m_Children: []

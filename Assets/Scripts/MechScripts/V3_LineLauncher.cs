@@ -86,7 +86,7 @@ public class V3_LineLauncher : MonoBehaviour
         }
         else
         {
-            mechAnimator.SetBool("Zipping", false);
+            //mechAnimator.SetBool("Zipping", false);
 
             if (MechMovement.instance.mechActive == true)
             {
