@@ -39,6 +39,8 @@ public class V3_LineLauncher : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         //canZip = false;
         line.enabled = false;
+
+        isZipping = false;
     }
 
     // Update is called once per frame
@@ -86,11 +88,12 @@ public class V3_LineLauncher : MonoBehaviour
         }
         else
         {
-            //mechAnimator.SetBool("Zipping", false);
+            //StopZipAnim();
 
             if (MechMovement.instance.mechActive == true)
             {
                 rb.isKinematic = false;
+                StopZipAnim();
             }
             rb.useGravity = true;
             //StartCoroutine(ZipBoost());
@@ -178,5 +181,10 @@ public class V3_LineLauncher : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         canZip = true;
+    }
+
+    private void StopZipAnim()
+    {
+        mechAnimator.SetBool("Zipping", false);
     }
 }
