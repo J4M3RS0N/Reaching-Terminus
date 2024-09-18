@@ -59,7 +59,7 @@ public class MechCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mouseSensitivityM = PlayerPrefs.GetFloat("currentSensitivity_Mech", 100);
+        mouseSensitivityM = PlayerPrefs.GetFloat("currentSensitivityMech", 100);
 
         // xSlider.value = sensX / 10;
         // ySlider.value = sensY / 10;
@@ -74,7 +74,7 @@ public class MechCamera : MonoBehaviour
 
         if (endGame.deathAnim) return;
 
-        PlayerPrefs.SetFloat("currentSensitivity_Mech", mouseSensitivityM);
+        PlayerPrefs.SetFloat("currentSensitivityMech", mouseSensitivityM);
 
         //get mouse input
         //float mouseX = Input.GetAxis("Mouse X") * sensX * Time.deltaTime;

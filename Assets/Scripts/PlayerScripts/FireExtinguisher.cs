@@ -54,6 +54,7 @@ public class FireExtinguisher : MonoBehaviour
     {
         if (currentAmmo > 0 && canShoot == true)
         {
+            if (GameManager.current.gamePaused) return;
             // if the player is pressing mouse button and the fire time is right and they have ammo
             if (Input.GetMouseButton(0) && Time.time >= nextTimeToShoot)
             {
