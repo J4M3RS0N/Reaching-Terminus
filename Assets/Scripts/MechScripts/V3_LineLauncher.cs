@@ -20,6 +20,12 @@ public class V3_LineLauncher : MonoBehaviour
     public float maxZipTime;
     private float zippingCdTimer;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource launcherAudio;
+    [SerializeField] private AudioSource lineAudio;
+
+    [SerializeField] private AudioClip fireLineSound;
+    [SerializeField] private AudioClip unhookSound;
 
     Rigidbody rb;
     public LayerMask isGrappable;
@@ -78,21 +84,29 @@ public class V3_LineLauncher : MonoBehaviour
                 player.transform.position = Vector3.MoveTowards(player.transform.position, grapplePoint, zipSpeed * Time.deltaTime);
                 rb.isKinematic = true;
                 rb.useGravity = false;
+
+                //play zipping sound
+                lineAudio.enabled = true;
             }
 
             if (MechMovement.instance.mechActive == false)
             {
                 isZipping = false;
                 rb.isKinematic = false;
+
+                //stop playing zip sound
+                lineAudio.enabled = false;
             }
         }
         else
         {
-            //StopZipAnim();
-
             if (MechMovement.instance.mechActive == true)
             {
                 rb.isKinematic = false;
+
+                //stop playing zip sound
+                lineAudio.enabled = false;
+
                 StopZipAnim();
             }
             rb.useGravity = true;
@@ -113,7 +127,8 @@ public class V3_LineLauncher : MonoBehaviour
 
                 line.enabled = true;
 
-                //isZipping = true;
+                //Play connecting line SFX
+                launcherAudio.PlayOneShot(fireLineSound);
 
                 //create visual line for the zipline for players to see
                 line.SetPosition(1, grapplePoint);
@@ -147,6 +162,9 @@ public class V3_LineLauncher : MonoBehaviour
 
                 lineConnected = false;
                 isZipping = false;
+
+                //player disconnect sound
+                launcherAudio.PlayOneShot(unhookSound);
 
                 //animate grapple arm going away
                 mechAnimator.SetBool("LineConnected", false);
