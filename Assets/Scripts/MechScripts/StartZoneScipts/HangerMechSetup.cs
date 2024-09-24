@@ -6,6 +6,10 @@ public class HangerMechSetup : MonoBehaviour
 {
     [Header("Changing Cargo Mesh")]
     public GameObject mechCargoModel;
+    public GameObject dustPS;
+    [SerializeField] private AudioSource dropAudio;
+    [SerializeField] private AudioClip dropSound;
+
     IEnumerator attatchingCargo;
 
     [Header("Dropping Mech")]
@@ -34,6 +38,8 @@ public class HangerMechSetup : MonoBehaviour
     {
         yield return new WaitForSeconds(4.2f);
         mechrb.isKinematic = false;
+        dropAudio.PlayOneShot(dropSound);
+        dustPS.SetActive(true);
         yield return new WaitForSeconds(2);
         mechrb.isKinematic = true;
     }
