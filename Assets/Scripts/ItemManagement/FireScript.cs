@@ -71,7 +71,7 @@ public class FireScript : MonoBehaviour
            yield return new WaitForSeconds(1.5f);
            Destroy(gameObject);
 
-
+            CoolantCollector.instance.thereIsFire = false;
         }
     }
 

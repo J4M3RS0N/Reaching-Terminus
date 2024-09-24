@@ -18,7 +18,8 @@ public class CoolantCollector : MonoBehaviour
     [Header("Fire Stuff")]
     [SerializeField] public GameObject fireParticle;
     [SerializeField] private Transform fireSpawner;
-    private bool thereIsFire;
+    [SerializeField] private GameObject interiorFireObj;
+    public bool thereIsFire;
 
     [Header("Audio")]
     [SerializeField] private AudioSource coolantAudio;
@@ -79,8 +80,18 @@ public class CoolantCollector : MonoBehaviour
             //fireSpawner.SetActive(true);
             if (thereIsFire == false)
             {
-                Instantiate(fireParticle, fireSpawner.position, fireSpawner.rotation, fireSpawner);
+                //Instantiate(fireParticle, fireSpawner.position, fireSpawner.rotation, fireSpawner);
+
+                GameObject coolantFire = Instantiate(fireParticle, fireSpawner.position, fireSpawner.rotation, fireSpawner);
+
+                interiorFireObj.SetActive(true);
                 thereIsFire = true;
+
+                if(coolantFire = null)
+                {
+                    interiorFireObj.SetActive(false);
+                    thereIsFire = false;
+                }
             }
         }
 
@@ -89,6 +100,7 @@ public class CoolantCollector : MonoBehaviour
             emptyButterUI.SetActive(false);
             intemptyUI.SetActive(false);
 
+            interiorFireObj.SetActive(false);
             thereIsFire = false;
 
             emptyCoolantAudio.enabled = false;
@@ -104,12 +116,12 @@ public class CoolantCollector : MonoBehaviour
         if (coolantRunning)
         {
             leverAnimator.SetBool("RunCoolant", true);
-            //StartCoroutine(drainHealthCoruotine);
+            StartCoroutine(drainHealthCoruotine);
         }
         else
         {
             leverAnimator.SetBool("RunCoolant", false);
-            //StopCoroutine(drainHealthCoruotine);
+            StopCoroutine(drainHealthCoruotine);
         }
     }
 
