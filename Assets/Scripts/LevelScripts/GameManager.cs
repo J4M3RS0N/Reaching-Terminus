@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(1);
+        Pausegame();
         Debug.Log("Player Restarted Run");
     }
 
