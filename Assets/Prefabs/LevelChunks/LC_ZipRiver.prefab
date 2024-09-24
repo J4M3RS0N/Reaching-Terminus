@@ -5143,7 +5143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7568528260671412163, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -54.9
+      value: -21.3
       objectReference: {fileID: 0}
     - target: {fileID: 9194203434702353008, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
       propertyPath: m_MaxParticleSize
@@ -5412,6 +5412,10 @@ PrefabInstance:
     - target: {fileID: 3054341088980437186, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
       propertyPath: m_Name
       value: GreyVolumeFog (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054341088980437186, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6415130139164574129, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
       propertyPath: m_RootOrder
@@ -5737,7 +5741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7568528260671412163, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -65.4
+      value: -27.7
       objectReference: {fileID: 0}
     - target: {fileID: 9194203434702353008, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
       propertyPath: m_MaxParticleSize
