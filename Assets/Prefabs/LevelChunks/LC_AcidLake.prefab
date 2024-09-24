@@ -3938,7 +3938,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19794
+  m_VersionIndex: 19797
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4469,7 +4469,7 @@ AudioSource:
   m_GameObject: {fileID: 2067509244809784307}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7774277832521599610, guid: 631658b2cab8081438042eb38857fbf3, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -8610,7 +8610,7 @@ AudioSource:
   m_GameObject: {fileID: 6388861271942385764}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2601355218182533527, guid: 631658b2cab8081438042eb38857fbf3, type: 2}
   m_audioClip: {fileID: 8300000, guid: 000380a2924c3894fb23aa54e0a86880, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.8
@@ -9201,7 +9201,7 @@ AudioSource:
   m_GameObject: {fileID: 7255289743148724958}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7774277832521599610, guid: 631658b2cab8081438042eb38857fbf3, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.8
