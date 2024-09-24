@@ -79,6 +79,12 @@ public class EndGameScript : MonoBehaviour
         Debug.Log("he won");
     }
 
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
+        Debug.Log("Player Restarted Run");
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quit");
