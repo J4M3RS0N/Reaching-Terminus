@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class OptionsMenuScript : MonoBehaviour
 {
+    [Header("Audio")]
+    private AudioSource buttonAudio;
+    [SerializeField] private AudioClip pressSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,21 +20,8 @@ public class OptionsMenuScript : MonoBehaviour
         
     }
 
-    public void WinGame()
+    public void ClickSoundShot()
     {
-        SceneManager.LoadScene("Win Scene");
-        Debug.Log("he won");
-    }
-
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(1);
-        Debug.Log("Player Restarted Run");
-    }
-
-    public void QuitGame()
-    {
-        Debug.Log("Quit");
-        Application.Quit();
+        buttonAudio.PlayOneShot(pressSound);
     }
 }
