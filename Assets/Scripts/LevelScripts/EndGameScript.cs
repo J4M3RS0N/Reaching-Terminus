@@ -34,12 +34,13 @@ public class EndGameScript : MonoBehaviour
         {
             //LosePanel.SetActive(true);
             GameManager.current.losePanel.SetActive(true);
+            GameManager.current.timersPanel.SetActive(true);
 
             if (Input.GetKey(KeyCode.R))
             {
-                //LosePanel.SetActive(false);
-
+                //Hide Panels and load scene
                 GameManager.current.losePanel.SetActive(false);
+                GameManager.current.timersPanel.SetActive(false);
 
                 SceneManager.LoadScene(1);
             }
@@ -48,9 +49,9 @@ public class EndGameScript : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
 
-                //LosePanel.SetActive(false);
-
+                //Hide Panels and load scene
                 GameManager.current.losePanel.SetActive(false);
+                GameManager.current.timersPanel.SetActive(false);
 
                 SceneManager.LoadScene("Main Menu");
             }

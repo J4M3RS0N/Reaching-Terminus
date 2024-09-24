@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] TextMeshProUGUI finishedRunText;
     [SerializeField] TextMeshProUGUI fastestRunText;
+    public GameObject timersPanel;
     float elapsedTime;
     float runTime;
     float bestTime;
@@ -146,6 +147,7 @@ public class GameManager : MonoBehaviour
     {
         SetRunEndTime();
         CheckBestTime();
+        timersPanel.SetActive(true);
 
         //SceneManager.LoadScene("Win Scene");
         Debug.Log("he won");
