@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
      
         //check if the player has a highscore and set the highscore test to that
         UpdateBestTimeText();
+
+        bestTime = PlayerPrefs.GetFloat("BestTime", 0);
+        fastestRunText.text = bestTime.ToString("00:00");
         //else, no highscore yet
     }
 
@@ -118,10 +121,10 @@ public class GameManager : MonoBehaviour
 
     void CheckBestTime()
     {
-        if (runTime < PlayerPrefs.GetFloat("BestTime"))
+        if (runTime < PlayerPrefs.GetFloat("BestTime", 0))
         {
             bestTime = runTime;
-            fastestRunText.text = runTime.ToString();
+            //fastestRunText.text = runTime.ToString();
 
             PlayerPrefs.SetFloat("BestTime", runTime);
             UpdateBestTimeText();
@@ -151,6 +154,7 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(1);
+        elapsedTime = 0f;
         Pausegame();
         Debug.Log("Player Restarted Run");
     }

@@ -5,9 +5,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] TextMeshProUGUI finishedRunText;
-    [SerializeField] TextMeshProUGUI fastestRunText;
+    //[SerializeField] TextMeshProUGUI timerText;
     float elapsedTime;
 
     // Start is called before the first frame update
@@ -20,10 +18,11 @@ public class Timer : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;
-        int minutes = Mathf.FloorToInt(elapsedTime / 60);
-        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+        //int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        //int seconds = Mathf.FloorToInt(elapsedTime % 60);
 
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        //timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
         //timerText.text = elapsedTime.ToString();    
     }
 
