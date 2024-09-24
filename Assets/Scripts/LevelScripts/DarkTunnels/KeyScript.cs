@@ -14,7 +14,7 @@ public class KeyScript : MonoBehaviour
     {
         TunnelKey = this;
 
-        keyBool = false;
+        //keyBool = false;
         doorButton.SetActive(false);
     }
 

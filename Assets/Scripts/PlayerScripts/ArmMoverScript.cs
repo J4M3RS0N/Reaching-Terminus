@@ -12,6 +12,9 @@ public class ArmMoverScript : MonoBehaviour
     private AudioSource armAudio;
     [SerializeField] private AudioClip armMoveAudio;
 
+    [Header("PauseState")]
+    public bool armPaused;
+
     // Start is called before the first frame update
     void Start()
     {
