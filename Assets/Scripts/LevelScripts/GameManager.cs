@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+
 //using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +15,14 @@ public class GameManager : MonoBehaviour
     public TutorialPanelScript llPanel;
     public bool gamePaused;
     public bool linelaunchOpen;
+
+    [Header("Timer")]
+    [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] TextMeshProUGUI finishedRunText;
+    [SerializeField] TextMeshProUGUI fastestRunText;
+    float elapsedTime;
+    float runTime;
+    float bestTime;
 
     private void Awake()
     {
@@ -36,6 +46,7 @@ public class GameManager : MonoBehaviour
         llPanel = GetComponent<TutorialPanelScript>();
      
         //check if the player has a highscore and set the highscore test to that
+        UpdateBestTimeText();
         //else, no highscore yet
     }
 
@@ -47,6 +58,15 @@ public class GameManager : MonoBehaviour
         // best time and best score - set best to the current if its higher/ shorter in value
 
         // set the test for the timer
+
+        //TIMER
+        elapsedTime += Time.deltaTime;
+        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        //timerText.text = elapsedTime.ToString(); 
+
 
         //PAUSE GAME
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -84,9 +104,47 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void SetRunEndTime()
+    {
+        runTime = elapsedTime;
+        //finishedRunText.text = timerText.text;
+        finishedRunText.text = elapsedTime.ToString();
+
+        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+
+        finishedRunText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    void CheckBestTime()
+    {
+        if (runTime < PlayerPrefs.GetFloat("BestTime"))
+        {
+            bestTime = runTime;
+            fastestRunText.text = runTime.ToString();
+
+            PlayerPrefs.SetFloat("BestTime", runTime);
+            UpdateBestTimeText();
+        }
+    }
+
+    void UpdateBestTimeText()
+    {
+        fastestRunText.text = $"BestTime: {PlayerPrefs.GetFloat("BestTime", 0)}";
+
+        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+
+        fastestRunText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        Debug.Log("New BestTime");
+    }
+
     public void WinGame()
     {
-        SceneManager.LoadScene("Win Scene");
+        SetRunEndTime();
+        CheckBestTime();
+
+        //SceneManager.LoadScene("Win Scene");
         Debug.Log("he won");
     }
 
