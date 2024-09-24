@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI finishedRunText;
     [SerializeField] TextMeshProUGUI fastestRunText;
     public GameObject timersPanel;
-    float elapsedTime;
+    public float elapsedTime;
     float runTime;
     float bestTime;
 
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void SetRunEndTime()
+    public void SetRunEndTime()
     {
         runTime = elapsedTime;
         //finishedRunText.text = timerText.text;

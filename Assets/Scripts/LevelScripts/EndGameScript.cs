@@ -83,6 +83,7 @@ public class EndGameScript : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(1);
+        GameManager.current.elapsedTime = 0;
         Debug.Log("Player Restarted Run");
     }
 
@@ -102,5 +103,6 @@ public class EndGameScript : MonoBehaviour
     public void GameOver()
     { 
         gameOver = true;
+        GameManager.current.SetRunEndTime();
     }
 }
