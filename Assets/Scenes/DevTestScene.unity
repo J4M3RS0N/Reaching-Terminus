@@ -26608,6 +26608,8 @@ MonoBehaviour:
   PlayerCam: {fileID: 990670908}
   MechCam: {fileID: 1249652090}
   enterMechUI: {fileID: 1329290960}
+  mechModelExtObj: {fileID: 3212607298398226488}
+  mechModelShadowObj: {fileID: 1737195408}
   embark: 0
   playerInMech: 0
   startMechEngine:
@@ -46705,7 +46707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1737195409
 Transform:
   m_ObjectHideFlags: 0
