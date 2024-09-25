@@ -24,8 +24,9 @@ public class MechMovement : MonoBehaviour
 
     public float airMultiplyer;
 
-    [Header("Audio")]
+    [Header("Audio and Leg Animation")]
     [SerializeField] private AudioSource mechFootstepAudio;
+    [SerializeField] private Animator legAnimator;
 
     [Header("LineLauncherChecks")]
     [SerializeField] private V3_LineLauncher ll;
@@ -187,10 +188,12 @@ public class MechMovement : MonoBehaviour
         if ((horizontalInput > 0 || horizontalInput < 0 || verticalInput > 0f || verticalInput < 0f) && ToastCollector.instance.currentHealth > 0)
         {
             mechFootstepAudio.enabled = true;
+            legAnimator.SetBool("LegsWalking", true);
         }
         else
         {
             mechFootstepAudio.enabled = false;
+            legAnimator.SetBool("LegsWalking", false);
         }
     }
 
