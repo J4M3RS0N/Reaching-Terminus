@@ -45,6 +45,7 @@ public class PressurePlateScript : MonoBehaviour
         if (other.gameObject.tag == plateTag)
         {
             //plateWall.transform.position += new Vector3(0, 6, 0);
+
             activePlate = true;
 
             Debug.Log("On Platform");
@@ -56,6 +57,7 @@ public class PressurePlateScript : MonoBehaviour
         if (other.gameObject.tag == plateTag)
         {
             //plateWall.transform.position -= new Vector3(0, 6, 0);
+
             activePlate = false;
 
             Debug.Log("Left Platform");

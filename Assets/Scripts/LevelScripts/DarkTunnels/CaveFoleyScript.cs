@@ -31,6 +31,11 @@ public class CaveFoleyScript : MonoBehaviour
         {
             caveAudio.enabled = false;
         }
+
+        if (other.gameObject.tag == "Mech")
+        {
+            caveAudio.enabled = false;
+        }
     }
 
 }
