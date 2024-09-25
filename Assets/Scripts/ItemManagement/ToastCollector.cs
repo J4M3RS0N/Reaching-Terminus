@@ -137,7 +137,7 @@ public class ToastCollector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Toast"))
         {
-            AddHealth(30);
+            AddHealth(40);
             fuelAudio.PlayOneShot(collectSound);
 
             intscript.DropObject();

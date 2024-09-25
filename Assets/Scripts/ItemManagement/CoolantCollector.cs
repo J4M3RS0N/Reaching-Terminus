@@ -139,7 +139,7 @@ public class CoolantCollector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Butter"))
         {
-            AddHealth(30);
+            AddHealth(40);
             coolantAudio.PlayOneShot(collectSound);
 
             intscript.DropObject();
