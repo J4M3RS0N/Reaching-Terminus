@@ -27028,6 +27028,7 @@ MonoBehaviour:
   enterMechUI: {fileID: 1329290960}
   mechModelExtObj: {fileID: 3212607298398226488}
   mechModelShadowObj: {fileID: 1737195408}
+  animatedLegObj: {fileID: 1598907450}
   embark: 0
   playerInMech: 0
   startMechEngine:
@@ -27120,9 +27121,9 @@ Transform:
   - {fileID: 671651244}
   - {fileID: 2872920518773363330}
   - {fileID: 1737195409}
+  - {fileID: 1598907451}
   - {fileID: 966829023548202905}
   - {fileID: 1647025084}
-  - {fileID: 1598907451}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -32274,7 +32275,7 @@ PrefabInstance:
       objectReference: {fileID: 2101012971}
     - target: {fileID: 1640538039787852699, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
       propertyPath: m_VersionIndex
-      value: 3683
+      value: 3686
       objectReference: {fileID: 0}
     - target: {fileID: 1680223229427704864, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
       propertyPath: m_Mesh
@@ -32294,7 +32295,7 @@ PrefabInstance:
       objectReference: {fileID: 1370773383}
     - target: {fileID: 8906788662676679427, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
       propertyPath: m_VersionIndex
-      value: 3001
+      value: 3004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
@@ -44979,7 +44980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1598907451
 Transform:
   m_ObjectHideFlags: 0
@@ -44996,7 +44997,7 @@ Transform:
   - {fileID: 1524677518}
   - {fileID: 1650242160}
   m_Father: {fileID: 820075075}
-  m_RootOrder: 13
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1598907452
 Animator:
@@ -46278,7 +46279,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 820075075}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -59867,7 +59868,7 @@ Transform:
   m_Children:
   - {fileID: 3343727418758624780}
   m_Father: {fileID: 820075075}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: -90}
 --- !u!23 &984492447468326102
 MeshRenderer:

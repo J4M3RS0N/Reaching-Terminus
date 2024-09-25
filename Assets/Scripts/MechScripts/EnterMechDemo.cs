@@ -16,11 +16,12 @@ public class EnterMechDemo : MonoBehaviour
     [Header("Cameras")]
     public GameObject PlayerCam;
     public GameObject MechCam;
-    
 
+    [Header("GameObjects")]
     public GameObject enterMechUI;
     [SerializeField] private GameObject mechModelExtObj;
     [SerializeField] private GameObject mechModelShadowObj;
+    [SerializeField] private GameObject animatedLegObj;
 
     [Header("Mech Bools")]
     // switches when player is within the collider that checks if they can enter the mech
@@ -129,6 +130,7 @@ public class EnterMechDemo : MonoBehaviour
             //Swap mech models that are being renderd so shaodws show proeprly
             mechModelExtObj.SetActive(false);
             mechModelShadowObj.SetActive(true);
+            animatedLegObj.SetActive(true);
 
             // Camera swapping
             PlayerCam.gameObject.SetActive(false);
@@ -154,6 +156,7 @@ public class EnterMechDemo : MonoBehaviour
             //Swap mech models that are being renderd so shaodws show proeprly
             mechModelExtObj.SetActive(true);
             mechModelShadowObj.SetActive(false);
+            animatedLegObj.SetActive(false);
 
             //Swap cameras back so the player can see
             PlayerCam.gameObject.SetActive(true);
