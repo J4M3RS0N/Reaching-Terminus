@@ -70,3 +70,19 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/TutorialPanelScript.cs.meta
+Assets/TutorialPanelScript.cs
+Assets/Textures&Materials/DiviDium/M_Building+Extras.mat.meta
+Assets/Textures&Materials/DiviDium/M_Building+Extras.mat
+Assets/Scripts/MechScripts/LineLauncher_V2.cs.meta
+Assets/Scripts/MechScripts/LineLauncher_V2.cs
+Assets/Scripts/KillPlayerScript.cs.meta
+Assets/Scripts/KillPlayerScript.cs
+Assets/Scripts/ItemManagement/LineLauncher_V2.cs.meta
+Assets/Scripts/ItemManagement/LineLauncher_V2.cs
+Assets/PressurePlateScript.cs.meta
+Assets/PressurePlateScript.cs
+Assets/PressurePlateDualDoor.cs.meta
+Assets/PressurePlateDualDoor.cs
+Assets/MechTutorialPanel.cs.meta
+Assets/MechTutorialPanel.cs
