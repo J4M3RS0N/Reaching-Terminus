@@ -16,6 +16,11 @@ public class EnterMechDemo : MonoBehaviour
     [Header("Cameras")]
     public GameObject PlayerCam;
     public GameObject MechCam;
+    public GameObject EmbarkCam;
+
+    [Header("Animation")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject chair;
 
     [Header("GameObjects")]
     public GameObject enterMechUI;
@@ -114,58 +119,159 @@ public class EnterMechDemo : MonoBehaviour
 
         if (embark)
         {
-            //Start consuming fuel
-            startMechEngine.Invoke();
+            StartCoroutine(EmbarkEnumerator());
 
-            //Player 
-            mechMove.mechActive = true;
-            mechrb.isKinematic = false;
-            enterMechUI.gameObject.SetActive(false);
+            ////Start consuming fuel
+            //startMechEngine.Invoke();
 
-            //player is aprented to Mech
-            Player.transform.SetParent(Mech);
-            Player.gameObject.SetActive(false);
-            //playerRB.isKinematic = true;
+            ////Player 
+            //mechMove.mechActive = true;
+            //mechrb.isKinematic = false;
+            //enterMechUI.gameObject.SetActive(false);
 
-            //Swap mech models that are being renderd so shaodws show proeprly
-            mechModelExtObj.SetActive(false);
-            mechModelShadowObj.SetActive(true);
-            animatedLegObj.SetActive(true);
+            ////player is parented to Mech
+            ////Player.transform.SetParent(Mech);
+            ////Player.gameObject.SetActive(false);
 
-            // Camera swapping
-            PlayerCam.gameObject.SetActive(false);
-            MechCam.gameObject.SetActive(true);
+            ////Swap mech models that are being renderd so shaodws show proeprly
+            //mechModelExtObj.SetActive(false);
+            //mechModelShadowObj.SetActive(true);
+            //animatedLegObj.SetActive(true);
 
-            //Switch bool to damage the player if the mech is on fire
-            playerInMech = true;
+            //// Camera swapping
+            ////PlayerCam.gameObject.SetActive(false);
+            //MechCam.gameObject.SetActive(true);
+
+            ////Switch bool to damage the player if the mech is on fire
+            //playerInMech = true;
         }
         else
         {
-            //Stop consuming fuel
-            startMechEngine.Invoke();
+            StartCoroutine(DisembarkEnumerator());
 
-            //Mech is deactivated
-            mechMove.mechActive = false;
-            mechrb.isKinematic = true;
+            ////Stop consuming fuel
+            //startMechEngine.Invoke();
 
-            //unparent player from Mech
-            Player.transform.SetParent(null);
-            Player.gameObject.SetActive(true);
-            //playerRB.isKinematic = true;
+            ////Mech is deactivated
+            //mechMove.mechActive = false;
+            //mechrb.isKinematic = true;
 
-            //Swap mech models that are being renderd so shaodws show proeprly
-            mechModelExtObj.SetActive(true);
-            mechModelShadowObj.SetActive(false);
-            animatedLegObj.SetActive(false);
+            ////unparent player from Mech
+            //Player.transform.SetParent(null);
+            //Player.gameObject.SetActive(true);
+            ////playerRB.isKinematic = true;
 
-            //Swap cameras back so the player can see
-            PlayerCam.gameObject.SetActive(true);
-            MechCam.gameObject.SetActive(false);
+            ////Swap mech models that are being renderd so shaodws show proeprly
+            //mechModelExtObj.SetActive(true);
+            //mechModelShadowObj.SetActive(false);
+            //animatedLegObj.SetActive(false);
 
-            //stop mech collider from triggering damage when the player isn't in the mech
-            playerInMech = false;
+            ////Swap cameras back so the player can see
+            //PlayerCam.gameObject.SetActive(true);
+            //MechCam.gameObject.SetActive(false);
+
+            ////stop mech collider from triggering damage when the player isn't in the mech
+            //playerInMech = false;
         }
     }
+
+    private IEnumerator EmbarkEnumerator()
+    {
+        //player is parented to Mech
+        Player.transform.SetParent(Mech);
+        Player.gameObject.SetActive(false);
+
+        //turn off player cam and enable emabrking cam
+        PlayerCam.gameObject.SetActive(false);
+        EmbarkCam.gameObject.SetActive(true);
+
+        //start embarking camera animation
+        animator.SetBool("EmbarkCam", true);
+        yield return new WaitForSeconds(2f);
+
+        //parent the camera to the chair and play its animation
+        EmbarkCam.transform.SetParent(chair.transform);
+        animator.SetBool("RotateSeat", true);
+
+        yield return new WaitForSeconds(2f);
+
+        EmbarkCam.SetActive(false);
+
+        ActivateMech();
+
+        yield break;
+    }
+
+    private IEnumerator DisembarkEnumerator()
+    {
+        DeactivateMech();
+
+        //swivel chair back around
+        EmbarkCam.SetActive(true);
+        animator.SetBool("RotateSeat", true);
+        yield return new WaitForSeconds(2f);
+
+        //after chair animation unparent embark camera
+        EmbarkCam.transform.SetParent(Mech);
+        animator.SetBool("EmbarkCam", false);
+        yield return new WaitForSeconds(2f);
+
+        // unparent player from mech
+        Player.transform.SetParent(null);
+        Player.gameObject.SetActive(true);
+
+        EmbarkCam.gameObject.SetActive(false);
+        PlayerCam.gameObject.SetActive(true);
+
+        yield break;
+    }
+
+    private void ActivateMech()
+    {
+        //Start consuming resources
+        startMechEngine.Invoke();
+
+        // let the mech move when theres input
+        mechMove.mechActive = true;
+        mechrb.isKinematic = false;
+        enterMechUI.gameObject.SetActive(false);
+
+        //Swap mech models that are being rendered so shadows show properly
+        mechModelExtObj.SetActive(false);
+        mechModelShadowObj.SetActive(true);
+        animatedLegObj.SetActive(true);
+
+        // Activate mech camera
+        MechCam.gameObject.SetActive(true);
+
+        //Switch bool to damage the player if the mech is on fire
+        playerInMech = true;
+    }
+
+    private void DeactivateMech()
+    {
+        //Stop consuming fuel
+        startMechEngine.Invoke();
+
+        //Mech is deactivated
+        mechMove.mechActive = false;
+        mechrb.isKinematic = true;
+
+        //Swap mech models that are being renderd so shaodws show proeprly
+        mechModelExtObj.SetActive(true);
+        mechModelShadowObj.SetActive(false);
+        animatedLegObj.SetActive(false);
+
+        //Swap cameras back so the player can see
+        MechCam.gameObject.SetActive(false);
+
+        //stop mech collider from triggering damage when the player isn't in the mech
+        playerInMech = false;
+    }
+
+
+
+
 
 
 
