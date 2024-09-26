@@ -20,7 +20,7 @@ public class EnterMechDemo : MonoBehaviour
 
     [Header("Animation")]
     [SerializeField] private Animator animator;
-    [SerializeField] private GameObject chair;
+    [SerializeField] private Transform chair;
 
     [Header("GameObjects")]
     public GameObject enterMechUI;
@@ -182,18 +182,12 @@ public class EnterMechDemo : MonoBehaviour
         Player.gameObject.SetActive(false);
 
         //turn off player cam and enable emabrking cam
-        PlayerCam.gameObject.SetActive(false);
         EmbarkCam.gameObject.SetActive(true);
+        PlayerCam.gameObject.SetActive(false);
 
         //start embarking camera animation
         animator.SetBool("EmbarkCam", true);
-        yield return new WaitForSeconds(2f);
-
-        //parent the camera to the chair and play its animation
-        EmbarkCam.transform.SetParent(chair.transform);
-        animator.SetBool("RotateSeat", true);
-
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         EmbarkCam.SetActive(false);
 
@@ -208,13 +202,8 @@ public class EnterMechDemo : MonoBehaviour
 
         //swivel chair back around
         EmbarkCam.SetActive(true);
-        animator.SetBool("RotateSeat", true);
-        yield return new WaitForSeconds(2f);
-
-        //after chair animation unparent embark camera
-        EmbarkCam.transform.SetParent(Mech);
         animator.SetBool("EmbarkCam", false);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
 
         // unparent player from mech
         Player.transform.SetParent(null);
