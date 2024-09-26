@@ -27535,6 +27535,7 @@ MonoBehaviour:
   EmbarkCam: {fileID: 1467546786}
   animator: {fileID: 1213248700}
   chair: {fileID: 36980948574967487}
+  playerCamHolder: {fileID: 1705772787}
   enterMechUI: {fileID: 1329290960}
   mechModelExtObj: {fileID: 3212607298398226488}
   mechModelShadowObj: {fileID: 1737195408}
@@ -31024,6 +31025,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1031974954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1031974955}
+  m_Layer: 0
+  m_Name: PilotHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1031974955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031974954}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000035762775}
+  m_LocalPosition: {x: 0.05428, y: 0.0415, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 36980948574967487}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1034281602
 GameObject:
   m_ObjectHideFlags: 0
@@ -32881,7 +32913,7 @@ PrefabInstance:
       objectReference: {fileID: 1543325487}
     - target: {fileID: 1640538039787852699, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
       propertyPath: m_VersionIndex
-      value: 3701
+      value: 3707
       objectReference: {fileID: 0}
     - target: {fileID: 1680223229427704864, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
       propertyPath: m_Mesh
@@ -32901,7 +32933,7 @@ PrefabInstance:
       objectReference: {fileID: 1370773383}
     - target: {fileID: 8906788662676679427, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
       propertyPath: m_VersionIndex
-      value: 3016
+      value: 3022
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
@@ -43290,7 +43322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1467546787
 Transform:
   m_ObjectHideFlags: 0
@@ -60051,7 +60083,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.05113519, z: 0.297801}
   m_LocalScale: {x: 22, y: 22, z: 22}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1031974955}
   m_Father: {fileID: 1213248699}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 810, z: 0}
@@ -65858,15 +65891,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2612863713145950020}
-  m_LocalRotation: {x: 0.0920119, y: -0, z: -6.097259e-17, w: 0.9957579}
+  m_LocalRotation: {x: 0.067987554, y: -0, z: -6.109066e-17, w: 0.99768615}
   m_LocalPosition: {x: -0, y: 0.0374, z: -0.0071}
-  m_LocalScale: {x: 1.7260356, y: 0.98761374, z: 1.5031325}
+  m_LocalScale: {x: 1.6802611, y: 1.052565, z: 1.4632694}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 66062333}
   m_Father: {fileID: 543450652699916874}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 10.559, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.797, y: 0, z: 0}
 --- !u!4 &6473669454683472738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6473669454582942777, guid: 6b5404abb5fa91b408b30ddbd640715f, type: 3}
@@ -65892,7 +65925,7 @@ GameObject:
   - component: {fileID: 6993794175429040219}
   - component: {fileID: 3141182667811894856}
   - component: {fileID: 6993794175429040220}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: TopBackPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
