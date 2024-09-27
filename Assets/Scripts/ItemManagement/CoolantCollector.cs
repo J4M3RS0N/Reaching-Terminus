@@ -19,6 +19,7 @@ public class CoolantCollector : MonoBehaviour
     [SerializeField] public GameObject fireParticle;
     [SerializeField] private Transform fireSpawner;
     [SerializeField] private GameObject interiorFireObj;
+    [SerializeField] private GameObject exteriorFireObj;
     public bool thereIsFire;
 
     [Header("Audio")]
@@ -85,11 +86,13 @@ public class CoolantCollector : MonoBehaviour
                 GameObject coolantFire = Instantiate(fireParticle, fireSpawner.position, fireSpawner.rotation, fireSpawner);
 
                 interiorFireObj.SetActive(true);
+                exteriorFireObj.SetActive(true);
                 thereIsFire = true;
 
                 if(coolantFire = null)
                 {
                     interiorFireObj.SetActive(false);
+                    exteriorFireObj.SetActive(false);
                     thereIsFire = false;
                 }
             }
@@ -101,6 +104,7 @@ public class CoolantCollector : MonoBehaviour
             intemptyUI.SetActive(false);
 
             interiorFireObj.SetActive(false);
+            exteriorFireObj.SetActive(false);
             thereIsFire = false;
 
             emptyCoolantAudio.enabled = false;
