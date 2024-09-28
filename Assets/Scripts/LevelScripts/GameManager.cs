@@ -50,8 +50,6 @@ public class GameManager : MonoBehaviour
 
         llPanel = GetComponent<TutorialPanelScript>();
 
-        blackScreen.SetActive(false);
-
         //check if the player has a highscore and set the highscore test to that
         UpdateBestTimeText();
 

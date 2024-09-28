@@ -21,10 +21,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public IEnumerator QuitGame()
+    public void QuitGame()
     {
         animator.SetTrigger("FadeToBlack");
-        yield return new WaitForSeconds(1);
 
         Debug.Log("Quit");
         Application.Quit();
