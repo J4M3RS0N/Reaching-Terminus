@@ -42,7 +42,7 @@ public class EndGameScript : MonoBehaviour
                 GameManager.current.losePanel.SetActive(false);
                 GameManager.current.timersPanel.SetActive(false);
 
-                SceneManager.LoadScene(1);
+                RestartGame();
             }
             if (Input.GetKey(KeyCode.Q))
             {
@@ -53,7 +53,7 @@ public class EndGameScript : MonoBehaviour
                 GameManager.current.losePanel.SetActive(false);
                 GameManager.current.timersPanel.SetActive(false);
 
-                SceneManager.LoadScene("Main Menu");
+                QuitGame();
             }
         }
     }

@@ -23,6 +23,10 @@ public class EnterMechDemo : MonoBehaviour
     [SerializeField] private Transform chair;
     public GameObject playerCamHolder;
 
+    [Header("Aduio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip disembarkClip;
+
     [Header("GameObjects")]
     public GameObject enterMechUI;
     [SerializeField] private GameObject mechModelExtObj;
@@ -244,6 +248,9 @@ public class EnterMechDemo : MonoBehaviour
     {
         //Stop consuming fuel
         startMechEngine.Invoke();
+
+        //play exiting sound
+        audioSource.PlayOneShot(disembarkClip);
 
         //Mech is deactivated
         mechMove.mechActive = false;

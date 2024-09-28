@@ -9,6 +9,9 @@ public class LadderClimbing : MonoBehaviour
     public Rigidbody rb;
     public LayerMask ladder;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource climbingAudio;
+
     [Header("Climbing")]
     public float climbSpeed;
     public float maxClimbTime;
@@ -55,6 +58,7 @@ public class LadderClimbing : MonoBehaviour
     private void StartClimbing()
     {
         climbing = true;
+        climbingAudio.enabled = true;
     }
 
     private void ClimbingMovement()
@@ -65,5 +69,6 @@ public class LadderClimbing : MonoBehaviour
     private void StopClimbing()
     {
         climbing = false;
+        climbingAudio.enabled = false;
     }
 }
