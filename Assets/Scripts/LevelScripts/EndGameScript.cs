@@ -42,15 +42,17 @@ public class EndGameScript : MonoBehaviour
             if (Input.GetKey(KeyCode.R))
             {
                 //Hide Panels and load scene
-                GameManager.current.losePanel.SetActive(false);
-                GameManager.current.timersPanel.SetActive(false);
-
-                RestartGame();
+                StartCoroutine(RestartGame());
             }
             if (Input.GetKey(KeyCode.Q))
             {
                 StartCoroutine(CloseGame());
             }
+        }
+        else
+        {
+
+            GameManager.current.blackScreen.SetActive(false);
         }
     }
 
@@ -70,11 +72,17 @@ public class EndGameScript : MonoBehaviour
         Debug.Log("he won");
     }
 
-    public void RestartGame()
+    public IEnumerator RestartGame()
     {
+        animator.SetTrigger("FadeToBlack");
+        yield return new WaitForSeconds(1);
+
+        GameManager.current.blackScreen.SetActive(true);
+
+        GameManager.current.losePanel.SetActive(false);
+        GameManager.current.timersPanel.SetActive(false);
+
         SceneManager.LoadScene(1);
-        GameManager.current.elapsedTime = 0;
-        Debug.Log("Player Restarted Run");
     }
 
     public void QuitGame()

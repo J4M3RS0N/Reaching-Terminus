@@ -10,9 +10,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager current;
 
+    [Header("UI")]
     [SerializeField] GameObject optionsPanel;
     public GameObject losePanel;
+    public GameObject blackScreen;
     public TutorialPanelScript llPanel;
+
+    [Header("Bools (+")]
     public bool gamePaused;
     public bool linelaunchOpen;
 
@@ -45,7 +49,9 @@ public class GameManager : MonoBehaviour
         }
 
         llPanel = GetComponent<TutorialPanelScript>();
-     
+
+        blackScreen.SetActive(false);
+
         //check if the player has a highscore and set the highscore test to that
         UpdateBestTimeText();
 
