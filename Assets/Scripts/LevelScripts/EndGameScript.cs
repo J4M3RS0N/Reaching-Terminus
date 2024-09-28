@@ -83,6 +83,7 @@ public class EndGameScript : MonoBehaviour
         GameManager.current.timersPanel.SetActive(false);
 
         SceneManager.LoadScene(1);
+        GameManager.current.elapsedTime = 0f;
     }
 
     public void QuitGame()
