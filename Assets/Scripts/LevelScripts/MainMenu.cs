@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] Animator animator;
+
     public void Start()
     {
         
@@ -19,8 +21,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void QuitGame()
+    public IEnumerator QuitGame()
     {
+        animator.SetTrigger("FadeToBlack");
+        yield return new WaitForSeconds(1);
+
         Debug.Log("Quit");
         Application.Quit();
     }
