@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EndGameScript : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class EndGameScript : MonoBehaviour
 
     //[SerializeField] GameObject LosePanel;
     //[SerializeField] GameObject mechLosePanel;
+    [Header("Color Fading")]
+    public Animator animator;
 
     public bool deathAnim;
     public bool gameOver;
@@ -46,14 +49,7 @@ public class EndGameScript : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.Q))
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-
-                //Hide Panels and load scene
-                GameManager.current.losePanel.SetActive(false);
-                GameManager.current.timersPanel.SetActive(false);
-
-                QuitGame();
+                StartCoroutine(CloseGame());
             }
         }
     }
@@ -67,12 +63,6 @@ public class EndGameScript : MonoBehaviour
         StartCoroutine(DeathAnimation());
 
     }
-
-    //public void Pausegame()
-    //{
-    //    // SceneManager.LoadScene("Win Scene");
-    //    Debug.Log("Pause Game");
-    //}
 
     public void WinGame()
     {
@@ -91,6 +81,22 @@ public class EndGameScript : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    private IEnumerator CloseGame()
+    {
+        //fade game to black before quitting
+        animator.SetTrigger("FadeToBlack");
+        yield return new WaitForSeconds(1);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        //Hide Panels and load scene
+        GameManager.current.losePanel.SetActive(false);
+        GameManager.current.timersPanel.SetActive(false);
+
+        QuitGame();
     }
 
     private IEnumerator DeathAnimation()

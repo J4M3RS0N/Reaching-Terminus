@@ -59,6 +59,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
     public MovementState state;
 
     public bool playerCannotMove = false;
+    public bool enableLandingAudio;
 
     //public UnityEvent playerPauseGame;
 
@@ -99,9 +100,16 @@ public class SAVED_PlayerMovement : MonoBehaviour
 
         //handle drag
         if (grounded)
+        {
             rb.drag = groundDrag;
+        }
         else
+        {
             rb.drag = 0;
+
+            StartCoroutine(CheckFallingTime());
+        }
+       
 
 
         if (!playerCannotMove && endGame.deathAnim == true)
@@ -307,6 +315,16 @@ public class SAVED_PlayerMovement : MonoBehaviour
     private Vector3 GetSlopeMoveDirection()
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
+    }
+
+    private IEnumerator CheckFallingTime()
+    {
+        yield return new WaitForSeconds(2.5f);
+
+        if (!grounded)
+        {
+            enableLandingAudio = true;
+        }
     }
 
     //stop jumping when in acid

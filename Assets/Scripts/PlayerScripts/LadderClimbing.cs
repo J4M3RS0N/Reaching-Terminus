@@ -9,6 +9,8 @@ public class LadderClimbing : MonoBehaviour
     public Rigidbody rb;
     public LayerMask ladder;
 
+    [SerializeField] private EndGameScript endGame;
+
     [Header("Audio")]
     [SerializeField] private AudioSource climbingAudio;
     [SerializeField] private AudioSource fallingAudio;
@@ -28,6 +30,7 @@ public class LadderClimbing : MonoBehaviour
 
     private RaycastHit frontWallHit;
     private bool wallInFront;
+    public bool enableLandingAudio;
 
     private void Statemachine()
     {
@@ -52,6 +55,11 @@ public class LadderClimbing : MonoBehaviour
         if(!climbing && SAVED_PlayerMovement.pmInstance.grounded == false)
         {
             fallingAudio.enabled = true;
+
+            if (endGame.gameOver)
+            {
+                fallingAudio.enabled = false;
+            }
         }
         else
         {

@@ -15,9 +15,18 @@ public class GroundCheckAudio : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("ground"))
+        if(SAVED_PlayerMovement.pmInstance.enableLandingAudio == true)
         {
-            audioSource.PlayOneShot(landedSFX);
+            if (other.gameObject.layer == LayerMask.NameToLayer("ground"))
+            {
+                audioSource.PlayOneShot(landedSFX);
+
+                SAVED_PlayerMovement.pmInstance.enableLandingAudio = false;
+            }
+        }
+        else
+        {
+            return;
         }
     }
 }

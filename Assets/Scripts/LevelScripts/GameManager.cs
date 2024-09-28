@@ -84,6 +84,8 @@ public class GameManager : MonoBehaviour
     {
         gamePaused = !gamePaused;
 
+        if (SAVED_PlayerMovement.pmInstance.playerCannotMove == true) return;
+
         if (gamePaused)
         {
             Time.timeScale = 0;
