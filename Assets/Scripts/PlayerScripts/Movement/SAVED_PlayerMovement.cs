@@ -314,6 +314,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
     {
         if (col.gameObject.tag == "Acid")
         {
+            //play enter acid sound
             readyToJump = false;
         }
     }
@@ -323,6 +324,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
     {
         if (col.gameObject.tag == "Acid")
         {
+            //play exit acid sound
             readyToJump = true;
         }
     }

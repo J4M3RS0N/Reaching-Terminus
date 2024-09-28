@@ -11,6 +11,7 @@ public class LadderClimbing : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource climbingAudio;
+    [SerializeField] private AudioSource fallingAudio;
 
     [Header("Climbing")]
     public float climbSpeed;
@@ -47,6 +48,15 @@ public class LadderClimbing : MonoBehaviour
         Statemachine();
 
         if (climbing) ClimbingMovement();
+
+        if(!climbing && SAVED_PlayerMovement.pmInstance.grounded == false)
+        {
+            fallingAudio.enabled = true;
+        }
+        else
+        {
+            fallingAudio.enabled = false;
+        }
     }
 
     private void WallCheck()
