@@ -20,6 +20,8 @@ public class FireScript : MonoBehaviour
 
     [Header("Audio")]
     private AudioSource fireAudio;
+    [SerializeField] private AudioSource steamAudio;
+    [SerializeField] private AudioClip steamClip;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,7 @@ public class FireScript : MonoBehaviour
     private void Update()
     {
         //TakeDamage();
+       
     }
 
   
@@ -80,7 +83,7 @@ public class FireScript : MonoBehaviour
         currenthealth -= amount;
         Debug.Log(currenthealth);
 
-
+        steamAudio.PlayOneShot(steamClip);
 
         if (currenthealth <= 0)
         {

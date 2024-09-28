@@ -7,7 +7,7 @@ public class DamageGun : MonoBehaviour
     public int Damage;
     public float BulletRange;
     [SerializeField] private float amountExtinguishedPS = .1f;
-  
+
     private Transform PlayerCamera;
 
     // Start is called before the first frame update
