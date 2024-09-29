@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3172398337775673692}
   - component: {fileID: 4298880965951062610}
   - component: {fileID: 6005049831747764342}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Acid_Rock_A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 4996190050060544975}
   - component: {fileID: 657478871059776539}
   - component: {fileID: 5311932952969470282}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Acid_Rock_B (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1637,7 +1637,7 @@ GameObject:
   - component: {fileID: 7040430605619058413}
   - component: {fileID: 8787245183971882853}
   - component: {fileID: 7207271396952992885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Acid_Rock_A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2224,7 +2224,7 @@ GameObject:
   - component: {fileID: 4976533279005056367}
   - component: {fileID: 2289940599341520144}
   - component: {fileID: 7547618714617419174}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Acid_Rock_B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2812,7 +2812,7 @@ GameObject:
   - component: {fileID: 2418517299964646914}
   - component: {fileID: 5003901439612884039}
   - component: {fileID: 6082088339288051734}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Acid_Rock_C (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2827,7 +2827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5189380452251323344}
   m_LocalRotation: {x: -0, y: -0.22321641, z: -0, w: 0.974769}
-  m_LocalPosition: {x: 35.55, y: 2.21, z: -34.89}
+  m_LocalPosition: {x: 34.61, y: 2.21, z: -35.23}
   m_LocalScale: {x: 309.8754, y: 109.13481, z: 459.5127}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3445,7 +3445,7 @@ GameObject:
   - component: {fileID: 392025777713869661}
   - component: {fileID: 4744475461797639144}
   - component: {fileID: 1258803133356201774}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Acid_Rock_C (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3460,7 +3460,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6118382346825205427}
   m_LocalRotation: {x: -0, y: -0.9749806, z: -0, w: 0.22228996}
-  m_LocalPosition: {x: 32.82, y: 1.77, z: -36.25}
+  m_LocalPosition: {x: 31.88, y: 1.77, z: -36.59}
   m_LocalScale: {x: 125.68931, y: 51.728207, z: 100.51591}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4524,7 +4524,7 @@ GameObject:
   - component: {fileID: 8592919892254943987}
   - component: {fileID: 8180737166422037376}
   - component: {fileID: 8333116126521108866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Acid_Rock_C (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
