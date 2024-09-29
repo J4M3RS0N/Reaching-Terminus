@@ -81,12 +81,17 @@ public class V3_LineLauncher : MonoBehaviour
 
             if (MechMovement.instance.mechActive == true)
             {
-                player.transform.position = Vector3.MoveTowards(player.transform.position, grapplePoint, zipSpeed * Time.deltaTime);
+                player.transform.position = Vector3.MoveTowards(player.transform.position, grapplePoint, zipSpeed * maxZipTime * Time.deltaTime);
                 rb.isKinematic = true;
                 rb.useGravity = false;
 
                 //play zipping sound
                 lineAudio.enabled = true;
+
+                if(player.transform.position == grapplePoint)
+                {
+                    UnHook();
+                }
             }
 
             if (MechMovement.instance.mechActive == false)
@@ -155,29 +160,34 @@ public class V3_LineLauncher : MonoBehaviour
             //Stop Zipping and reset zip cooldown
             else
             {
-                rb.isKinematic = false;
-                rb.useGravity = true;
-
-                line.enabled = false;
-
-                lineConnected = false;
-                isZipping = false;
-
-                //player disconnect sound
-                launcherAudio.PlayOneShot(unhookSound);
-
-                //animate grapple arm going away
-                mechAnimator.SetBool("LineConnected", false);
-
-                //enable the hook attatched to the mech model
-                homeHook.SetActive(true);
-
-                firedHook.SetActive(false);
-
-                StartCoroutine(ResetZipping());
-                Debug.Log("looked away from zipPoint");
+                UnHook();
             }
         }
+    }
+
+    private void UnHook()
+    {
+        rb.isKinematic = false;
+        rb.useGravity = true;
+
+        line.enabled = false;
+
+        lineConnected = false;
+        isZipping = false;
+
+        //player disconnect sound
+        launcherAudio.PlayOneShot(unhookSound);
+
+        //animate grapple arm going away
+        mechAnimator.SetBool("LineConnected", false);
+
+        //enable the hook attatched to the mech model
+        homeHook.SetActive(true);
+
+        firedHook.SetActive(false);
+
+        StartCoroutine(ResetZipping());
+        Debug.Log("Unhooked or looked away from zipPoint");
     }
 
     private IEnumerator ZipBoost()

@@ -34500,9 +34500,9 @@ GameObject:
   - component: {fileID: 820075076}
   - component: {fileID: 820075077}
   - component: {fileID: 820075079}
-  - component: {fileID: 820075078}
   - component: {fileID: 820075081}
   - component: {fileID: 820075082}
+  - component: {fileID: 820075078}
   m_Layer: 0
   m_Name: MechDemo
   m_TagString: Mech
@@ -34809,7 +34809,7 @@ MonoBehaviour:
   firingRange: 25
   zipSpeed: 16
   zipThrust: 200
-  maxZipTime: 5
+  maxZipTime: 0.9
   launcherAudio: {fileID: 1234326640}
   lineAudio: {fileID: 2081800400}
   fireLineSound: {fileID: 8300000, guid: 0e94cf9ea5a1dda4ba5cfef2f4ae1ccf, type: 3}
