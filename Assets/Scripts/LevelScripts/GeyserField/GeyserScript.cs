@@ -6,7 +6,7 @@ public class GeyserScript : MonoBehaviour
 {
     //Random Seed
     private float fireOffFloat;
-    public float firingTime = 2.0f;
+    private float firingTime;
     public GameObject geyserDamageObj;
     public GameObject geyserWarningObj;
 
@@ -14,6 +14,8 @@ public class GeyserScript : MonoBehaviour
     private AudioSource geyserAudio;
     [SerializeField] private AudioSource plumeAudio;
     [SerializeField] private AudioClip endingSound;
+
+    public bool geyserIsFiring;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class GeyserScript : MonoBehaviour
         geyserWarningObj.SetActive(false);
 
         plumeAudio.enabled = false;
+        geyserIsFiring = false;
 
         StartCoroutine(SetOffGeyser());
     }
@@ -39,13 +42,15 @@ public class GeyserScript : MonoBehaviour
 
     private IEnumerator SetOffGeyser()
     {
-        fireOffFloat = Random.Range(1.0f, 5.0f);
+        //fireOffFloat = Random.Range(1.0f, 2.0f);
+        geyserIsFiring = true;
 
         geyserWarningObj.SetActive(true);
 
-        yield return new WaitForSeconds(fireOffFloat);
+        yield return new WaitForSeconds(1);
 
-        //geyserDamageObj.SetActive(true);
+        firingTime = 10f;
+
         geyserDamageObj.transform.Rotate(0.0f, 0.0f, 0.0f);
 
         plumeAudio.enabled = true;
@@ -59,7 +64,8 @@ public class GeyserScript : MonoBehaviour
         //geyserAudio.PlayOneShot(endingSound);
         plumeAudio.enabled = false;
 
-        StartCoroutine(SetOffGeyser());
+        geyserIsFiring = false;
+        //StartCoroutine(SetOffGeyser());
 
     }
 }
