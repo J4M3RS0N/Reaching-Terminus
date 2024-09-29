@@ -13,12 +13,14 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] GameObject optionsPanel;
     public GameObject losePanel;
+    public GameObject winPanel;
     public GameObject blackScreen;
     public TutorialPanelScript llPanel;
 
     [Header("Bools (+")]
     public bool gamePaused;
     public bool linelaunchOpen;
+    public bool freezeGame;
 
     [Header("Timer")]
     [SerializeField] TextMeshProUGUI timerText;
@@ -110,6 +112,20 @@ public class GameManager : MonoBehaviour
             optionsPanel.SetActive(false);
             //OptionsScript.currentOP.gameObject.SetActive(false);
 
+            Time.timeScale = 1;
+        }
+    }
+
+    public void FreezeGame()
+    {
+        freezeGame = !freezeGame;
+
+        if (freezeGame)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
             Time.timeScale = 1;
         }
     }

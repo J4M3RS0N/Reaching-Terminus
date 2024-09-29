@@ -51,7 +51,6 @@ public class EndGameScript : MonoBehaviour
         }
         else
         {
-
             GameManager.current.blackScreen.SetActive(false);
         }
     }

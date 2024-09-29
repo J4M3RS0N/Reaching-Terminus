@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
 
     public void ReplayGame()
     {
+        GameManager.current.timersPanel.SetActive(false);
         SceneManager.LoadScene(1);
     }
 
