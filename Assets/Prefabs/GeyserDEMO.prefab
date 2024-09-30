@@ -4966,6 +4966,7 @@ MonoBehaviour:
   geyserWarningObj: {fileID: 1539869688962882020}
   plumeAudio: {fileID: 6017704965308515440}
   endingSound: {fileID: 8300000, guid: 747a59c4a89ec5c42a21d7820f787507, type: 3}
+  geyserIsFiring: 0
 --- !u!82 &7862692484500444503
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5104,7 +5105,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7774277832521599610, guid: 631658b2cab8081438042eb38857fbf3, type: 2}
-  m_audioClip: {fileID: 8300000, guid: a24b97018863e9c4c939f9cd7a991ab3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 993647e4460b4c648a94377c4298f091, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.8
   m_Pitch: 1

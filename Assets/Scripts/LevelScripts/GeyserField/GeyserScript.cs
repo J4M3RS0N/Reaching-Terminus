@@ -6,7 +6,7 @@ public class GeyserScript : MonoBehaviour
 {
     //Random Seed
     private float fireOffFloat;
-    private float firingTime;
+    public float firingTime = 10f;
     public GameObject geyserDamageObj;
     public GameObject geyserWarningObj;
 
@@ -23,7 +23,7 @@ public class GeyserScript : MonoBehaviour
         geyserAudio = GetComponent<AudioSource>();
 
         //geyserDamageObj.SetActive(false);
-        geyserDamageObj.transform.Rotate(180.0f, 0.0f, 0.0f);
+        //geyserDamageObj.transform.Rotate(180.0f, 0.0f, 0.0f);
         geyserWarningObj.SetActive(false);
 
         plumeAudio.enabled = false;
@@ -42,30 +42,32 @@ public class GeyserScript : MonoBehaviour
 
     private IEnumerator SetOffGeyser()
     {
-        //fireOffFloat = Random.Range(1.0f, 2.0f);
+        geyserDamageObj.transform.Rotate(180.0f, 0.0f, 0.0f);
+
+        fireOffFloat = Random.Range(1.0f, 5.0f);
+
         geyserIsFiring = true;
 
         geyserWarningObj.SetActive(true);
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(fireOffFloat);
 
-        firingTime = 10f;
-
-        geyserDamageObj.transform.Rotate(0.0f, 0.0f, 0.0f);
+        geyserDamageObj.transform.Rotate(180.0f, 0.0f, 0.0f);
 
         plumeAudio.enabled = true;
 
         yield return new WaitForSeconds(firingTime);
 
         //geyserDamageObj.SetActive(false);
-        geyserDamageObj.transform.Rotate(180.0f, 0.0f, 0.0f);
+        geyserDamageObj.transform.Rotate(0.0f, 0.0f, 0.0f);
         geyserWarningObj.SetActive(false);
 
         //geyserAudio.PlayOneShot(endingSound);
         plumeAudio.enabled = false;
 
         geyserIsFiring = false;
-        //StartCoroutine(SetOffGeyser());
+        
+        StartCoroutine(SetOffGeyser());
 
     }
 }
