@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
 
     private float fireDamage = 0.002f;
     private float geyserDamage = 0.007f;
-    private float acidDamage = 0.003f;
+    private float acidDamage = 0.004f;
 
     //bool to call if player health is empty
     public bool playerHasDied = false;
