@@ -16,7 +16,7 @@ public class LightToggle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             spotlight.enabled = !spotlight.enabled;
         }
