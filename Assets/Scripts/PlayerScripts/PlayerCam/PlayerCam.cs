@@ -7,6 +7,7 @@ public class PlayerCam : MonoBehaviour
 {
     [SerializeField] private EndGameScript endGame;
     [SerializeField] private Slider slider;
+    [SerializeField] public EnterMechDemo enterMechDemo;
 
     //public float sensX;
     //public float sensY;
@@ -43,14 +44,17 @@ public class PlayerCam : MonoBehaviour
         //get mouse input
         //float mouseX = Input.GetAxis("Mouse X") * sensX * Time.deltaTime;
         //float mouseY = Input.GetAxis("Mouse Y") * sensY * Time.deltaTime;
+        if (enterMechDemo.playerInMech == true) return;
+        {
 
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        yRotation += mouseX;
+            yRotation += mouseX;
 
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        }
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);

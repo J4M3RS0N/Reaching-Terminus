@@ -185,6 +185,7 @@ public class EnterMechDemo : MonoBehaviour
         //player is parented to Mech
         Player.transform.SetParent(Mech);
         Player.gameObject.SetActive(false);
+        playerCamHolder.transform.SetParent(Mech);
 
         //turn off player cam and enable emabrking cam
         EmbarkCam.gameObject.SetActive(true);
@@ -217,7 +218,7 @@ public class EnterMechDemo : MonoBehaviour
 
         EmbarkCam.gameObject.SetActive(false);
         PlayerCam.gameObject.SetActive(true);
-        //playerCamHolder.transform.Rotate(0, 180, 0);
+        playerCamHolder.transform.SetParent(null);
 
         yield break;
     }
@@ -263,6 +264,7 @@ public class EnterMechDemo : MonoBehaviour
 
         //Swap cameras back so the player can see
         MechCam.gameObject.SetActive(false);
+        playerCamHolder.transform.Rotate(0, 180, 0);
 
         //stop mech collider from triggering damage when the player isn't in the mech
         playerInMech = false;

@@ -46,7 +46,7 @@ public class New_InteractScript : MonoBehaviour
         {
             if (objectGrabbable == null) //Not carrying Object, try to grab
             {
-                float pickUpDistance = 1f;
+                float pickUpDistance = 1.5f;
                 if (Physics.Raycast(playerCamTransform.position, playerCamTransform.forward, out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
                     if (raycastHit.transform.TryGetComponent(out objectGrabbable))
                     {

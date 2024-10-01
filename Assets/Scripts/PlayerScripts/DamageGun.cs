@@ -7,6 +7,7 @@ public class DamageGun : MonoBehaviour
     public int Damage;
     public float BulletRange;
     [SerializeField] private float amountExtinguishedPS = .1f;
+    public LayerMask fireLayer;
 
     private Transform PlayerCamera;
 
@@ -19,7 +20,7 @@ public class DamageGun : MonoBehaviour
     public void Shoot()
     {
         Ray gunRay = new Ray(PlayerCamera.position, PlayerCamera.forward);
-        if(Physics.Raycast(gunRay, out RaycastHit hitInfo, BulletRange))
+        if(Physics.Raycast(gunRay, out RaycastHit hitInfo, BulletRange, fireLayer))
         {
             if (hitInfo.collider.gameObject.CompareTag("Fire") && hitInfo.collider.TryGetComponent(out FireScript fire))
             {

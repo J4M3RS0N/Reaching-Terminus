@@ -79,7 +79,7 @@ public class CoolantCollector : MonoBehaviour
             emptyCoolantAudio.enabled = true;
 
             //fireSpawner.SetActive(true);
-            if (thereIsFire == false)
+            if (thereIsFire == false && coolantRunning == true)
             {
                 //Instantiate(fireParticle, fireSpawner.position, fireSpawner.rotation, fireSpawner);
 
