@@ -4826,7 +4826,7 @@ GameObject:
   - component: {fileID: 7985740659578597124}
   - component: {fileID: 8833239621729032311}
   - component: {fileID: 7063545491044091874}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Fire_New
   m_TagString: Fire
   m_Icon: {fileID: 0}
@@ -9662,8 +9662,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1067405, y: 2.0979486, z: 5.8555756}
-  m_Center: {x: -0.0072243214, y: -0.0095665455, z: 1.4818971}
+  m_Size: {x: 2.1067405, y: 2.0979486, z: 6.7684793}
+  m_Center: {x: -0.0072243214, y: -0.0095665455, z: 1.0254452}
 --- !u!82 &7063545491044091874
 AudioSource:
   m_ObjectHideFlags: 0
