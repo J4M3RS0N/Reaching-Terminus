@@ -41979,7 +41979,7 @@ PrefabInstance:
       objectReference: {fileID: 1543325487}
     - target: {fileID: 1640538039787852699, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
       propertyPath: m_VersionIndex
-      value: 3764
+      value: 3770
       objectReference: {fileID: 0}
     - target: {fileID: 1680223229427704864, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
       propertyPath: m_Mesh
@@ -42019,7 +42019,7 @@ PrefabInstance:
       objectReference: {fileID: 1370773383}
     - target: {fileID: 8906788662676679427, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
       propertyPath: m_VersionIndex
-      value: 3079
+      value: 3085
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06cfc3b887d11c24da6f0b99aeb18571, type: 3}
@@ -51894,7 +51894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7362059777558105349, guid: 135d8cd52cf4a6a45831456b72de1406, type: 3}
       propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7715422648750828039, guid: 135d8cd52cf4a6a45831456b72de1406, type: 3}
       propertyPath: m_LocalScale.x
@@ -51926,7 +51926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8781149581293150179, guid: 135d8cd52cf4a6a45831456b72de1406, type: 3}
       propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 135d8cd52cf4a6a45831456b72de1406, type: 3}
