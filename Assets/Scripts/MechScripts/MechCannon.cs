@@ -61,6 +61,8 @@ public class MechCannon : MonoBehaviour
 
             BreakCraneHold craneCollider = hit.transform.GetComponent<BreakCraneHold>();
 
+            StagDropScript stag = hit.transform.GetComponent<StagDropScript>();
+
 
             if(wall != null)
             {
@@ -70,6 +72,11 @@ public class MechCannon : MonoBehaviour
             if(craneCollider != null)
             {
                 craneCollider.CraneTakeDamage(cannonDamage);
+            }
+
+            if(stag != null)
+            {
+                stag.DetatchStag();
             }
 
             GameObject impactGO = Instantiate(impactFlash, hit.point, Quaternion.LookRotation(hit.normal));
