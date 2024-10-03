@@ -16,7 +16,7 @@ public class FireExtinguisher : MonoBehaviour
     //public float ammo = 1f;
     //private float maxAmmo = 1f;
 
-    public int maxAmmo = 200;
+    public int maxAmmo = 300;
     public int currentAmmo;
     public HealthBar healthbar;
 
@@ -68,6 +68,8 @@ public class FireExtinguisher : MonoBehaviour
                 currentAmmo -= 5;
                 healthbar.SetHealth(currentAmmo);
 
+                //shake the player camera
+                //playerCamShake.ShakeTheCamera();
 
                 extinguishPS.SetActive(true);
 
