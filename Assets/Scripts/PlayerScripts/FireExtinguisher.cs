@@ -11,6 +11,7 @@ public class FireExtinguisher : MonoBehaviour
 
     [SerializeField] private GameObject extinguishPS;
     [SerializeField] private GameObject reloadText;
+    [SerializeField] private Animator animator;
 
     // ammo floats
     //public float ammo = 1f;
@@ -60,6 +61,7 @@ public class FireExtinguisher : MonoBehaviour
             {
                 nextTimeToShoot = Time.time + 1f / fireRate;
                 OnExtinguisherShoot?.Invoke();
+                
 
                 //set firing bool to true
                 firing = true;
@@ -69,7 +71,7 @@ public class FireExtinguisher : MonoBehaviour
                 healthbar.SetHealth(currentAmmo);
 
                 //shake the player camera
-                //playerCamShake.ShakeTheCamera();
+                animator.SetBool("FiringBool", true);
 
                 extinguishPS.SetActive(true);
 
@@ -84,6 +86,8 @@ public class FireExtinguisher : MonoBehaviour
         {
             extinguishPS.SetActive(false);
 
+            animator.SetBool("FiringBool", false);
+
             firing = false;
 
             extinguisherAudio.enabled = false;
@@ -94,6 +98,7 @@ public class FireExtinguisher : MonoBehaviour
         {
             extinguishPS.SetActive(true);
             extinguisherAudio.enabled = true;
+            animator.SetBool("FiringBool", true);
         }
 
         // regenerate Ammo
@@ -128,6 +133,9 @@ public class FireExtinguisher : MonoBehaviour
             extinguishPS.SetActive(false);
 
             extinguisherAudio.enabled = false;
+
+            animator.SetBool("FiringBool", false);
+
 
             healthbar.SetHealth(currentAmmo);
         }
