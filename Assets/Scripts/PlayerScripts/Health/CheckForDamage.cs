@@ -10,6 +10,7 @@ public class CheckForDamage : MonoBehaviour
     public bool playerInFire;
     public bool playerInAcid;
     public bool playerInGeyser;
+    public bool playerInTar;
 
     public void Start()
     {
@@ -33,6 +34,11 @@ public class CheckForDamage : MonoBehaviour
         {
             playerInGeyser = true;
         }
+
+        if (col.gameObject.tag == "Tar")
+        {
+            playerInTar = true;
+        }
     }
 
     //when they leave a damaging collider, tell the health script
@@ -52,6 +58,11 @@ public class CheckForDamage : MonoBehaviour
         if (col.gameObject.tag == "Geyser")
         {
             playerInGeyser = false;
+        }
+
+        if (col.gameObject.tag == "Tar")
+        {
+            playerInTar = false;
         }
     }
 }

@@ -14,6 +14,7 @@ TagManager:
   - LinePoint
   - Cargo
   - LineLauncherPickup
+  - Tar
   layers:
   - Default
   - TransparentFX

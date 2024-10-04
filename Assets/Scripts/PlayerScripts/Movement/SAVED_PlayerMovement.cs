@@ -54,7 +54,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
 
     Vector3 moveDirection;
 
-    Rigidbody rb;
+    public Rigidbody rb;
 
     public MovementState state;
 
@@ -117,14 +117,6 @@ public class SAVED_PlayerMovement : MonoBehaviour
             Debug.Log("playerdie in movement script");
             playerCannotMove = true;
         }
-
-        ////PAUSE GAME
-        //if (Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    //GameManager.current.Pausegame();
-        //    playerPauseGame.Invoke();
-        //}
-
     }
 
     private void SpeedControl()

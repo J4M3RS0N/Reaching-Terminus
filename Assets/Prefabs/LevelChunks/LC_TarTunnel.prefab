@@ -518,7 +518,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 7196620521708517913}
   m_Layer: 9
   m_Name: DeathCube
-  m_TagString: Fire
+  m_TagString: Acid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -551,7 +551,7 @@ Transform:
   m_GameObject: {fileID: 500332575781021918}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -10.2, z: 1.9}
-  m_LocalScale: {x: 116.58144, y: 15.7315, z: 123.86778}
+  m_LocalScale: {x: 116.58144, y: 4.346771, z: 123.86778}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3120592339395829996}
@@ -1207,7 +1207,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1565,7 +1565,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1825,7 +1825,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1987,7 +1987,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2102,7 +2102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062942935826869604}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000058114523}
-  m_LocalPosition: {x: -2.222, y: -6.289201, z: 57.065}
+  m_LocalPosition: {x: -2.2, y: -6.289201, z: 56.81}
   m_LocalScale: {x: 128.07704, y: 101, z: 107.484215}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2784,7 +2784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3215571027706733940}
   m_LocalRotation: {x: 0.0817495, y: 0.9198238, z: -0.03959541, w: 0.3816718}
-  m_LocalPosition: {x: -5.88, y: 0.8, z: -44.71}
+  m_LocalPosition: {x: -5.84, y: 1, z: -44.71}
   m_LocalScale: {x: 6.8458004, y: 6.845801, z: 6.8458004}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3210,7 +3210,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3372,7 +3372,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3632,7 +3632,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3858,14 +3858,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5436795391928552106}
-  m_LocalRotation: {x: 0.8638736, y: 0.45372918, z: -0.18481736, w: -0.11702434}
-  m_LocalPosition: {x: -20.94, y: 31.47, z: -6.74}
+  m_LocalRotation: {x: -0.08341456, y: -0.1670717, z: -0.46055913, w: -0.867764}
+  m_LocalPosition: {x: -22.51, y: 32.55, z: -6.36}
   m_LocalScale: {x: 169.29271, y: 151.59056, z: 116.13777}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2059409953404506193}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: -1.976, y: -154.801, z: -235.861}
+  m_LocalEulerAnglesHint: {x: -0.523, y: 21.519, z: -304.186}
 --- !u!33 &8371929441522262477
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10349,7 +10349,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -10464,9 +10464,10 @@ GameObject:
   - component: {fileID: 7525640646918756040}
   - component: {fileID: 1277408969135241799}
   - component: {fileID: 1566687384006724233}
-  m_Layer: 6
-  m_Name: WaterCube
-  m_TagString: Untagged
+  - component: {fileID: 3012536356204707305}
+  m_Layer: 0
+  m_Name: TarWaterCube
+  m_TagString: Tar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10556,11 +10557,27 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8372488891038815811}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &3012536356204707305
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8372488891038815811}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8394559590539483693
 GameObject:
   m_ObjectHideFlags: 0
@@ -11000,7 +11017,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -11162,7 +11179,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -11324,7 +11341,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 19
+  m_VersionIndex: 22
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
