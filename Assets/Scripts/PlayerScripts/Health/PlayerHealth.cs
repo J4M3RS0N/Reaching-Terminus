@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
     private float fireDamage = 0.002f;
     private float geyserDamage = 0.007f;
     private float acidDamage = 0.004f;
+    private float tarDamage = 0.002f;
 
     //bool to call if player health is empty
     public bool playerHasDied = false;
@@ -93,10 +94,21 @@ public class PlayerHealth : MonoBehaviour
             volVignette.intensity.Override(intensity);
         }
 
+        //damage player when in tar and stop them from moving
+        if (playerHealth > 0 && dmgCheck.playerInTar == true)
+        {
+            playerHealth -= tarDamage;
+
+            intensity += tarDamage;
+
+            if (intensity < 0) intensity = 0;
+
+            volVignette.intensity.Override(intensity);
+        }
+
         //player health regeneration
         else if (playerHealth >= 0 && dmgCheck.playerInFire == false)
         {
-            //RegenPlayerHealth();
 
             //regen player health
             playerHealth += 0.0015f;

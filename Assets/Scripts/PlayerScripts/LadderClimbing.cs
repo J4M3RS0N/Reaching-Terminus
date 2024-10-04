@@ -9,6 +9,7 @@ public class LadderClimbing : MonoBehaviour
     public Rigidbody rb;
     public LayerMask ladder;
 
+    [SerializeField] private CheckForDamage dmgCheck;
     [SerializeField] private EndGameScript endGame;
 
     [Header("Audio")]
@@ -54,6 +55,8 @@ public class LadderClimbing : MonoBehaviour
 
         if(!climbing && SAVED_PlayerMovement.pmInstance.grounded == false)
         {
+            if (dmgCheck.playerInTar == true) return;
+
             fallingAudio.enabled = true;
 
             if (endGame.gameOver)

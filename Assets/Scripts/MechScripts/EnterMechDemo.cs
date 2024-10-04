@@ -10,6 +10,7 @@ public class EnterMechDemo : MonoBehaviour
     public Transform Mech;
     public Transform Player;
     public V3_LineLauncher ll;
+    public CheckForDamage dmgCheck;
 
     Rigidbody mechrb;
 
@@ -119,6 +120,9 @@ public class EnterMechDemo : MonoBehaviour
     {
         //dont let player leave the mule if they are zipping
         if (ll.isZipping) return;
+
+        //dont let player embark or disembark if they are sinking tar
+        if (dmgCheck.playerInTar) return;
 
         embark = !embark;
 

@@ -54,7 +54,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
 
     Vector3 moveDirection;
 
-    public Rigidbody rb;
+    Rigidbody rb;
 
     public MovementState state;
 
