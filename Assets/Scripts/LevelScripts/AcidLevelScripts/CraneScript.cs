@@ -56,9 +56,10 @@ public class CraneScript : MonoBehaviour
 
     public void DropContainer()
     {
-        craneAnimator.SetBool("DropContainer", true);
-
         containerAudio.PlayOneShot(droppingSound);
+        Debug.Log("DroppingSound");
+
+        craneAnimator.SetBool("DropContainer", true);
 
         StartCoroutine(ReplaceContainer());
     }
