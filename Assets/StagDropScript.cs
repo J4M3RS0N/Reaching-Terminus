@@ -9,12 +9,15 @@ public class StagDropScript : MonoBehaviour
     public float fallingTime;
     MeshCollider meshCol;
     Rigidbody rb;
+    AudioSource stagAudio;
+    [SerializeField] private AudioClip splashSFX;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         meshCol = GetComponent<MeshCollider>();
+        stagAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,6 +44,7 @@ public class StagDropScript : MonoBehaviour
     {
         if(other.gameObject.tag == "Tar")
         {
+            stagAudio.PlayOneShot(splashSFX);
             Instantiate(splashPS, transform.position, transform.rotation);
         }
     }
