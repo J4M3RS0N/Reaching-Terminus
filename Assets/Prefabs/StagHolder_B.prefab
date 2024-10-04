@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ba42d15fd00cf4e83db7d454274fca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splashPS: {fileID: 3353068056544146984, guid: b13af8ab71bac284c90bae56076d899f, type: 3}
   fallingTime: 1
 --- !u!54 &1065207111284324573
 Rigidbody:

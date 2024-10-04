@@ -5,6 +5,7 @@ using UnityEngine;
 public class StagDropScript : MonoBehaviour
 {
     //[SerializeField] private Collider floorDetectObj;
+    public GameObject splashPS;
     public float fallingTime;
     MeshCollider meshCol;
     Rigidbody rb;
@@ -34,5 +35,13 @@ public class StagDropScript : MonoBehaviour
         rb.isKinematic = true;
         meshCol.enabled = true;
         yield return null;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Tar")
+        {
+            Instantiate(splashPS, transform.position, transform.rotation);
+        }
     }
 }

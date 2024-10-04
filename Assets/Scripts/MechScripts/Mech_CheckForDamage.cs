@@ -37,5 +37,11 @@ public class Mech_CheckForDamage : MonoBehaviour
         {
             dmgCheck.playerInGeyser = false;
         }
+
+        if (col.gameObject.tag == "Tar" && enterMech.playerInMech == true || enterMech.playerInMech == false)
+        {
+            dmgCheck.playerInTar = false;
+            //stop player from disembarking
+        }
     }
 }
