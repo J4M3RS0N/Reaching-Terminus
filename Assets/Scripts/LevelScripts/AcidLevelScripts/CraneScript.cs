@@ -23,6 +23,10 @@ public class CraneScript : MonoBehaviour
     [SerializeField] private AudioClip movingSound;
     [SerializeField] private AudioClip droppingSound;
 
+    [Header("Splash PS")]
+    [SerializeField] private GameObject firstSplash;
+    [SerializeField] private GameObject secondSplash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,8 +83,12 @@ public class CraneScript : MonoBehaviour
 
     public IEnumerator ReplaceContainer()
     {
+        firstSplash.SetActive(true);
+
         yield return new WaitForSeconds(1.1f);
         attatchedContainer.SetActive(false);
         rampContainer.SetActive(true);
+
+        secondSplash.SetActive(true);
     }
 }

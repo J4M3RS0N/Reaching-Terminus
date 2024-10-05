@@ -5844,6 +5844,8 @@ MonoBehaviour:
   containerAudio: {fileID: 4125474643085907241}
   movingSound: {fileID: 8300000, guid: bd8fa1c785c68a442a67dac73df74072, type: 3}
   droppingSound: {fileID: 8300000, guid: dfc18e59679538a489d8664855815b8f, type: 3}
+  firstSplash: {fileID: 6260754789876391372}
+  secondSplash: {fileID: 3335280908342194770}
 --- !u!1 &3316930530354243474
 GameObject:
   m_ObjectHideFlags: 0
@@ -5959,7 +5961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2606799274736057122
 Transform:
   m_ObjectHideFlags: 0
@@ -18922,7 +18924,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3610687407748815703
 Transform:
   m_ObjectHideFlags: 0
