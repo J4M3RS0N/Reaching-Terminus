@@ -7,6 +7,8 @@ using UnityEngine.Rendering.Universal;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public List<AudioClip> damageSounds = new List<AudioClip>();
+
     [SerializeField] private EndGameScript endGame;
 
     //make list of image vraibales to change ove the course of player damage;
@@ -34,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
 
     //bool to call if player health is empty
     public bool playerHasDied = false;
+    public bool takingDamage;
 
     [Header("Audio")]
     private AudioSource phAudio;
@@ -47,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
 
         //making sure the game kows this isn't true yet
         playerHasDied = false;
+        takingDamage = false;
 
         playerHealth = playerMaxhealth;
 
@@ -56,9 +60,21 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if(takingDamage == true)
+        //{
+        
+        //}
+        //if(takingDamage == false)
+        //{
+        
+        //}
+
         //Damage player accodring to fire bool and fire damage float
         if (playerHealth > 0 && dmgCheck.playerInFire == true)
         {
+            //play damage audio
+            //takingDamage = true;
+
             //deplete player health
             playerHealth -= fireDamage;
 
@@ -73,6 +89,8 @@ public class PlayerHealth : MonoBehaviour
         //damage player according to acid bool and acid damage float
         if (playerHealth > 0 && dmgCheck.playerInAcid == true)
         {
+            //takingDamage = tru
+
             playerHealth -= acidDamage;
 
             intensity += acidDamage;
@@ -85,6 +103,9 @@ public class PlayerHealth : MonoBehaviour
         //damage player according to geyser bool and damage float
         if (playerHealth > 0 && dmgCheck.playerInGeyser == true)
         {
+            //takingDamage = true;
+
+
             playerHealth -= geyserDamage;
 
             intensity += geyserDamage;
@@ -97,6 +118,9 @@ public class PlayerHealth : MonoBehaviour
         //damage player when in tar and stop them from moving
         if (playerHealth > 0 && dmgCheck.playerInTar == true)
         {
+            //takingDamage = true
+
+
             playerHealth -= tarDamage;
 
             intensity += tarDamage;
@@ -109,6 +133,7 @@ public class PlayerHealth : MonoBehaviour
         //player health regeneration
         else if (playerHealth >= 0 && dmgCheck.playerInFire == false)
         {
+            //takingDamage = false;
 
             //regen player health
             playerHealth += 0.0015f;
@@ -141,6 +166,8 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("player died here");
         endGame.PlayerDied();
+
+        //takingDamage = false;
 
         phAudio.PlayOneShot(deathSound);
  

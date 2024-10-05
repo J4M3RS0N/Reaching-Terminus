@@ -7,6 +7,11 @@ public class CheckForDamage : MonoBehaviour
 {
     public static CheckForDamage dmgCheckInstance;
 
+    public AudioSource fireDmgAudio;
+    public AudioSource acidDmgAudio;
+    public AudioSource geyserDmgAudio;
+    public AudioSource tarDmgAudio;
+
     public bool playerInFire;
     public bool playerInAcid;
     public bool playerInGeyser;
@@ -23,21 +28,25 @@ public class CheckForDamage : MonoBehaviour
         if (col.gameObject.tag == "Fire")
         {
             playerInFire = true;
+            fireDmgAudio.enabled = true;
         }
 
         if (col.gameObject.tag == "Acid")
         {
             playerInAcid = true;
+            acidDmgAudio.enabled = true;
         }
 
         if (col.gameObject.tag == "Geyser")
         {
             playerInGeyser = true;
+            geyserDmgAudio.enabled = true;
         }
 
         if (col.gameObject.tag == "Tar")
         {
             playerInTar = true;
+            tarDmgAudio.enabled = true;
         }
     }
 
@@ -47,22 +56,25 @@ public class CheckForDamage : MonoBehaviour
         if (col.gameObject.tag == "Fire")
         {
             playerInFire = false;
-            //.Log("player left fire");
+            fireDmgAudio.enabled = false;
         }
 
         if (col.gameObject.tag == "Acid")
         {
             playerInAcid = false;
+            acidDmgAudio.enabled = false;
         }
 
         if (col.gameObject.tag == "Geyser")
         {
             playerInGeyser = false;
+            geyserDmgAudio.enabled = false;
         }
 
         if (col.gameObject.tag == "Tar")
         {
             playerInTar = false;
+            tarDmgAudio.enabled = false;
         }
     }
 }
