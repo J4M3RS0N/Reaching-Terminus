@@ -32,6 +32,8 @@ public class PressurePlateScript : MonoBehaviour
         {
             plateWall.transform.position = Vector3.MoveTowards(plateWall.transform.position, endPos.position, moveSpeed * Time.deltaTime);
 
+            //parent object on pressure plate to the pressure plate
+
             returnAudio.enabled = false;
             moveTowardsAudio.enabled = true;
 
@@ -62,8 +64,9 @@ public class PressurePlateScript : MonoBehaviour
         if (other.gameObject.tag == plateTag)
         {
             //plateWall.transform.position += new Vector3(0, 6, 0);
-
             activePlate = true;
+
+            other.transform.parent.SetParent(plateWall.transform);
 
             Debug.Log("On Platform");
         }
@@ -76,6 +79,8 @@ public class PressurePlateScript : MonoBehaviour
             //plateWall.transform.position -= new Vector3(0, 6, 0);
 
             activePlate = false;
+
+            other.transform.parent.SetParent(null);
 
             Debug.Log("Left Platform");
         }
