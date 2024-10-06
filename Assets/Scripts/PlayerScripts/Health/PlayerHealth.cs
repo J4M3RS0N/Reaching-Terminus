@@ -36,7 +36,6 @@ public class PlayerHealth : MonoBehaviour
 
     //bool to call if player health is empty
     public bool playerHasDied = false;
-    public bool takingDamage;
 
     [Header("Audio")]
     private AudioSource phAudio;
@@ -50,7 +49,6 @@ public class PlayerHealth : MonoBehaviour
 
         //making sure the game kows this isn't true yet
         playerHasDied = false;
-        takingDamage = false;
 
         playerHealth = playerMaxhealth;
 
@@ -159,7 +157,6 @@ public class PlayerHealth : MonoBehaviour
             PlayerHealthEmpty();
             playerHasDied = true;
         }
-
     }
 
     public void PlayerHealthEmpty()

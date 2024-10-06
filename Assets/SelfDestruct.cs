@@ -6,8 +6,17 @@ using UnityEngine.UI;
 public class SelfDestruct : MonoBehaviour
 {
     [SerializeField] private EndGameScript endGame;
+    [SerializeField] private PlayerHealth ph;
+    [SerializeField] private ShakeCamera camShake;
+    [SerializeField] private GameObject explosion;
 
     public Slider slider;
+    public bool selfDestruct;
+
+    private void Awake()
+    {
+        slider.value = 0;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -24,26 +33,13 @@ public class SelfDestruct : MonoBehaviour
 
             //play some warning sounds and flashing red lights
 
-            if(slider.value >= 5f)
+            if(slider.value == 5)
             {
                 //begin self destruct sequence
-                StartCoroutine(SelfDestructSequence());
+                //Set explosion ps with damaging collider active, and stoip players from leaving mech in other scripts, which should kill them
+                camShake.ShakeTheCamera();
+                explosion.SetActive(true);
             }
         }
-
-        if (Input.GetKeyUp(KeyCode.X))
-        {
-            slider.value = 0;
-        }
-    }
-
-    private IEnumerator SelfDestructSequence()
-    {
-        slider.value = 5f;
-        //play explosions and kill player
-        yield return new WaitForSeconds(2);
-
-        endGame.PlayerDied();
-        yield return null;
     }
 }
