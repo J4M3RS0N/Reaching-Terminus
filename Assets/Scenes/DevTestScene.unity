@@ -17751,7 +17751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endGame: {fileID: 1026954869}
   ph: {fileID: 972342075}
-  coolant: {fileID: 0}
+  coolant: {fileID: 1492855108}
   camShake: {fileID: 1249652097}
   explosion: {fileID: 1072380829}
   slider: {fileID: 144415003}
