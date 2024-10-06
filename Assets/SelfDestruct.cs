@@ -34,7 +34,7 @@ public class SelfDestruct : MonoBehaviour
 
             //play some warning sounds and flashing red lights
 
-            if(slider.value == 5)
+            if(slider.value == 3)
             {
                 //begin self destruct sequence
                 //Set explosion ps with damaging collider active, and stoip players from leaving mech in other scripts, which should kill them

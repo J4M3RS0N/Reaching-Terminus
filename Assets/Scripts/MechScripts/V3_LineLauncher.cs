@@ -96,11 +96,6 @@ public class V3_LineLauncher : MonoBehaviour
 
             if (MechMovement.instance.mechActive == false || ToastCollector.instance.currentHealth <= 0)
             {
-                //isZipping = false;
-                //rb.isKinematic = false;
-
-                ////stop playing zip sound
-                //lineAudio.enabled = false;
                 UnHook();
             }
         }

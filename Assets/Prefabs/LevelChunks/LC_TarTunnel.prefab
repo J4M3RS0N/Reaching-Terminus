@@ -12383,6 +12383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreyVolumeFog
       objectReference: {fileID: 0}
+    - target: {fileID: 3054341088980437186, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6415130139164574129, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -13843,6 +13847,10 @@ PrefabInstance:
     - target: {fileID: 3054341088980437186, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
       propertyPath: m_Name
       value: GreyVolumeFog (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054341088980437186, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6415130139164574129, guid: 0f79a8b9597a6394ba3aeb5e1ed1f48c, type: 3}
       propertyPath: m_RootOrder
