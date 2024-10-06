@@ -104,12 +104,12 @@ public class CoolantCollector : MonoBehaviour
                 exteriorFireObj.SetActive(false);
                 thereIsFire = false;
             }
-        }
 
-        if(selfDestructed == true)
-        {
-            interiorFireObj.SetActive(true);
-            exteriorFireObj.SetActive(true);
+            if (selfDestructed == true)
+            {
+                interiorFireObj.SetActive(true);
+                exteriorFireObj.SetActive(true);
+            }
         }
 
         if (currentHealth > 0)
