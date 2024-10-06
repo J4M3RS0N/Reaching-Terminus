@@ -7,9 +7,9 @@ public class SelfDestruct : MonoBehaviour
 {
     [SerializeField] private EndGameScript endGame;
     [SerializeField] private PlayerHealth ph;
-    [SerializeField] private CoolantCollector coolant;
     [SerializeField] private ShakeCamera camShake;
     [SerializeField] private GameObject explosion;
+    [SerializeField] private GameObject explosionFire;
 
     public Slider slider;
     public bool selfDestruct;
@@ -40,7 +40,8 @@ public class SelfDestruct : MonoBehaviour
                 //Set explosion ps with damaging collider active, and stoip players from leaving mech in other scripts, which should kill them
                 camShake.ShakeTheCamera();
                 explosion.SetActive(true);
-                coolant.selfDestructed = true;
+                explosionFire.SetActive(true);
+                
             }
         }
     }

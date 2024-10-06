@@ -21,7 +21,6 @@ public class CoolantCollector : MonoBehaviour
     [SerializeField] private GameObject interiorFireObj;
     [SerializeField] private GameObject exteriorFireObj;
     public bool thereIsFire;
-    public bool selfDestructed;
 
     [Header("Audio")]
     [SerializeField] private AudioSource coolantAudio;
@@ -103,12 +102,6 @@ public class CoolantCollector : MonoBehaviour
                 interiorFireObj.SetActive(false);
                 exteriorFireObj.SetActive(false);
                 thereIsFire = false;
-            }
-
-            if (selfDestructed == true)
-            {
-                interiorFireObj.SetActive(true);
-                exteriorFireObj.SetActive(true);
             }
         }
 
