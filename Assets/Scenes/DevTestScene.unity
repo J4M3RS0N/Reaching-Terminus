@@ -17148,7 +17148,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7774277832521599610, guid: 631658b2cab8081438042eb38857fbf3, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2194bb25a5c2e414fad41789a8ab03de, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -17743,6 +17743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endGame: {fileID: 1026954869}
   ph: {fileID: 972342075}
+  coolant: {fileID: 0}
   camShake: {fileID: 1249652097}
   explosion: {fileID: 1072380829}
   slider: {fileID: 144415003}
@@ -32892,7 +32893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &669448879
 RectTransform:
   m_ObjectHideFlags: 0
@@ -64913,7 +64914,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7774277832521599610, guid: 631658b2cab8081438042eb38857fbf3, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0bb9f8fe5c585a146bd252febebf4ded, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
