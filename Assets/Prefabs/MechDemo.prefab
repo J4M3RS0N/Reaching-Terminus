@@ -218,7 +218,6 @@ GameObject:
   - component: {fileID: 504413816592214835}
   - component: {fileID: 504413816592214834}
   - component: {fileID: 504413816592214833}
-  - component: {fileID: 504413816592214832}
   m_Layer: 0
   m_Name: MechObj
   m_TagString: Mech
@@ -305,19 +304,6 @@ CapsuleCollider:
   m_Height: 1.7377441
   m_Direction: 1
   m_Center: {x: 0, y: -0.14457789, z: 0}
---- !u!114 &504413816592214832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504413816592214839}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bbd85b25ed129147a9fd310bef84166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 30
 --- !u!1 &504413816733180858
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +415,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemHolder: {fileID: 504413818219928270}
+  interactText: 
+  pressSound: {fileID: 0}
   buttonPush:
     m_PersistentCalls:
       m_Calls:
@@ -736,12 +724,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c25aab0e62b274daca2f9451eb4459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnedOffMaterial: {fileID: 2100000, guid: 426a843bc753e4b49925c78b258f00eb, type: 2}
-  turnedOnMaterial: {fileID: 2100000, guid: 79873c20dc68e8a4c9e587716c5cc07d, type: 2}
   emptyButterUI: {fileID: 0}
   intemptyUI: {fileID: 0}
+  intscript: {fileID: 0}
   fireParticle: {fileID: 4296796174315959453, guid: a16e08531087d734d860f99a214579c5, type: 3}
   fireSpawner: {fileID: 504413817415029599}
+  interiorFireObj: {fileID: 0}
+  exteriorFireObj: {fileID: 0}
+  thereIsFire: 0
+  coolantAudio: {fileID: 0}
+  collectSound: {fileID: 0}
+  emptyCoolantAudio: {fileID: 0}
   maxHealth: 180
   currentHealth: 50
   healthbar: {fileID: 0}
@@ -749,6 +742,7 @@ MonoBehaviour:
   intcurrentHealth: 50
   interiorHealthbar: {fileID: 0}
   coolantRunning: 0
+  leverAnimator: {fileID: 0}
 --- !u!1 &504413817395581999
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,9 +850,6 @@ GameObject:
   m_Component:
   - component: {fileID: 504413817403445671}
   - component: {fileID: 504413817403445670}
-  - component: {fileID: 504413817403445669}
-  - component: {fileID: 504413817403445668}
-  - component: {fileID: 504413817403445664}
   - component: {fileID: 504413817403445723}
   m_Layer: 0
   m_Name: MechDemo
@@ -910,80 +901,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 80
   m_CollisionDetection: 1
---- !u!114 &504413817403445669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504413817403445722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 175049fe04e40ea469aec5781ea09ebb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 4.5
-  groundDrag: 3
-  mechRotationSpeed: 700
-  airMultiplyer: 0.4
-  playerHeight: 6
-  ground:
-    serializedVersion: 2
-    m_Bits: 64
-  groundRadius: 1.1
-  gCastDistance: 2
-  grounded: 0
-  maxSlopeAngle: 70
-  mechOrientation: {fileID: 504413817751464827}
-  mechObj: {fileID: 504413816592214839}
-  mechActive: 0
-  state: 0
---- !u!114 &504413817403445668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504413817403445722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff6501223aa5e71478a5d71329da2ba6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mech: {fileID: 504413817403445671}
-  Player: {fileID: 0}
-  PlayerCam: {fileID: 0}
-  MechCam: {fileID: 0}
-  enterMechUI: {fileID: 0}
-  CanEmbark: 0
-  startMechEngine:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 504413818219928271}
-        m_TargetAssemblyTypeName: ToastCollector, Assembly-CSharp
-        m_MethodName: ToggleEngine
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &504413817403445664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504413817403445722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0761869d7060b49a0bf9a7da64aadd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mechCargoModel: {fileID: 8211429290390998365}
 --- !u!65 &504413817403445723
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1481,7 +1398,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 504413817945473866}
-  - component: {fileID: 504413817945473867}
   m_Layer: 0
   m_Name: MechCameraPosition
   m_TagString: Untagged
@@ -1504,19 +1420,6 @@ Transform:
   m_Father: {fileID: 504413817403445671}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &504413817945473867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 504413817945473865}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b453d3910af31da46941903754954ff6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mechCameraPosition: {fileID: 504413816592214844}
 --- !u!1 &504413818074341728
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,6 +1903,11 @@ MonoBehaviour:
   turnedOnMaterial: {fileID: 2100000, guid: 9bb1d1fc0474d7747b487c23b9270db1, type: 2}
   emptyToastUI: {fileID: 0}
   intemptyUI: {fileID: 0}
+  intscript: {fileID: 0}
+  engineAudio: {fileID: 0}
+  collectSound: {fileID: 0}
+  breakdownSound: {fileID: 0}
+  emptyFuelAudio: {fileID: 0}
   maxHealth: 200
   currentHealth: 100
   healthbar: {fileID: 0}
@@ -2806,11 +2714,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.005000028, y: 0.037023716, z: 0.052901663}
   m_Center: {x: 0.0024999972, y: -0.018511858, z: 0.000000029802322}
---- !u!1 &8211429290390998365 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -651664189263304926, guid: b1ca8dad54fdfa44e88c05e5b33b288e, type: 3}
-  m_PrefabInstance: {fileID: 504413816795196031}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8838757154072199662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -168432550253237359, guid: b1ca8dad54fdfa44e88c05e5b33b288e, type: 3}

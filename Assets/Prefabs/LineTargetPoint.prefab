@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7298757655718549979}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: LineLauncherPickup
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 7450904233277961372}
   m_Layer: 15
   m_Name: Cube
-  m_TagString: LineLauncherPickup
+  m_TagString: LinePoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
