@@ -7,6 +7,7 @@ public class MechToggleCoolant : MonoBehaviour
 {
     public UnityEvent mechButtonPush;
     [SerializeField] private GameObject activeObj;
+    [SerializeField] private GameObject interiorActiveObj; 
     private bool buttonActive;
 
     [Header("Audio")]
@@ -42,10 +43,12 @@ public class MechToggleCoolant : MonoBehaviour
         if(buttonActive) 
         { 
              activeObj.SetActive(true);
+            interiorActiveObj.SetActive(true);
         }
         else
         {
             activeObj.SetActive(false);
+            interiorActiveObj.SetActive(false);
         }
     }
 }
