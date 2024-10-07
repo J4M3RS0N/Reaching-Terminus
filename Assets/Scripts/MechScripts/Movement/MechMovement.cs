@@ -31,6 +31,7 @@ public class MechMovement : MonoBehaviour
     [Header("LineLauncherChecks")]
     [SerializeField] private V3_LineLauncher ll;
     [SerializeField] private GameObject backPlatform;
+    [SerializeField] private GameObject llUIObj;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -306,7 +307,7 @@ public class MechMovement : MonoBehaviour
         if(other.gameObject.tag == "LineLauncherPickup")
         {
             ll.canZip = true;
-
+            llUIObj.SetActive(true);
             Destroy(other.gameObject);
         }
     }
