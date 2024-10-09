@@ -112,7 +112,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
        
 
 
-        if (!playerCannotMove && endGame.deathAnim == true)
+        if (!playerCannotMove && endGame.deathAnim == true || !playerCannotMove && endGame.victoryMode == true)
         {
             Debug.Log("playerdie in movement script");
             playerCannotMove = true;
@@ -157,7 +157,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
 
 
         //play walking noises when input for movement keys
-        if((horizontalInput > 0 || horizontalInput < 0 || verticalInput > 0f || verticalInput < 0f) && grounded && !endGame.deathAnim)
+        if((horizontalInput > 0 || horizontalInput < 0 || verticalInput > 0f || verticalInput < 0f) && grounded && !endGame.gameOver)
         {
             playerFootsteps.enabled = true;
             playerAnimator.SetBool("Walking", true);

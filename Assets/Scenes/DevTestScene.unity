@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.835037, y: 389}
-  m_SizeDelta: {x: 1467.81, y: 204.666}
+  m_AnchoredPosition: {x: 7.9033, y: 389}
+  m_SizeDelta: {x: 1487.7, y: 204.666}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &224112
 MonoBehaviour:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CONGRATULATIONS
+  m_text: CONGRATULATIONS - CARGO DELIVERED
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 36044704700b96e48975605c218fce19, type: 2}
   m_sharedMaterial: {fileID: -6874369146227565457, guid: 36044704700b96e48975605c218fce19, type: 2}
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 66
+  m_fontSizeBase: 66
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -46660,6 +46660,7 @@ MonoBehaviour:
   animator: {fileID: 669448882}
   deathAnim: 0
   gameOver: 0
+  victoryMode: 0
 --- !u!4 &1026954870
 Transform:
   m_ObjectHideFlags: 0
@@ -106739,6 +106740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e11a9d3947781c74aa8a05a8fb425b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endGame: {fileID: 1026954869}
   tAnimatior: {fileID: 919132148630873510}
   cargoButton: {fileID: 1810560667}
   launchButton: {fileID: 1674072915}

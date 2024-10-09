@@ -15,11 +15,13 @@ public class EndGameScript : MonoBehaviour
 
     public bool deathAnim;
     public bool gameOver;
+    public bool victoryMode;
 
     public void Awake()
     {
         deathAnim = false;
         gameOver = false;
+        victoryMode = false;
 
     }
 
@@ -33,7 +35,7 @@ public class EndGameScript : MonoBehaviour
     {
         // if the gameover bool is true, unlock the mouse and allow for button inputs to restart or quit, or return to mainmenu
 
-        if (gameOver)
+        if (gameOver && deathAnim)
         {
             //LosePanel.SetActive(true);
             GameManager.current.losePanel.SetActive(true);
@@ -49,6 +51,23 @@ public class EndGameScript : MonoBehaviour
                 StartCoroutine(CloseGame());
             }
         }
+
+        if(gameOver && victoryMode)
+        {
+            GameManager.current.winPanel.SetActive(true);
+            GameManager.current.timersPanel.SetActive(true);
+
+            if (Input.GetKey(KeyCode.R))
+            {
+                //Hide Panels and load scene
+                StartCoroutine(RestartGame());
+            }
+            if (Input.GetKey(KeyCode.Q))
+            {
+                StartCoroutine(CloseGame());
+            }
+        }
+
         else
         {
             GameManager.current.blackScreen.SetActive(false);
@@ -60,14 +79,17 @@ public class EndGameScript : MonoBehaviour
         Debug.Log("Player should be dead");
 
         // play animation where camera moves / stop player from moving their body or camera
+
         deathAnim = true;
+        GameManager.current.WinGame();
         StartCoroutine(DeathAnimation());
 
     }
 
     public void WinGame()
     {
-        SceneManager.LoadScene("Win Scene");
+        //SceneManager.LoadScene("Win Scene");
+        victoryMode = true;
         Debug.Log("he won");
     }
 
@@ -77,7 +99,7 @@ public class EndGameScript : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         GameManager.current.blackScreen.SetActive(true);
-
+        GameManager.current.winPanel.SetActive(false);
         GameManager.current.losePanel.SetActive(false);
         GameManager.current.timersPanel.SetActive(false);
 
@@ -101,6 +123,8 @@ public class EndGameScript : MonoBehaviour
         Cursor.visible = true;
 
         //Hide Panels and load scene
+        GameManager.current.winPanel.SetActive(false);
+
         GameManager.current.losePanel.SetActive(false);
         GameManager.current.timersPanel.SetActive(false);
 

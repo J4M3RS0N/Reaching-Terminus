@@ -24,7 +24,7 @@ public class LaunchRocket : MonoBehaviour
     // rocket lift off, activate rocket trail PS and rocket leaving animation
     //wait 5- 10 seconds
     //win game is true (panel opr scene, still undecided)
-
+    public EndGameScript endGame;
     public Animator tAnimatior;
     public GameObject cargoButton;
     public GameObject launchButton;
@@ -67,6 +67,10 @@ public class LaunchRocket : MonoBehaviour
         tAnimatior.SetTrigger("ReleaseRocket");
         yield return new WaitForSeconds(2);
         tAnimatior.SetTrigger("FireRocket");
+        yield return new WaitForSeconds(5);
+        endGame.WinGame();
+        endGame.GameOver();
+        //yield return null;
 
         //wait a little longer then win game stuff
     }
