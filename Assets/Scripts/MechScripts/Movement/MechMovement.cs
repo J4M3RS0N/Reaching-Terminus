@@ -32,6 +32,9 @@ public class MechMovement : MonoBehaviour
     [SerializeField] private V3_LineLauncher ll;
     [SerializeField] private GameObject backPlatform;
     [SerializeField] private GameObject llUIObj;
+    [SerializeField] private GameObject handArm;
+    [SerializeField] private GameObject llArm;
+
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -308,6 +311,10 @@ public class MechMovement : MonoBehaviour
         {
             ll.canZip = true;
             llUIObj.SetActive(true);
+
+            handArm.SetActive(false);
+            llArm.SetActive(true);
+
             Destroy(other.gameObject);
         }
     }
