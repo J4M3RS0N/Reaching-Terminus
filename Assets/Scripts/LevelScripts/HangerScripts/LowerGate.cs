@@ -27,7 +27,7 @@ public class LowerGate : MonoBehaviour
     {
         if(other.gameObject.tag == "Mech")
         {
-            hangerAnimator.SetBool("LowerGate", true);
+            hangerAnimator.SetTrigger("LowerGate 0");
             gateAudio.PlayOneShot(openGateSound);
             StartCoroutine(DestroyCollider());
         }
