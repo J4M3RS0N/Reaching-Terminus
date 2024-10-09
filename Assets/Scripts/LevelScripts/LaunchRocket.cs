@@ -26,6 +26,7 @@ public class LaunchRocket : MonoBehaviour
     //win game is true (panel opr scene, still undecided)
     public EndGameScript endGame;
     public Animator tAnimatior;
+    public GameObject doorBlockers;
     public GameObject cargoButton;
     public GameObject launchButton;
     public GameObject hideLaunchButtonObj;
@@ -54,6 +55,7 @@ public class LaunchRocket : MonoBehaviour
 
     public IEnumerator LoadMechCargo()
     {
+        doorBlockers.SetActive(true);
         tAnimatior.SetTrigger("LoadMechCargo");
         yield return new WaitForSeconds(6.5f);
         launchButton.SetActive(true);

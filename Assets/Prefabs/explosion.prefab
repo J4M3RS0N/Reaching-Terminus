@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7175370127903891232}
   m_Layer: 0
   m_Name: explosion
-  m_TagString: Fire
+  m_TagString: Geyser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
