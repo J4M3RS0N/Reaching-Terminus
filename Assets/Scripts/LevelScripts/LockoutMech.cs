@@ -8,6 +8,11 @@ public class LockoutMech : MonoBehaviour
 
     [SerializeField] private EnterMechDemo mechEmabrk;
     [SerializeField] private Transform mechHolder;
+    [SerializeField] private GameObject mechDemo;
+    [SerializeField] private GameObject standInMech;
+
+    [SerializeField] private Transform pilot;
+    [SerializeField] private Transform pilotHolder;
     [SerializeField] private GameObject enterMechButton;
     
 
@@ -31,9 +36,10 @@ public class LockoutMech : MonoBehaviour
 
             //force the pilot to exit the mech
             mechEmabrk.ToggleEmbark();
-
+            StartCoroutine(SwapMechs());
+            //pilot.transform.position = pilotHolder.position;
             //disable pilot's ability to re-enter the mech
-            enterMechButton.SetActive(false);
+            //enterMechButton.SetActive(false);
 
             //send the trigger collider away to avoid repeating mech embark toggle, and allow the registration of the collider becoming null
             transform.position = new Vector3(-1, -1, -1);
@@ -42,5 +48,16 @@ public class LockoutMech : MonoBehaviour
             //close up the back of the mech and disable fuel and coolant consumption, end all fires, turn off noises from mech
             //OR turn off mechdemo, and have standin model mesh swap in with the stand
         }
+    }
+
+    private IEnumerator SwapMechs()
+    {
+        yield return new WaitForSeconds(2.5f);
+
+        mechDemo.SetActive(false);
+        standInMech.SetActive(true);
+        pilot.transform.position = pilotHolder.position;
+
+
     }
 }

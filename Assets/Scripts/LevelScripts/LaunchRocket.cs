@@ -25,15 +25,49 @@ public class LaunchRocket : MonoBehaviour
     //wait 5- 10 seconds
     //win game is true (panel opr scene, still undecided)
 
+    public Animator tAnimatior;
+    public GameObject cargoButton;
+    public GameObject launchButton;
+    public GameObject hideLaunchButtonObj;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void StartCargoCoroutine()
+    {
+        StartCoroutine(LoadMechCargo());
+    }
+
+    public void StartLaunchSequence()
+    {
+        StartCoroutine(ReleaseRocket());
+    }
+
+    public IEnumerator LoadMechCargo()
+    {
+        tAnimatior.SetTrigger("LoadMechCargo");
+        yield return new WaitForSeconds(6.5f);
+        launchButton.SetActive(true);
+        cargoButton.SetActive(false);
+
+    }
+
+    public IEnumerator ReleaseRocket()
+    {
+        hideLaunchButtonObj.SetActive(true);
+        tAnimatior.SetTrigger("ReleaseRocket");
+        yield return new WaitForSeconds(2);
+        tAnimatior.SetTrigger("FireRocket");
+
+        //wait a little longer then win game stuff
     }
 }
