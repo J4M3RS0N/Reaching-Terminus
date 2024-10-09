@@ -13,7 +13,7 @@ public class LockoutMech : MonoBehaviour
 
     [SerializeField] private Transform pilot;
     [SerializeField] private Transform pilotHolder;
-    [SerializeField] private GameObject enterMechButton;
+    [SerializeField] private GameObject loadCargoButton;
     
 
     // Start is called before the first frame update
@@ -57,6 +57,8 @@ public class LockoutMech : MonoBehaviour
         mechDemo.SetActive(false);
         standInMech.SetActive(true);
         pilot.transform.position = pilotHolder.position;
+
+        loadCargoButton.SetActive(true);
 
 
     }

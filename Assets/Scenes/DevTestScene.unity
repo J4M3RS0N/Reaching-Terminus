@@ -60559,7 +60559,7 @@ MonoBehaviour:
   standInMech: {fileID: 1820553797}
   pilot: {fileID: 1914993558}
   pilotHolder: {fileID: 781837125}
-  enterMechButton: {fileID: 1507388471}
+  loadCargoButton: {fileID: 1810560667}
 --- !u!1 &1327746798
 GameObject:
   m_ObjectHideFlags: 0
@@ -90880,7 +90880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1810560668
 Transform:
   m_ObjectHideFlags: 0

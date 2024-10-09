@@ -90,6 +90,7 @@ public class EndGameScript : MonoBehaviour
     {
         //SceneManager.LoadScene("Win Scene");
         victoryMode = true;
+        GameManager.current.WinGame();
         Debug.Log("he won");
     }
 
