@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 504413817403445670}
   - component: {fileID: 504413817403445723}
   m_Layer: 0
-  m_Name: MechDemo
+  m_Name: MechDemo(Old)
   m_TagString: Mech
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

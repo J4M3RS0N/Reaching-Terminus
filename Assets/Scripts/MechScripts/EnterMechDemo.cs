@@ -24,6 +24,9 @@ public class EnterMechDemo : MonoBehaviour
     [SerializeField] private Transform chair;
     public GameObject playerCamHolder;
 
+    public IEnumerator embarkEnumerator;
+    public IEnumerator disembarkEnumerator;
+
     [Header("Aduio")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip disembarkClip;
@@ -54,6 +57,9 @@ public class EnterMechDemo : MonoBehaviour
 
         mechMove = GetComponent<MechMovement>();
         mechrb = GetComponent<Rigidbody>();
+
+        embarkEnumerator = EmbarkEnumerator();
+        disembarkEnumerator = DisembarkEnumerator();
 
         mechrb.isKinematic = true;
         mechMove.mechActive = false;
@@ -184,7 +190,7 @@ public class EnterMechDemo : MonoBehaviour
         }
     }
 
-    private IEnumerator EmbarkEnumerator()
+    public IEnumerator EmbarkEnumerator()
     {
         //player is parented to Mech
         Player.transform.SetParent(Mech);
@@ -206,7 +212,7 @@ public class EnterMechDemo : MonoBehaviour
         yield break;
     }
 
-    private IEnumerator DisembarkEnumerator()
+    public IEnumerator DisembarkEnumerator()
     {
         DeactivateMech();
 
