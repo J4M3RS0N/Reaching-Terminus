@@ -69,7 +69,7 @@ public class LaunchRocket : MonoBehaviour
         tAnimatior.SetTrigger("ReleaseRocket");
         yield return new WaitForSeconds(2);
         tAnimatior.SetTrigger("FireRocket");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         endGame.WinGame();
         endGame.GameOver();
         //yield return null;
