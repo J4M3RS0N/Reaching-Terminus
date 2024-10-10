@@ -125,7 +125,7 @@ public class ToastCollector : MonoBehaviour
     {
         while (true)
         {
-            DrainHealth(3);
+            DrainHealth(2);
 
 
 

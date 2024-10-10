@@ -140,7 +140,7 @@ public class CoolantCollector : MonoBehaviour
     {
         while (true)
         {
-            DrainHealth(3);
+            DrainHealth(2);
 
             yield return new WaitForSeconds(2f);
         }
