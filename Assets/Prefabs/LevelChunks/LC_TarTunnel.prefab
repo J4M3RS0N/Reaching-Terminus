@@ -2005,7 +2005,7 @@ GameObject:
   - component: {fileID: 8582580530530847650}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: LineLauncherPickup
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4233,7 +4233,7 @@ GameObject:
   - component: {fileID: 6081836897173001839}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: LineLauncherPickup
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4613,7 +4613,7 @@ GameObject:
   - component: {fileID: 7176562887696770930}
   m_Layer: 15
   m_Name: HookCube
-  m_TagString: LineLauncherPickup
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9859,7 +9859,7 @@ GameObject:
   - component: {fileID: 8446495618997774053}
   m_Layer: 15
   m_Name: HookCube
-  m_TagString: LineLauncherPickup
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

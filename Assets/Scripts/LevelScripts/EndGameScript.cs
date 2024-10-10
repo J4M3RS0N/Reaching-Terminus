@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class EndGameScript : MonoBehaviour
 {
     [SerializeField] PlayerHealth playerHPS;
-
+    [SerializeField] private AudioSource victorySound;
     //[SerializeField] GameObject LosePanel;
     //[SerializeField] GameObject mechLosePanel;
     [Header("Color Fading")]
@@ -22,6 +22,7 @@ public class EndGameScript : MonoBehaviour
         deathAnim = false;
         gameOver = false;
         victoryMode = false;
+        victorySound.enabled = false;
 
     }
 
@@ -81,7 +82,7 @@ public class EndGameScript : MonoBehaviour
         // play animation where camera moves / stop player from moving their body or camera
 
         deathAnim = true;
-        GameManager.current.WinGame();
+        //GameManager.current.WinGame();
         StartCoroutine(DeathAnimation());
 
     }
@@ -91,6 +92,7 @@ public class EndGameScript : MonoBehaviour
         //SceneManager.LoadScene("Win Scene");
         victoryMode = true;
         GameManager.current.WinGame();
+        victorySound.enabled = true;
         Debug.Log("he won");
     }
 

@@ -8,6 +8,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
     [SerializeField] private EndGameScript endGame;
     [SerializeField] private AudioSource playerFootsteps;
     [SerializeField] private Animator playerAnimator;
+    [SerializeField] private GameObject llUI;
 
     public static SAVED_PlayerMovement pmInstance;
 
@@ -327,6 +328,12 @@ public class SAVED_PlayerMovement : MonoBehaviour
             //play enter acid sound
             readyToJump = false;
         }
+
+        if (col.gameObject.tag == "LineLauncherPickup")
+        {
+            //find mech to use panel setactive
+            llUI.SetActive(true);
+        }
     }
 
     // let player jump when out of acid
@@ -336,6 +343,12 @@ public class SAVED_PlayerMovement : MonoBehaviour
         {
             //play exit acid sound
             readyToJump = true;
+        }
+
+        if (col.gameObject.tag == "LineLauncherPickup")
+        {
+            //find mech to use panel setactive flase
+            llUI.SetActive(false);
         }
     }
 

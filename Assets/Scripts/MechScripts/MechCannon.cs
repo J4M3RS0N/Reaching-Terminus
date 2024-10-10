@@ -12,6 +12,7 @@ public class MechCannon : MonoBehaviour
 
     public Camera mechCam;
     public ParticleSystem muzzleFlash;
+    public GameObject rockSpray;
     public GameObject impactFlash;
 
     [Header("Audio")]
@@ -67,6 +68,11 @@ public class MechCannon : MonoBehaviour
             if(wall != null)
             {
                 wall.WallTakeDamage(cannonDamage);
+                if(wall.wallDead == true)
+                {
+                    GameObject rPS = Instantiate(rockSpray, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(rPS, 2f);
+                }
             }
 
             if(craneCollider != null)
