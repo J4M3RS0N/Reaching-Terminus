@@ -19,6 +19,11 @@ public class ShakeCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            ShakeTheCamera();
+        }
+
         if (currentShakeDuration > 0)
         {
             //Shake camera by randomly offsetting it inside of a circle

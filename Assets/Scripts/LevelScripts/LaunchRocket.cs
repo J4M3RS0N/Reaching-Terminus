@@ -4,28 +4,16 @@ using UnityEngine;
 
 public class LaunchRocket : MonoBehaviour
 {
-    //load mech cargo onto rocket by rasing mech up, loading cargo then lowering mech
-    //Laucnh the rocket: release side clamps, start firing particle system, shoot rocket up and out into sky/offscreen; endgame/win game
-
-    //Coroutine order:
-
-    //First button press animates mech on platforming being raised to exposed section of rocket
-    //wait 2 seconds
-    // cargo arm frame reaches outfrom rocket and takes cargo off of mech
-    //wait 4 seconds
-    //mech is lowered back to the ground
-
-    //LaunchRocket croutine starsts
-
-
-    // unclamp rocket animation plays, and start up steam PS is turned on
-    //wait 2 seconds
-    // 3 second countdown timer for launch
-    // rocket lift off, activate rocket trail PS and rocket leaving animation
-    //wait 5- 10 seconds
-    //win game is true (panel opr scene, still undecided)
+    [Header("Script References")]
     public EndGameScript endGame;
     public Animator tAnimatior;
+    public ShakeCamera tCamShake;
+
+    [Header("Cameras")]
+    public GameObject playerCam;
+    public GameObject tCam;
+
+    [Header("GameObjects")]
     public GameObject doorBlockers;
     public GameObject cargoButton;
     public GameObject launchButton;
@@ -67,8 +55,15 @@ public class LaunchRocket : MonoBehaviour
     {
         hideLaunchButtonObj.SetActive(true);
         tAnimatior.SetTrigger("ReleaseRocket");
-        yield return new WaitForSeconds(2);
+
+        yield return new WaitForSeconds(1);
+        playerCam.SetActive(false);
+        tCam.SetActive(true);
+        tCamShake.ShakeTheCamera();
+
+        yield return new WaitForSeconds(1);
         tAnimatior.SetTrigger("FireRocket");
+
         yield return new WaitForSeconds(3);
         endGame.WinGame();
         endGame.GameOver();
