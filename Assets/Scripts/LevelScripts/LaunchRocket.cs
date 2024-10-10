@@ -13,6 +13,10 @@ public class LaunchRocket : MonoBehaviour
     public GameObject playerCam;
     public GameObject tCam;
 
+    [Header("Audio")]
+    public AudioSource cargoAudio;
+    public AudioSource rocketAudio;
+
     [Header("GameObjects")]
     public GameObject doorBlockers;
     public GameObject cargoButton;
@@ -45,6 +49,7 @@ public class LaunchRocket : MonoBehaviour
     {
         doorBlockers.SetActive(true);
         tAnimatior.SetTrigger("LoadMechCargo");
+        cargoAudio.enabled = true;
         yield return new WaitForSeconds(6.5f);
         launchButton.SetActive(true);
         cargoButton.SetActive(false);
@@ -55,6 +60,7 @@ public class LaunchRocket : MonoBehaviour
     {
         hideLaunchButtonObj.SetActive(true);
         tAnimatior.SetTrigger("ReleaseRocket");
+        rocketAudio.enabled = true;
 
         yield return new WaitForSeconds(1);
         playerCam.SetActive(false);
