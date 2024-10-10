@@ -8,6 +8,7 @@ public class New_InteractScript : MonoBehaviour
 
     [SerializeField] private Transform playerCamTransform;
     [SerializeField] private Transform objectGrabPointTransform;
+    [SerializeField] private GameObject pickUpUI;
     [SerializeField] private LayerMask pickUpLayerMask;
 
     private ObjectGrabbable objectGrabbable;
@@ -42,6 +43,35 @@ public class New_InteractScript : MonoBehaviour
         //        }
         //}
 
+        //shoot raycast to enable pickup UI
+        if (objectGrabbable == null)
+        {
+            float pickUpDistance = 1.5f;
+            if (Physics.Raycast(playerCamTransform.position, playerCamTransform.forward, out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask))
+            {
+                if (objectisbeingheld == false)
+                {
+                    pickUpUI.SetActive(true);
+                }
+
+                if (objectisbeingheld == true)
+                {
+                    pickUpUI.SetActive(false);
+                }
+            }
+            else
+            {
+                pickUpUI.SetActive(false);
+            }
+        }
+
+        else
+        {
+            pickUpUI.SetActive(false);
+        }
+
+
+        //pickup objects
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (objectGrabbable == null) //Not carrying Object, try to grab
@@ -105,6 +135,8 @@ public class New_InteractScript : MonoBehaviour
         //drop currently equiped object
         objectGrabbable.Drop();
         objectGrabbable = null;
+        objectisbeingheld = false;
+
         Debug.Log(objectGrabbable = null);
 
         // allow arm to animate again
