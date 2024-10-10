@@ -236,7 +236,7 @@ public class EnterMechDemo : MonoBehaviour
     private void ActivateMech()
     {
         //Start consuming resources
-        startMechEngine.Invoke();
+        //startMechEngine.Invoke();
 
         // let the mech move when theres input
         mechMove.mechActive = true;
@@ -258,7 +258,7 @@ public class EnterMechDemo : MonoBehaviour
     private void DeactivateMech()
     {
         //Stop consuming fuel
-        startMechEngine.Invoke();
+        //startMechEngine.Invoke();
 
         //play exiting sound
         audioSource.PlayOneShot(disembarkClip);
