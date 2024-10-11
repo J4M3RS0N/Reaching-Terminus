@@ -41,6 +41,7 @@ public class ToastCollector : MonoBehaviour
     public HealthBar interiorHealthbar;
 
     public bool running;
+    public bool mechMobile;
 
     // Start is called before the first frame update
     void Start()
@@ -111,6 +112,7 @@ public class ToastCollector : MonoBehaviour
            StartCoroutine(drainHealthCoruotine);
 
             engineAudio.enabled = true;
+            mechMobile = true;
         }
         else
         {
@@ -118,6 +120,7 @@ public class ToastCollector : MonoBehaviour
            StopCoroutine(drainHealthCoruotine);
 
             engineAudio.enabled = false;
+            mechMobile = false;
         }
     }
 

@@ -333,6 +333,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
         {
             //find mech to use panel setactive
             llUI.SetActive(true);
+            Debug.Log("Can't Use Yet");
         }
     }
 

@@ -125,6 +125,13 @@ public class MechMovement : MonoBehaviour
             mechFootstepAudio.enabled = false;
         }
 
+        // if mech powewr switch is off even when mocing, animations and audio for mech walking are set inactive
+        if (ToastCollector.instance.mechMobile == false)
+        {
+            mechFootstepAudio.enabled = false;
+            legAnimator.SetBool("LegsWalking", false);
+        }
+
         if (mechActive == true)
         {
             // new event system input to exit the mech
@@ -194,6 +201,7 @@ public class MechMovement : MonoBehaviour
             mechFootstepAudio.enabled = true;
             legAnimator.SetBool("LegsWalking", true);
         }
+
         else
         {
             mechFootstepAudio.enabled = false;

@@ -30,16 +30,17 @@ public class KeyScript : MonoBehaviour
 
         keyBool = true;
 
-        DestroyKey();
-    }
-
-    private void DestroyKey()
-    {
-        Destroy(this.gameObject);
+        StartCoroutine(DestroyKey());
     }
 
     public Transform GetTransform()
     {
         return transform;
+    }
+
+    private IEnumerator DestroyKey()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(this.gameObject);
     }
 }

@@ -71,6 +71,7 @@ public class CraneScript : MonoBehaviour
     public IEnumerator SeatPlayer()
     {
         Player.transform.SetParent(CraneSeat);
+        Player.playerCannotMove = true;
 
         yield return new WaitForSeconds(1);
         craneButton.SetActive(false);
@@ -78,6 +79,7 @@ public class CraneScript : MonoBehaviour
         yield return new WaitForSeconds(4.8f);
         craneCollider.SetActive(true);
         Player.transform.SetParent(null);
+        Player.playerCannotMove = false;
 
     }
 
