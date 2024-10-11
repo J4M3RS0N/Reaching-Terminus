@@ -25,12 +25,13 @@ public class SAVED_PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplyer;
-    bool readyToJump;
+    public bool readyToJump;
 
     [Header("Crouching")]
     public float crouchSpeed;
     public float crouchYScale;
     private float startYScale;
+    public bool canCrouch;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
@@ -86,6 +87,8 @@ public class SAVED_PlayerMovement : MonoBehaviour
         playerActive = true;
 
         readyToJump = true;
+
+        canCrouch = true;
 
         startYScale = transform.localScale.y;
     }
@@ -201,14 +204,15 @@ public class SAVED_PlayerMovement : MonoBehaviour
         }
 
         //start crouch
-        if (Input.GetKeyDown(crouchKey))
+        if (Input.GetKeyDown(crouchKey) && canCrouch)
         {
             transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
             rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+            Debug.Log("Crouch");
         }
 
         //stop crouch
-        if (Input.GetKeyUp(crouchKey))
+        if (Input.GetKeyUp(crouchKey) && canCrouch)
         {
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
         }

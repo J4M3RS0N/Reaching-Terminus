@@ -72,6 +72,8 @@ public class CraneScript : MonoBehaviour
     {
         Player.transform.SetParent(CraneSeat);
         Player.playerCannotMove = true;
+        Player.readyToJump = false;
+        Player.canCrouch = false;
 
         yield return new WaitForSeconds(1);
         craneButton.SetActive(false);
@@ -80,6 +82,8 @@ public class CraneScript : MonoBehaviour
         craneCollider.SetActive(true);
         Player.transform.SetParent(null);
         Player.playerCannotMove = false;
+        Player.readyToJump = true;
+        Player.canCrouch = true;
 
     }
 

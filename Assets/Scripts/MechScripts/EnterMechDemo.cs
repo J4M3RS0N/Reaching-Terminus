@@ -124,6 +124,9 @@ public class EnterMechDemo : MonoBehaviour
 
     public void ToggleEmbark()
     {
+        //stops players from exiting mech while ariborne
+        if (MechMovement.instance.grounded == false) return;
+
         //dont let player leave the mule if they are zipping
         if (ll.isZipping) return;
 
