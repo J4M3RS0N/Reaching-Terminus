@@ -186,12 +186,7 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quit");
-        //Application.Quit();
-        SceneManager.LoadScene("Main Menu");
-        Pausegame();
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        timerText.enabled = false;
+        Application.Quit();
+        //SceneManager.LoadScene("Main Menu");
     }
 }
