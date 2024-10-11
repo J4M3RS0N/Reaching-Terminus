@@ -36,6 +36,8 @@ public class MechCannon : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
         {
             if (GameManager.current.gamePaused) return;
+            if (ToastCollector.instance.running == false) return;
+
             nextTimeToFire = Time.time + 1f / cannonFirerate;
             mechUIAnim.SetTrigger("ShotsFired");
             Shoot();
@@ -44,9 +46,6 @@ public class MechCannon : MonoBehaviour
     }
     void Shoot()
     {
-        if (MechMovement.instance.mechCannotMove == true) return;
-        if (ToastCollector.instance.currentHealth <= 0) return;
-
         muzzleFlash.Play();
 
         shake.ShakeTheCamera();
