@@ -113,7 +113,8 @@ public class EndGameScript : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quit");
-        Application.Quit();
+        //Application.Quit();
+        SceneManager.LoadScene("Main Menu");
     }
 
     private IEnumerator CloseGame()

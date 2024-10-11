@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         //check if the player has a highscore and set the highscore test to that
         UpdateBestTimeText();
 
-        bestTime = PlayerPrefs.GetFloat("BestTime", 0);
+        bestTime = PlayerPrefs.GetFloat("BestTimeCurrent", 0);
         fastestRunText.text = bestTime.ToString("00:00");
         //else, no highscore yet
     }
@@ -144,19 +144,19 @@ public class GameManager : MonoBehaviour
 
     void CheckBestTime()
     {
-        if (runTime < PlayerPrefs.GetFloat("BestTime", 0))
+        if (runTime < PlayerPrefs.GetFloat("BestTimeCurrent", 0))
         {
             bestTime = runTime;
             //fastestRunText.text = runTime.ToString();
 
-            PlayerPrefs.SetFloat("BestTime", runTime);
+            PlayerPrefs.SetFloat("BestTimeCurrent", runTime);
             UpdateBestTimeText();
         }
     }
 
     void UpdateBestTimeText()
     {
-        fastestRunText.text = $"BestTime: {PlayerPrefs.GetFloat("BestTime", 0)}";
+        fastestRunText.text = $"BestTime: {PlayerPrefs.GetFloat("BestTimeCurrent", 0)}";
 
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
@@ -186,6 +186,12 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("Quit");
-        Application.Quit();
+        //Application.Quit();
+        SceneManager.LoadScene("Main Menu");
+        Pausegame();
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        timerText.enabled = false;
     }
 }
