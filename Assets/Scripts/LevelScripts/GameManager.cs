@@ -5,6 +5,7 @@ using TMPro;
 //using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -56,13 +57,16 @@ public class GameManager : MonoBehaviour
         //UpdateBestTimeText(); //because default run time is set to zero,nothing can be lowerthan it so the code cant work properly for best time
 
         bestTime = PlayerPrefs.GetFloat("BestTimeCurrent");
-        fastestRunText.text = bestTime.ToString();
+
+        TimeSpan time = TimeSpan.FromSeconds(bestTime);
+
+        fastestRunText.text = time.ToString(@"mm\:ss");
 
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
 
         //fastestRunText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        fastestRunText.text = bestTime.ToString("00:00");
+        //fastestRunText.text = bestTime.ToString("00:00");
         //else, no highscore yet
     }
 
