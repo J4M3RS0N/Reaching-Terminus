@@ -138,13 +138,12 @@ public class EndGameScript : MonoBehaviour
     private IEnumerator DeathAnimation()
     {
         yield return new WaitForSeconds(2);
-
         GameOver();
     }
 
     public void GameOver()
     { 
         gameOver = true;
-        GameManager.current.SetRunEndTime();
+        GameManager.current.LoseGame();
     }
 }

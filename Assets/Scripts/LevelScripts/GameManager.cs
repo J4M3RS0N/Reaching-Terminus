@@ -55,8 +55,13 @@ public class GameManager : MonoBehaviour
         //check if the player has a highscore and set the highscore test to that
         //UpdateBestTimeText(); //because default run time is set to zero,nothing can be lowerthan it so the code cant work properly for best time
 
-        bestTime = PlayerPrefs.GetFloat("BestTimeCurrent", 0);
-        fastestRunText.text = bestTime.ToString("00:00");
+        bestTime = PlayerPrefs.GetFloat("BestTimeCurrent");
+
+        int minutes = Mathf.FloorToInt(elapsedTime / 60);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60);
+
+        fastestRunText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        //fastestRunText.text = bestTime.ToString("00:00");
         //else, no highscore yet
     }
 
@@ -161,13 +166,15 @@ public class GameManager : MonoBehaviour
 
     void UpdateBestTimeText()
     {
-        fastestRunText.text = $"BestTimeCurrent: {PlayerPrefs.GetFloat("BestTimeCurrent")}";
+        //fastestRunText.text = $"BestTimeCurrent: {PlayerPrefs.GetFloat("BestTimeCurrent")}";
+        bestTime = PlayerPrefs.GetFloat("BestTimeCurrent");
+        fastestRunText.text = bestTime.ToString();
 
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
 
         fastestRunText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-        Debug.Log("New BestTime");
+        //Debug.Log("New BestTime");
     }
 
     public void WinGame()
@@ -178,6 +185,13 @@ public class GameManager : MonoBehaviour
 
         //SceneManager.LoadScene("Win Scene");
         Debug.Log("he won");
+    }
+
+    public void LoseGame()
+    {
+        SetRunEndTime();
+        //UpdateBestTimeText();
+        timersPanel.SetActive(true);
     }
 
     public void RestartGame()

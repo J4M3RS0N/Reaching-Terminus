@@ -192,6 +192,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("LeanRight", false);
         }
 
+        if (endGame.gameOver) return;
 
         //when to jump
         if (Input.GetKey(jumpKey) && readyToJump && grounded)
