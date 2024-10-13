@@ -125,7 +125,7 @@ public class MechMovement : MonoBehaviour
             mechFootstepAudio.enabled = false;
         }
 
-        // if mech powewr switch is off even when mocing, animations and audio for mech walking are set inactive
+        // if mech powewr switch is off even when moving, animations and audio for mech walking are set inactive
         if (ToastCollector.instance.mechMobile == false)
         {
             mechFootstepAudio.enabled = false;

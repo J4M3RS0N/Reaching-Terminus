@@ -62,6 +62,10 @@ public class ToastCollector : MonoBehaviour
 
         fuelAudio = GetComponent<AudioSource>();
         emptyFuelAudio.enabled = false;
+
+
+        mechMobile = false;
+        
     }
 
     private void Update()
