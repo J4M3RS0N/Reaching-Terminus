@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public bool gamePaused;
     public bool linelaunchOpen;
     public bool freezeGame;
+    public bool mechTutorialActive;
 
     [Header("Timer")]
     [SerializeField] TextMeshProUGUI timerText;
