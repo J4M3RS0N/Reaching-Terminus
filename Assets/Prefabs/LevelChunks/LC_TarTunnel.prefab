@@ -99372,6 +99372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StagHolder_C (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4055869681714264891, guid: 4b7dd974235f36b4c970f6655ac5239e, type: 3}
+      propertyPath: replacementStag
+      value: 
+      objectReference: {fileID: 2790215804498344394}
     - target: {fileID: 6153336933556212358, guid: 4b7dd974235f36b4c970f6655ac5239e, type: 3}
       propertyPath: m_RootOrder
       value: 6

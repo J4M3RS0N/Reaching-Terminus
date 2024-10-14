@@ -242,8 +242,8 @@ public class MechMovement : MonoBehaviour
 
     private void MoveMech()
     {
-
-        if (ToastCollector.instance.currentHealth <= 0)
+        //changed it so mech must be grounded to avoid mech getting stuck in air
+        if (ToastCollector.instance.currentHealth <= 0 && grounded)
         {
             rb.isKinematic = true;
             rb.angularVelocity = Vector3.zero;
