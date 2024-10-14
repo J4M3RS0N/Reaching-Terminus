@@ -5,12 +5,12 @@ using UnityEngine;
 public class StagDropScript : MonoBehaviour
 {
     //[SerializeField] private Collider floorDetectObj;
-    public GameObject splashPS;
     public float fallingTime;
     MeshCollider meshCol;
     Rigidbody rb;
     AudioSource stagAudio;
     [SerializeField] private AudioClip splashSFX;
+    [SerializeField] private GameObject replacementStag;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +45,8 @@ public class StagDropScript : MonoBehaviour
         if(other.gameObject.tag == "Tar")
         {
             stagAudio.PlayOneShot(splashSFX);
-            Instantiate(splashPS, transform.position, transform.rotation);
+            replacementStag.SetActive(true);
+            Destroy(this.gameObject);
         }
     }
 }

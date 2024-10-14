@@ -7,6 +7,8 @@ public class Mech_CheckForDamage : MonoBehaviour
     public CheckForDamage dmgCheck;
     public EnterMechDemo enterMech;
 
+    [SerializeField] private GameObject fallingAudio;
+
     public void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Fire" && enterMech.playerInMech == true)
@@ -42,6 +44,7 @@ public class Mech_CheckForDamage : MonoBehaviour
         {
             dmgCheck.playerInTar = false;
             //stop player from disembarking
+            fallingAudio.SetActive(true);
         }
     }
 }
