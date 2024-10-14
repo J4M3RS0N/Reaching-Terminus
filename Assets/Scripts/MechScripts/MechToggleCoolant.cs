@@ -7,7 +7,8 @@ public class MechToggleCoolant : MonoBehaviour
 {
     public UnityEvent mechButtonPush;
     [SerializeField] private GameObject activeObj;
-    [SerializeField] private GameObject interiorActiveObj; 
+    [SerializeField] private GameObject interiorActiveObj;
+    [SerializeField] private GameObject exhaustFumes;
     private bool buttonActive;
 
     [Header("Audio")]
@@ -44,11 +45,13 @@ public class MechToggleCoolant : MonoBehaviour
         { 
              activeObj.SetActive(true);
             interiorActiveObj.SetActive(true);
+            exhaustFumes.SetActive(true);   
         }
         else
         {
             activeObj.SetActive(false);
             interiorActiveObj.SetActive(false);
+            exhaustFumes.SetActive(false);
         }
     }
 }
