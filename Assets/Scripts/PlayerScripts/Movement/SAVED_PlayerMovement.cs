@@ -42,6 +42,7 @@ public class SAVED_PlayerMovement : MonoBehaviour
     public float playerHeight;
     public LayerMask ground;
     public bool grounded;
+    public float groundRadius;
 
     [Header("Slope Handling")]
     public float maxSlopeAngle;
@@ -96,7 +97,8 @@ public class SAVED_PlayerMovement : MonoBehaviour
     public void Update()
     {
         //ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ground);
+        //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, ground);
+        grounded = Physics.CheckSphere(transform.position - new Vector3(0, 0.7f, 0), groundRadius, ground);
 
         MyInput();
         SpeedControl();
