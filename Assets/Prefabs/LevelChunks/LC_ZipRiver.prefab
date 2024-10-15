@@ -12640,6 +12640,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2218752939299553478}
     m_Modifications:
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.537
+      objectReference: {fileID: 0}
     - target: {fileID: 4412587067087381673, guid: 4f058311748858a49b92f31107653d89, type: 3}
       propertyPath: m_Name
       value: LineTargetPoint_Stand
@@ -12714,6 +12722,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2218752939299553478}
     m_Modifications:
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.47
+      objectReference: {fileID: 0}
     - target: {fileID: 4412587067087381673, guid: 4f058311748858a49b92f31107653d89, type: 3}
       propertyPath: m_Name
       value: LineTargetPoint_Stand
@@ -12788,6 +12804,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2218752939299553478}
     m_Modifications:
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.391
+      objectReference: {fileID: 0}
     - target: {fileID: 4412587067087381673, guid: 4f058311748858a49b92f31107653d89, type: 3}
       propertyPath: m_Name
       value: LineTargetPoint_Stand
@@ -13174,6 +13194,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2218752939299553478}
     m_Modifications:
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.158
+      objectReference: {fileID: 0}
     - target: {fileID: 4412587067087381673, guid: 4f058311748858a49b92f31107653d89, type: 3}
       propertyPath: m_Name
       value: LineTargetPoint_Stand
@@ -13200,7 +13228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5120212042425241509, guid: 4f058311748858a49b92f31107653d89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.9089317
+      value: 6.29
       objectReference: {fileID: 0}
     - target: {fileID: 5120212042425241509, guid: 4f058311748858a49b92f31107653d89, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13248,6 +13276,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2218752939299553478}
     m_Modifications:
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.485
+      objectReference: {fileID: 0}
     - target: {fileID: 4412587067087381673, guid: 4f058311748858a49b92f31107653d89, type: 3}
       propertyPath: m_Name
       value: LineTargetPoint_Stand
@@ -13920,6 +13960,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2218752939299553478}
     m_Modifications:
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.376
+      objectReference: {fileID: 0}
     - target: {fileID: 4412587067087381673, guid: 4f058311748858a49b92f31107653d89, type: 3}
       propertyPath: m_Name
       value: LineTargetPoint_Stand
@@ -13994,6 +14038,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2218752939299553478}
     m_Modifications:
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3716626919581999178, guid: 4f058311748858a49b92f31107653d89, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.444
+      objectReference: {fileID: 0}
     - target: {fileID: 4412587067087381673, guid: 4f058311748858a49b92f31107653d89, type: 3}
       propertyPath: m_Name
       value: LineTargetPoint_Stand (1)

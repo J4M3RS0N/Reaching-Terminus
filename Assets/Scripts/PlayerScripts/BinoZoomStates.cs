@@ -11,6 +11,8 @@ public class BinoZoomStates : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioSource zoomInAudio;
     [SerializeField] private AudioSource zoomOutAudio;
+    [SerializeField] private AudioClip zInClip;
+    [SerializeField] private AudioClip zOutClip;
 
 
     private float originalFOV;
@@ -31,8 +33,7 @@ public class BinoZoomStates : MonoBehaviour
         //turn off object cam stuff and enable bino soutline like in halo
         binoCanvas.SetActive(true);
         objectCam.SetActive(false);
-        zoomOutAudio.enabled = false;
-        zoomInAudio.enabled = true;
+        zoomInAudio.PlayOneShot(zInClip);
         //play zoom in sound
     }
 
@@ -42,8 +43,7 @@ public class BinoZoomStates : MonoBehaviour
         //re-enable object cam stuff and disable bino outline
         binoCanvas.SetActive(false);
         objectCam.SetActive(true);
-        zoomInAudio.enabled = false;
-        zoomOutAudio.enabled = true;
+        zoomOutAudio.PlayOneShot(zOutClip);
 
         //play zoom out sound
     }
