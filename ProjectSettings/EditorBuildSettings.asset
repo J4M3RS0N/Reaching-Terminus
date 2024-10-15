@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DevTestScene.unity
     guid: dbb79fcbf9e85db499bfd645a342b2de
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Fail Scene.unity
     guid: dac3a52a23218f04988f1b27ccfd286a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Win Scene.unity
     guid: 653540f2ee9024648811c34d52032a5e
   m_configObjects: {}
