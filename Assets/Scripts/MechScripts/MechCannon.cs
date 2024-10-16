@@ -37,6 +37,7 @@ public class MechCannon : MonoBehaviour
         {
             if (GameManager.current.gamePaused) return;
             if (ToastCollector.instance.running == false) return;
+            if (ToastCollector.instance.currentHealth == 0) return;
 
             nextTimeToFire = Time.time + 1f / cannonFirerate;
             mechUIAnim.SetTrigger("ShotsFired");
