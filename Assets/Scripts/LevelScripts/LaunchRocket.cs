@@ -72,7 +72,8 @@ public class LaunchRocket : MonoBehaviour
 
         yield return new WaitForSeconds(3);
         endGame.WinGame();
-        endGame.GameOver();
+        //endGame.GameOver();
+        endGame.gameOver = true;
         //yield return null;
 
         //wait a little longer then win game stuff

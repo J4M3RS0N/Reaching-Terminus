@@ -58,11 +58,11 @@ public class GameManager : MonoBehaviour
         //check if the player has a highscore and set the highscore test to that
         //UpdateBestTimeText(); //because default run time is set to zero,nothing can be lowerthan it so the code cant work properly for best time
 
-        bestTime = PlayerPrefs.GetFloat("BestTimeCurrent", 100);
+        bestTime = PlayerPrefs.GetFloat("BestTimeCurrent", 36000);
 
         TimeSpan time = TimeSpan.FromSeconds(bestTime);
 
-        fastestRunText.text = time.ToString(@"mm\:ss");
+        fastestRunText.text = time.ToString(@"hh\:mm\:ss");
 
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
@@ -83,12 +83,12 @@ public class GameManager : MonoBehaviour
 
         //TIMER
         elapsedTime += Time.deltaTime;
+        int hours = Mathf.FloorToInt(elapsedTime / 3600);
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
 
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        timerText.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
         //timerText.text = elapsedTime.ToString(); 
-
 
         //PAUSE GAME
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -148,39 +148,42 @@ public class GameManager : MonoBehaviour
         //finishedRunText.text = timerText.text;
         finishedRunText.text = elapsedTime.ToString();
 
+        int hours = Mathf.FloorToInt(elapsedTime / 3600);
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
 
-        finishedRunText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        finishedRunText.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
     }
 
     void CheckBestTime()
     {
-        if (runTime < PlayerPrefs.GetFloat("BestTimeCurrent"))
+        if (runTime < PlayerPrefs.GetFloat("BestTimeCurrent", 36000))
         {
             bestTime = runTime;
             //fastestRunText.text = runTime.ToString();
 
             PlayerPrefs.SetFloat("BestTimeCurrent", runTime);
-            fastestRunText.text = finishedRunText.text;
+            //fastestRunText.text = finishedRunText.text;
+            int hours = Mathf.FloorToInt(elapsedTime / 3600);
             int minutes = Mathf.FloorToInt(elapsedTime / 60);
             int seconds = Mathf.FloorToInt(elapsedTime % 60);
 
-            fastestRunText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-            //UpdateBestTimeText();
+            //fastestRunText.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
+            UpdateBestTimeText();
         }
     }
 
     void UpdateBestTimeText()
     {
         //fastestRunText.text = $"BestTimeCurrent: {PlayerPrefs.GetFloat("BestTimeCurrent")}";
-        bestTime = PlayerPrefs.GetFloat("BestTimeCurrent");
+        bestTime = PlayerPrefs.GetFloat("BestTimeCurrent", 36000);
         fastestRunText.text = bestTime.ToString();
 
+        int hours = Mathf.FloorToInt(elapsedTime / 3600);
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
 
-        fastestRunText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        fastestRunText.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
         //Debug.Log("New BestTime");
     }
 
