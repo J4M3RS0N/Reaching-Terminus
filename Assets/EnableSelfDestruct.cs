@@ -11,7 +11,7 @@ public class EnableSelfDestruct : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(fuel.currentHealth == 0 && coolant.currentHealth == 0)
+        if(fuel.currentHealth == 0 && coolant.currentHealth == 0 || Input.GetKey(KeyCode.X))
         {
             selfDestruct.SetActive(true);
         }
