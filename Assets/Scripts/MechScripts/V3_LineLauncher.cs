@@ -7,7 +7,7 @@ public class V3_LineLauncher : MonoBehaviour
     [Header("References")]
     public LineRenderer line;
     [SerializeField] private GameObject player;
-    [SerializeField] private Camera playerCam;
+    [SerializeField] private Camera cam;
     [SerializeField] private Transform linePos;
     [SerializeField] private Animator mechAnimator;
     public GameObject firedHook;
@@ -58,19 +58,19 @@ public class V3_LineLauncher : MonoBehaviour
         {
             ShootLine();
         }
-        if (Input.GetKeyDown(reelKey))
-        {
-            if (lineConnected)
-            {
-                isZipping = !isZipping;
+        //if (Input.GetKeyDown(reelKey))
+        //{
+        //    if (lineConnected)
+        //    {
+        //        isZipping = !isZipping;
 
-                //mechAnimator.SetBool("Zipping", true);
-            }
-            else
-            {
-                isZipping = false;
-            }
-        }
+        //        //mechAnimator.SetBool("Zipping", true);
+        //    }
+        //    else
+        //    {
+        //        isZipping = false;
+        //    }
+        //}
 
         line.SetPosition(0, linePos.position);
 
@@ -122,7 +122,7 @@ public class V3_LineLauncher : MonoBehaviour
         if (!canZip) return;
         {
             RaycastHit hit;
-            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, firingRange, isGrappable))
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, firingRange, isGrappable))
             {
                 grapplePoint = hit.point;
 
@@ -139,7 +139,8 @@ public class V3_LineLauncher : MonoBehaviour
                 rb.useGravity = false;
 
                 //this will decide if the player can reel themselves or not
-                lineConnected = true;
+                //lineConnected = true;
+                isZipping = true;
 
                 //animate grapple arm to come up
                 mechAnimator.SetBool("LineConnected", true);
@@ -190,7 +191,7 @@ public class V3_LineLauncher : MonoBehaviour
     {
         // boost player forward when the leave a zipine 
 
-        rb.AddForce(playerCam.transform.forward * zipThrust);
+        rb.AddForce(cam.transform.forward * zipThrust);
 
         yield return new WaitForSeconds(1);
     }
