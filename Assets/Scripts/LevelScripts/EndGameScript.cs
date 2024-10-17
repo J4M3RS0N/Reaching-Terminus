@@ -83,6 +83,7 @@ public class EndGameScript : MonoBehaviour
 
         deathAnim = true;
         //GameManager.current.WinGame();
+        GameManager.current.skullObj.SetActive(true);
         StartCoroutine(DeathAnimation());
 
     }
@@ -91,6 +92,7 @@ public class EndGameScript : MonoBehaviour
     {
         //SceneManager.LoadScene("Win Scene");
         victoryMode = true;
+        GameManager.current.skullObj.SetActive(false);
         GameManager.current.WinGame();
         victorySound.enabled = true;
         Debug.Log("he won");

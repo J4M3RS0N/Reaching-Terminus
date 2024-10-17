@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject losePanel;
     public GameObject winPanel;
     public GameObject blackScreen;
+    public GameObject skullObj;
     public TutorialPanelScript llPanel;
 
     [Header("Bools (+")]
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
         //check if the player has a highscore and set the highscore test to that
         //UpdateBestTimeText(); //because default run time is set to zero,nothing can be lowerthan it so the code cant work properly for best time
 
-        bestTime = PlayerPrefs.GetFloat("BestTimeCurrent");
+        bestTime = PlayerPrefs.GetFloat("BestTimeCurrent", 100);
 
         TimeSpan time = TimeSpan.FromSeconds(bestTime);
 
