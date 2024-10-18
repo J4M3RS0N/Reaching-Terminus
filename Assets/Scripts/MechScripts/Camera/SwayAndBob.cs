@@ -63,7 +63,7 @@ public class SwayAndBob : MonoBehaviour
     private void MechBob()
     {
         //if the mech isnt zipping then mech bob
-        //if (ll.isZipping) return;
+        if (ll.isZipping) return;
         
 
         if (Input.GetAxisRaw("Horizontal") != 0 && mechEmbarked.playerInMech == true)
