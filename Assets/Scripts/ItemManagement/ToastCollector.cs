@@ -8,6 +8,8 @@ public class ToastCollector : MonoBehaviour
 {
     public static ToastCollector instance;
 
+    [SerializeField] private AnimatedResourceCollection fuelAnim;
+
     [SerializeField] private Material turnedOffMaterial;
     [SerializeField] private Material turnedOnMaterial;
     [SerializeField] private GameObject emptyToastUI;
@@ -154,6 +156,8 @@ public class ToastCollector : MonoBehaviour
 
     void AddHealth(int addH)
     {
+        fuelAnim.AnimateFuelCollection();
+
         currentHealth += addH;
 
         healthbar.SetHealth(currentHealth);

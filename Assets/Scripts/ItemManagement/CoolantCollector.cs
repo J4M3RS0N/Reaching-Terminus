@@ -9,6 +9,8 @@ public class CoolantCollector : MonoBehaviour
 {
     public static CoolantCollector instance;
 
+    [SerializeField] private AnimatedResourceCollection coolantAnim;
+
     [Header("Coolant UI")]
     [SerializeField] private GameObject emptyButterUI;
     [SerializeField] private GameObject intemptyUI;
@@ -173,6 +175,8 @@ public class CoolantCollector : MonoBehaviour
 
     void AddHealth(int addH)
     {
+        coolantAnim.AnimateCoolantCollection();
+
         currentHealth += addH;
        
 
