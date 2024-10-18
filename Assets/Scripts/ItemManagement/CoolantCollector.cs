@@ -117,7 +117,7 @@ public class CoolantCollector : MonoBehaviour
             exteriorFireObj.SetActive(true);
         }
 
-        if (currentHealth > 0)
+        if (currentHealth > 0 && thereIsFire == false)
         {
             emptyButterUI.SetActive(false);
             intemptyUI.SetActive(false);
