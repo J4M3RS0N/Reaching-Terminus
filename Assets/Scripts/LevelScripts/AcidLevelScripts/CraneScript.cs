@@ -13,7 +13,8 @@ public class CraneScript : MonoBehaviour
     public GameObject attatchedContainer;
     public GameObject rampContainer;
 
-    public GameObject craneCollider;
+    public Collider craneCollider;
+    [SerializeField] private DestructableWall dWall;
 
     [SerializeField] private GameObject craneButton;
 
@@ -34,10 +35,12 @@ public class CraneScript : MonoBehaviour
 
         //craneCollider = GetComponent<GameObject>();
         craneCollider.GetComponent<BoxCollider>();
-        craneCollider.SetActive(false);
+        craneCollider.enabled = false;
 
         craneAnimator = GetComponent<Animator>();
         rampContainer.SetActive(false);
+
+        dWall.enabled = false;
     }
 
     public void CraneTakeDamage(float amount)
@@ -79,7 +82,10 @@ public class CraneScript : MonoBehaviour
         craneButton.SetActive(false);
 
         yield return new WaitForSeconds(4.8f);
-        craneCollider.SetActive(true);
+
+        craneCollider.enabled = true;
+        dWall.enabled = true;
+
         Player.transform.SetParent(null);
         Player.playerCannotMove = false;
         Player.readyToJump = true;
