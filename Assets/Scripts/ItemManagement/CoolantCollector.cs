@@ -111,24 +111,25 @@ public class CoolantCollector : MonoBehaviour
             }
         }
 
-        if(currentHealth > 0 && thereIsFire == true)
+        if (currentHealth > 0)
         {
-            interiorFireObj.SetActive(true);
-            exteriorFireObj.SetActive(true);
-        }
+            if(thereIsFire == true)
+            {
+                interiorFireObj.SetActive(true);
+                exteriorFireObj.SetActive(true);
+            }
+            if(thereIsFire == false)
+            {
 
-        if (currentHealth > 0 && thereIsFire == false)
-        {
+                interiorFireObj.SetActive(false);
+                exteriorFireObj.SetActive(false);
+                thereIsFire = false;
+
+                //fireSpawner.SetActive(false);
+            }
+            emptyCoolantAudio.enabled = false;
             emptyButterUI.SetActive(false);
             intemptyUI.SetActive(false);
-
-            interiorFireObj.SetActive(false);
-            exteriorFireObj.SetActive(false);
-            thereIsFire = false;
-
-            emptyCoolantAudio.enabled = false;
-
-            //fireSpawner.SetActive(false);
         }
     }
 
